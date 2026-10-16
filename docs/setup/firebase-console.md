@@ -1,5 +1,7 @@
 # Firebase Console setup (about 10 minutes)
 
+> **Project `streak-app-72026`:** the web-app config (steps 5–6) is already in the committed [`.env`](../../.env). As of 2026-10-16, Authentication isn't initialized (`CONFIGURATION_NOT_FOUND`) and the Firestore database doesn't exist yet, so do **steps 2, 3 and 4**.
+
 The app's Firebase code is complete and tested against the Firebase Emulator Suite. It needs your Firebase project before real accounts and sync can work. Until then, STREAKS runs in guest mode and the sign-in screens say cloud accounts aren't configured.
 
 ## 1. Create the project
