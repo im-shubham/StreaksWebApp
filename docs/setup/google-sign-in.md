@@ -1,5 +1,7 @@
 # Google Sign-In setup
 
+> **Status for `streak-app-72026`:** the web and iOS client IDs are in `.env` (iOS app `app.streaks.mobile` registered). Still to do: build a development build (step 3), and for Android, register the Android app with its SHA-1.
+
 The code is done: "Continue with Google" is on Sign In and Create Account, it signs in to Firebase with the Google credential, and it signs out of Google on sign-out. Two things are still needed.
 
 ## The constraint: no Google sign-in in Expo Go
