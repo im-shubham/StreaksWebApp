@@ -1,5 +1,6 @@
+import { router } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
-import { StyleSheet, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, View } from 'react-native';
 
 import { TabScreen } from '@/components/shell/TabScreen';
 import { FlameMark } from '@/components/streaks/FlameMark';
@@ -10,9 +11,11 @@ import { Icon } from '@/components/ui/Icon';
 import { IconButton } from '@/components/ui/IconButton';
 import { Pill } from '@/components/ui/Pill';
 import { Text } from '@/components/ui/Text';
-import { checkIn } from '@/db/repositories/completions';
+import { checkIn, undoCheckIn } from '@/db/repositories/completions';
+import { setPrimaryHabit } from '@/db/repositories/habits';
 import { formatClock, formatTime } from '@/domain/dates';
 import { HABIT_CATEGORIES } from '@/domain/types';
+import { openHabitMenu } from '@/features/habits/habitActions';
 import { useHabitBoard, type HabitView } from '@/features/habits/useHabitBoard';
 import { alpha, colors, glow, radius, spacing } from '@/theme';
 import { EmptyDashboard } from './EmptyDashboard';
@@ -32,7 +35,7 @@ export function DashboardScreen() {
   }
   return (
     <TabScreen title="Streaks" avatarInitial={initial}>
-      <HabitSwitcher habit={board.primary} />
+      <HabitSwitcher habit={board.primary} others={board.active.filter((h) => h.id !== board.primary?.id)} />
       <StreakHero habit={board.primary} />
       <CheckInCard habit={board.primary} />
       <WeeklyRhythmCard habit={board.primary} />
@@ -55,10 +58,21 @@ export function DashboardScreen() {
   );
 }
 
-function HabitSwitcher({ habit }: { habit: HabitView }) {
+function HabitSwitcher({ habit, others }: { habit: HabitView; others: HabitView[] }) {
+  const db = useSQLiteContext();
+  const switchHabit = () => {
+    if (others.length === 0) {
+      router.navigate('/habits');
+      return;
+    }
+    Alert.alert('Show on Dashboard', undefined, [
+      ...others.map((h) => ({ text: h.name, onPress: () => void setPrimaryHabit(db, h.id) })),
+      { text: 'Cancel', style: 'cancel' as const },
+    ]);
+  };
   return (
     <View style={styles.switcher}>
-      <View style={styles.switcherPill}>
+      <Pressable accessibilityRole="button" accessibilityLabel={`Current habit ${habit.name}. Switch habit`} onPress={switchHabit} style={styles.switcherPill}>
         <Text variant="caption-caps" color="primary-fixed">
           {HABIT_CATEGORIES[habit.category]?.label ?? habit.category}
         </Text>
@@ -67,9 +81,8 @@ function HabitSwitcher({ habit }: { habit: HabitView }) {
           {habit.name}
         </Text>
         <Icon name="unfold_more" size={18} color="outline" />
-      </View>
-      <IconButton icon="show_chart" accessibilityLabel="Habit Analytics" />
-      <IconButton icon="more_horiz" accessibilityLabel="Habit Settings" />
+      </Pressable>
+      <IconButton icon="more_horiz" accessibilityLabel="Habit Settings" onPress={() => openHabitMenu(db, habit)} />
     </View>
   );
 }
@@ -151,6 +164,11 @@ function CheckInCard({ habit }: { habit: HabitView }) {
             <Text variant="caption-caps" color="on-surface-variant" style={{ textTransform: 'none', marginTop: 2 }}>
               Checked in at {time}
             </Text>
+            <Pressable accessibilityRole="button" onPress={() => void undoCheckIn(db, habit.id)} hitSlop={10} style={{ marginTop: 10 }}>
+              <Text variant="label-md" weight="600" color="on-surface-variant" style={{ textDecorationLine: 'underline' }}>
+                Undo check-in
+              </Text>
+            </Pressable>
           </>
         ) : (
           <Text variant="body-lg" color="on-surface-variant" align="center">

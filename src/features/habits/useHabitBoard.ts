@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { AppState } from 'react-native';
 
 import { COMPLETIONS_SQL, rowToCompletion, type CompletionRow } from '@/db/repositories/completions';
 import { HABITS_SQL, rowToHabit, type HabitRow } from '@/db/repositories/habits';
@@ -27,6 +28,21 @@ export type HabitView = Habit & {
 
 type VacationRow = { id: string; start_date: string; end_date: string; habit_ids: string | null; ended_early_on: string | null };
 
+/** Today's local date; updates at midnight and when the app returns to the foreground. */
+function useToday(): LocalDate {
+  const [date, setDate] = useState(todayDate);
+  useEffect(() => {
+    const refresh = () => setDate((d) => (d === todayDate() ? d : todayDate()));
+    const timer = setInterval(refresh, 60_000);
+    const sub = AppState.addEventListener('change', (s) => s === 'active' && refresh());
+    return () => {
+      clearInterval(timer);
+      sub.remove();
+    };
+  }, []);
+  return date;
+}
+
 /** Everything the Streaks / Habits tabs render, derived live from SQLite. */
 export function useHabitBoard() {
   const habitRows = useLiveQuery<HabitRow>(HABITS_SQL.live, [], ['habits']);
@@ -35,7 +51,7 @@ export function useHabitBoard() {
   const vacationRows = useLiveQuery<VacationRow>(COMPLETIONS_SQL.vacations, [], ['vacations']);
   const profileRows = useLiveQuery<ProfileRow>(PROFILE_SQL, [], ['profile']);
 
-  const date = todayDate();
+  const date = useToday();
 
   return useMemo(() => {
     if (!habitRows || !completionRows || !freezeRows || !vacationRows || !profileRows) return { loading: true as const };

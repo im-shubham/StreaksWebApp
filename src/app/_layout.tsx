@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { DATABASE_NAME, migrate } from '@/db/migrations';
+import { AuthProvider } from '@/features/auth/AuthProvider';
 import { colors } from '@/theme';
 import { appFonts } from '@/theme/fonts';
 
@@ -27,17 +28,22 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <Suspense fallback={null}>
           <SQLiteProvider databaseName={DATABASE_NAME} onInit={migrate} options={{ enableChangeListener: true }} useSuspense>
-            <StatusBar style="light" />
-            <Stack
-              screenOptions={{
-                headerShown: false,
-                contentStyle: { backgroundColor: colors.surface },
-                animation: 'slide_from_right',
-              }}
-            >
-              <Stack.Screen name="(tabs)" />
-              <Stack.Screen name="habit/new" options={{ animation: 'slide_from_bottom' }} />
-            </Stack>
+            <AuthProvider>
+              <StatusBar style="light" />
+              <Stack
+                screenOptions={{
+                  headerShown: false,
+                  contentStyle: { backgroundColor: colors.surface },
+                  animation: 'slide_from_right',
+                }}
+              >
+                <Stack.Screen name="(tabs)" />
+                <Stack.Screen name="welcome" options={{ animation: 'fade' }} />
+                <Stack.Screen name="auth/sign-in" />
+                <Stack.Screen name="auth/sign-up" />
+                <Stack.Screen name="habit/new" options={{ animation: 'slide_from_bottom' }} />
+              </Stack>
+            </AuthProvider>
           </SQLiteProvider>
         </Suspense>
       </SafeAreaProvider>

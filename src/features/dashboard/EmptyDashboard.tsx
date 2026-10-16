@@ -12,6 +12,7 @@ import { Text } from '@/components/ui/Text';
 import { createHabit } from '@/db/repositories/habits';
 import { formatMonthDay, type LocalDate } from '@/domain/dates';
 import { QUICK_START_TEMPLATES } from '@/domain/templates';
+import { withLimit } from '@/features/habits/habitActions';
 import { colors, radius, spacing } from '@/theme';
 
 /** Stitch: "STREAKS - Empty Dashboard". */
@@ -69,7 +70,7 @@ export function EmptyDashboard({ date }: { date: LocalDate }) {
             title={t.name}
             subtitle={t.subtitle}
             actionLabel="Quick Add"
-            onAction={() => void createHabit(db, { ...t, templateId: t.id })}
+            onAction={() => void withLimit(() => createHabit(db, { ...t, templateId: t.id }))}
           />
         ))}
       </View>

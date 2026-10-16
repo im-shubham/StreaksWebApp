@@ -1,4 +1,4 @@
-import { Alert, Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { useSQLiteContext } from 'expo-sqlite';
 
 import { HoldToComplete } from '@/components/streaks/HoldToComplete';
@@ -7,11 +7,12 @@ import { Icon } from '@/components/ui/Icon';
 import { IconButton } from '@/components/ui/IconButton';
 import { Pill } from '@/components/ui/Pill';
 import { Text } from '@/components/ui/Text';
-import { checkIn, undoCheckIn } from '@/db/repositories/completions';
-import { deleteHabit, setHabitStatus, setPrimaryHabit } from '@/db/repositories/habits';
+import { checkIn } from '@/db/repositories/completions';
+import { setHabitStatus, setPrimaryHabit } from '@/db/repositories/habits';
 import { describeCadence } from '@/domain/cadence';
 import { formatClock, formatTime, WEEKDAY_INITIALS } from '@/domain/dates';
 import { HABIT_CATEGORIES } from '@/domain/types';
+import { openHabitMenu, withLimit } from '@/features/habits/habitActions';
 import type { HabitView } from '@/features/habits/useHabitBoard';
 import { alpha, colors, radius, spacing } from '@/theme';
 
@@ -28,25 +29,7 @@ export function HabitCard({ habit }: { habit: HabitView }) {
     .filter(Boolean)
     .join(' • ');
 
-  const openMenu = () =>
-    Alert.alert(habit.name, undefined, [
-      ...(!paused && !habit.isPrimary ? [{ text: 'Pin to Dashboard', onPress: () => void setPrimaryHabit(db, habit.id) }] : []),
-      ...(done ? [{ text: 'Undo Check-in', onPress: () => void undoCheckIn(db, habit.id) }] : []),
-      paused
-        ? { text: 'Resume', onPress: () => void setHabitStatus(db, habit.id, 'active') }
-        : { text: 'Pause', onPress: () => void setHabitStatus(db, habit.id, 'paused') },
-      { text: 'Archive', onPress: () => void setHabitStatus(db, habit.id, 'archived') },
-      {
-        text: 'Delete',
-        style: 'destructive',
-        onPress: () =>
-          Alert.alert('Delete habit?', 'This removes the habit and its history from all devices.', [
-            { text: 'Cancel', style: 'cancel' },
-            { text: 'Delete', style: 'destructive', onPress: () => void deleteHabit(db, habit.id) },
-          ]),
-      },
-      { text: 'Cancel', style: 'cancel' },
-    ]);
+  const openMenu = () => openHabitMenu(db, habit);
 
   return (
     <Card padding={spacing['space-lg'] - 4} style={[habit.isPrimary && styles.primary, paused && { opacity: 0.85 }]}>
@@ -97,7 +80,7 @@ export function HabitCard({ habit }: { habit: HabitView }) {
             ) : null}
           </>
         ) : (
-          <Pressable onPress={() => void setHabitStatus(db, habit.id, 'active')} style={{ marginLeft: 'auto' }} hitSlop={8}>
+          <Pressable onPress={() => void withLimit(() => setHabitStatus(db, habit.id, 'active'))} style={{ marginLeft: 'auto' }} hitSlop={8}>
             <Text variant="label-md" weight="600" color="primary-fixed">
               Resume
             </Text>

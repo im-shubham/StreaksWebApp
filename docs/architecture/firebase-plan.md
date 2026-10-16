@@ -1,6 +1,9 @@
 # Firebase Integration Plan
 
-Status: **plan only.** No Firebase code or config is in the app yet. The app runs fully on-device on top of SQLite until Stage 4 (accounts) and Stage 5 (sync).
+Status: **implemented for the MVP** (Auth with email/password and Firestore sync), tested against the Firebase Emulator Suite (`npm run test:emulator`). It goes live once you complete [the Console setup](../setup/firebase-console.md).
+
+> **Change from the original plan:** the MVP uses the **Firebase JS SDK**, not React Native Firebase, because it has to run in **Expo Go**. RNFB remains the target once the app moves to development builds (Crashlytics, App Check, native Apple/Google sign-in). The data model and sync engine don't change, because `src/sync/firestoreRemote.ts` is the only Firestore-specific file.
+> Other changes: the profile is stored at `users/{uid}/profile/me`, and the server-side last-write-wins rule was dropped, because one rejected write fails the whole batch and would wedge a device's sync queue. Clients resolve conflicts on pull.
 
 ## 1. Principles
 

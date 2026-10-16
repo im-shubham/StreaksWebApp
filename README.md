@@ -6,17 +6,21 @@ A native iOS and Android habit tracker built with **Expo SDK 57**, React Native 
 
 ```bash
 npm install
-npx expo start            # press i / a, or scan with Expo Go
+cp .env.example .env.local   # optional: Firebase config, see docs/setup/firebase-console.md
+npx expo start
 ```
 
-Stage 1 runs in **Expo Go**. Later stages (Firebase, purchases, widgets) need a development build: `npx expo run:ios|android` or `eas build --profile development`.
+- **iPhone:** App Store Expo Go only supports up to SDK 54, and this app is SDK 57. See **[docs/setup/run-on-iphone.md](docs/setup/run-on-iphone.md)** for the working options.
+- **Android:** install Expo Go for SDK 57 from <https://expo.dev/go> and scan the QR code.
+- Without Firebase config the app runs in guest mode with all data on the device.
 
 ## Checks
 
 ```bash
 npm run typecheck
 npm run lint
-npm test                  # streak engine unit tests
+npm test                  # streak engine, repositories, sync engine (real SQLite)
+npm run test:emulator     # Firebase Auth + Firestore + rules against the Emulator Suite
 npx expo-doctor
 ```
 
@@ -39,4 +43,6 @@ scripts/            Stitch export, token and icon generators.
 - [Roadmap](docs/roadmap.md)
 - [Local database architecture](docs/architecture/database.md)
 - [Firebase integration plan](docs/architecture/firebase-plan.md)
+- [Firebase Console setup](docs/setup/firebase-console.md)
+- [Run on iPhone](docs/setup/run-on-iphone.md)
 - [Stitch archive & design discrepancies](design/stitch/README.md)

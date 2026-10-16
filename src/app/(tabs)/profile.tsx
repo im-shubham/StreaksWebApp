@@ -1,10 +1,3 @@
-import { StagePlaceholder } from '@/components/shell/StagePlaceholder';
-import { TabScreen } from '@/components/shell/TabScreen';
+import { ProfileScreen } from '@/features/profile/ProfileScreen';
 
-export default function ProfileTab() {
-  return (
-    <TabScreen title="Profile">
-      <StagePlaceholder slugs={['profile-settings', 'app-icon-picker-custom-themes']} />
-    </TabScreen>
-  );
-}
+export default ProfileScreen;

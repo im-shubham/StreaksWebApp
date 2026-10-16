@@ -15,9 +15,8 @@ import { Toggle } from '@/components/ui/Toggle';
 import { createHabit } from '@/db/repositories/habits';
 import { ALL_WEEKDAYS_MASK, maskCount, maskHas, toggleMask } from '@/domain/cadence';
 import { formatTime, WEEKDAY_INITIALS } from '@/domain/dates';
-import { canAddHabit, PLAN_LIMITS } from '@/domain/plans';
 import { EMBLEMS, HABIT_CATEGORIES, type CadenceType } from '@/domain/types';
-import { useHabitBoard } from '@/features/habits/useHabitBoard';
+import { withLimit } from '@/features/habits/habitActions';
 import { colors, fontFamily, radius, spacing, typography } from '@/theme';
 
 const CADENCES: { type: CadenceType; label: string }[] = [
@@ -38,7 +37,6 @@ const fromHHMM = (s: string) => {
 export function CreateHabitScreen() {
   const db = useSQLiteContext();
   const insets = useSafeAreaInsets();
-  const board = useHabitBoard();
 
   const [name, setName] = useState('');
   const [touched, setTouched] = useState(false);
@@ -68,14 +66,9 @@ export function CreateHabitScreen() {
       Alert.alert('Pick at least one day', 'Select the weekdays this habit runs on.');
       return;
     }
-    if (!board.loading && board.profile && !canAddHabit(board.profile.tier, board.active.length)) {
-      // Upgrade sheet ("Free Habit Limit & Upgrade Sheet") arrives in the monetization stage.
-      Alert.alert('Habit limit reached', `Your plan supports ${PLAN_LIMITS[board.profile.tier].maxActiveHabits} active habits.`);
-      return;
-    }
     setSaving(true);
     try {
-      await createHabit(db, {
+      const created = await withLimit(() => createHabit(db, {
         name,
         category: emblem.category,
         emblem: emblem.icon,
@@ -85,7 +78,8 @@ export function CreateHabitScreen() {
         executionTime: time,
         reminderEnabled: reminder,
         reminderTime: reminder ? time : null,
-      });
+      }));
+      if (!created) return;
       void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       router.back();
     } finally {

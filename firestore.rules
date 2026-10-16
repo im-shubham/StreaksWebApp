@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// STREAKS: each user can read and write only their own data.
+// Layout: users/{uid}/{collection}/{docId}  (see src/sync/firestoreRemote.ts)
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/{collection}/{docId} {
+      function isOwner() {
+        return request.auth != null && request.auth.uid == uid;
+      }
+      function validCollection() {
+        return collection in ['profile', 'habits', 'completions', 'freezeEvents', 'vacations', 'milestones'];
+      }
+      function validWrite() {
+        return request.resource.data.updatedAt is number
+          && request.resource.data.serverUpdatedAt == request.time
+          // Plan tier is decided server-side (purchases), never by the client.
+          && !('tier' in request.resource.data)
+          && request.resource.data.size() <= 40;
+      }
+
+      allow read: if isOwner();
+      allow create, update: if isOwner() && validCollection() && validWrite();
+      // Clients delete via tombstones (deletedAt) so deletions sync to other devices.
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

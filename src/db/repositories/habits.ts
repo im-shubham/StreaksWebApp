@@ -3,7 +3,8 @@ import type { SQLiteDatabase } from 'expo-sqlite';
 
 import type { IconName } from '@/components/ui/Icon';
 import { today } from '@/domain/dates';
-import type { CadenceType, Habit, HabitCategory, HabitStatus } from '@/domain/types';
+import { canAddHabit, HabitLimitError } from '@/domain/plans';
+import type { AccountTier, CadenceType, Habit, HabitCategory, HabitStatus } from '@/domain/types';
 import { enqueue } from '../outbox';
 
 export type HabitRow = {
@@ -75,6 +76,18 @@ export type NewHabit = {
   templateId?: string | null;
 };
 
+/** Throws HabitLimitError when the plan's active-habit cap is reached. */
+async function assertCanActivate(db: SQLiteDatabase): Promise<{ activeCount: number; maxOrder: number }> {
+  const profile = await db.getFirstAsync<{ tier: AccountTier }>(`SELECT tier FROM profile WHERE id = 'me'`);
+  const counts = await db.getFirstAsync<{ n: number; maxOrder: number | null }>(
+    `SELECT COUNT(*) AS n, MAX(sort_order) AS maxOrder FROM habits WHERE deleted_at IS NULL AND status = 'active'`,
+  );
+  const tier = profile?.tier ?? 'guest';
+  const activeCount = counts?.n ?? 0;
+  if (!canAddHabit(tier, activeCount)) throw new HabitLimitError(tier);
+  return { activeCount, maxOrder: counts?.maxOrder ?? -1 };
+}
+
 async function upsertOutbox(db: SQLiteDatabase, id: string) {
   const row = await db.getFirstAsync<HabitRow>('SELECT * FROM habits WHERE id = ?', id);
   if (row) await enqueue(db, 'habits', id, 'upsert', row);
@@ -84,10 +97,8 @@ export async function createHabit(db: SQLiteDatabase, input: NewHabit): Promise<
   const id = randomUUID();
   const now = Date.now();
   await db.withExclusiveTransactionAsync(async (txn) => {
-    const counts = await txn.getFirstAsync<{ n: number; maxOrder: number | null }>(
-      `SELECT COUNT(*) AS n, MAX(sort_order) AS maxOrder FROM habits WHERE deleted_at IS NULL AND status = 'active'`,
-    );
-    const isFirst = (counts?.n ?? 0) === 0;
+    const { activeCount, maxOrder } = await assertCanActivate(txn);
+    const isFirst = activeCount === 0;
     await txn.runAsync(
       `INSERT INTO habits (id, name, category, emblem, cadence_type, weekdays_mask, interval_days, start_date,
          weekly_target, target_label, execution_time, reminder_enabled, reminder_time, notes, status,
@@ -108,7 +119,7 @@ export async function createHabit(db: SQLiteDatabase, input: NewHabit): Promise<
       input.reminderTime ?? null,
       input.notes ?? null,
       isFirst ? 1 : 0,
-      (counts?.maxOrder ?? -1) + 1,
+      maxOrder + 1,
       input.templateId ?? null,
       now,
       now,
@@ -121,6 +132,10 @@ export async function createHabit(db: SQLiteDatabase, input: NewHabit): Promise<
 export async function setHabitStatus(db: SQLiteDatabase, id: string, status: HabitStatus): Promise<void> {
   const now = Date.now();
   await db.withExclusiveTransactionAsync(async (txn) => {
+    if (status === 'active') {
+      const current = await txn.getFirstAsync<{ status: HabitStatus }>('SELECT status FROM habits WHERE id = ?', id);
+      if (current?.status !== 'active') await assertCanActivate(txn);
+    }
     await txn.runAsync(
       `UPDATE habits SET status = ?, archived_at = ?, is_primary = CASE WHEN ? = 'active' THEN is_primary ELSE 0 END,
          updated_at = ? WHERE id = ?`,

@@ -13,7 +13,7 @@ import type { SQLiteDatabase } from 'expo-sqlite';
  *
  * Migrations are append-only. Never edit a shipped migration; add a new one.
  */
-const MIGRATIONS: string[] = [
+export const MIGRATIONS: string[] = [
   // v1: initial schema
   `
   CREATE TABLE habits (

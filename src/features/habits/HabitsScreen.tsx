@@ -10,7 +10,9 @@ import { Card } from '@/components/ui/Card';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { Text } from '@/components/ui/Text';
 import { createHabit } from '@/db/repositories/habits';
+import { canAddHabit } from '@/domain/plans';
 import { ARCHETYPE_TEMPLATES } from '@/domain/templates';
+import { showHabitLimit, withLimit } from './habitActions';
 import { colors, radius, spacing } from '@/theme';
 import { useHabitBoard } from './useHabitBoard';
 
@@ -45,7 +47,15 @@ export function HabitsScreen() {
             {board.active.length} Active • {board.paused.length} Paused
           </Text>
         </View>
-        <Button label="New Habit" icon="add" size="md" onPress={() => router.push('/habit/new')} style={{ borderRadius: radius['2xl'], height: 52 }} />
+        <Button
+          label="New Habit"
+          icon="add"
+          size="md"
+          onPress={() => {
+            const tier = board.profile?.tier ?? 'guest';
+            if (canAddHabit(tier, board.active.length)) router.push('/habit/new');
+            else showHabitLimit(tier);
+          }} style={{ borderRadius: radius['2xl'], height: 52 }} />
       </View>
 
       <View style={styles.segment}>
@@ -166,7 +176,7 @@ function EmptyHabits() {
             key={t.id}
             accessibilityRole="button"
             accessibilityLabel={`Add ${t.name}`}
-            onPress={() => void createHabit(db, { ...t, templateId: t.id })}
+            onPress={() => void withLimit(() => createHabit(db, { ...t, templateId: t.id }))}
             style={({ pressed }) => [styles.archetype, pressed && { backgroundColor: colors['surface-container'] }]}
           >
             <Icon name={t.emblem} size={22} color="primary-fixed" />

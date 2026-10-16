@@ -43,21 +43,21 @@ export const STITCH_SCREENS: StitchScreen[] = [
 
   { slug: 'insights-analytics', title: 'Insights & Analytics', stage: 3, status: 'planned' },
   { slug: 'empty-insights-analytics', title: 'Empty Insights & Analytics', stage: 3, status: 'planned' },
-  { slug: 'profile-settings', title: 'Profile & Settings', stage: 3, status: 'planned' },
+  { slug: 'profile-settings', title: 'Profile & Settings', stage: 3, status: 'built', route: '/profile' }, // MVP subset: account, sync, sign out
   { slug: 'app-icon-picker-custom-themes', title: 'App Icon Picker & Custom Themes', stage: 3, status: 'planned' },
 
-  { slug: 'welcome-onboarding', title: 'Welcome & Onboarding', stage: 4, status: 'planned' },
+  { slug: 'welcome-onboarding', title: 'Welcome & Onboarding', stage: 4, status: 'built', route: '/welcome' },
   { slug: 'onboarding-step-1', title: 'Onboarding Step 1', stage: 4, status: 'planned' },
   { slug: 'onboarding-step-2', title: 'Onboarding Step 2', stage: 4, status: 'planned' },
   { slug: 'onboarding-step-3', title: 'Onboarding Step 3', stage: 4, status: 'planned' },
   { slug: 'authentication', title: 'Authentication', stage: 4, status: 'planned' },
-  { slug: 'sign-in', title: 'Sign In', stage: 4, status: 'planned' },
-  { slug: 'create-account', title: 'Create Account', stage: 4, status: 'planned' },
+  { slug: 'sign-in', title: 'Sign In', stage: 4, status: 'built', route: '/auth/sign-in' },
+  { slug: 'create-account', title: 'Create Account', stage: 4, status: 'built', route: '/auth/sign-up' },
   { slug: 'forgot-password', title: 'Forgot Password', stage: 4, status: 'planned' },
   { slug: 'password-reset-email-sent', title: 'Password Reset Email Sent', stage: 4, status: 'planned' },
   { slug: 'auth-error-recovery', title: 'Auth Error & Recovery', stage: 4, status: 'planned' },
   { slug: 'session-expired-account-confirmation', title: 'Session Expired & Account Confirmation', stage: 4, status: 'planned' },
-  { slug: 'guest-mode-experience', title: 'Guest Mode Experience', stage: 4, status: 'planned' },
+  { slug: 'guest-mode-experience', title: 'Guest Mode Experience', stage: 4, status: 'planned' }, // guest mode works; dedicated screen pending
 
   { slug: 'account-data-loading-sync-confirmation', title: 'Account Data Loading & Sync Confirmation', stage: 5, status: 'planned' },
   { slug: 'offline-mode-local-cache', title: 'Offline Mode & Local Cache', stage: 5, status: 'planned' },

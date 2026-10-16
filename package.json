@@ -11,12 +11,14 @@
     "lint": "expo lint",
     "test": "jest",
     "doctor": "expo-doctor",
-    "check": "npm run typecheck && npm run lint && npm test"
+    "check": "npm run typecheck && npm run lint && npm test",
+    "test:emulator": "FIREBASE_EMULATORS=1 jest --config jest.emulator.config.js"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.2",
     "@react-native-community/datetimepicker": "9.1.0",
     "expo": "~57.0.30",
+    "expo-asset": "~57.0.20",
     "expo-blur": "~57.0.3",
     "expo-constants": "~57.0.22",
     "expo-crypto": "~57.0.4",
@@ -30,6 +32,7 @@
     "expo-sqlite": "~57.0.4",
     "expo-status-bar": "~57.0.1",
     "expo-system-ui": "~57.0.4",
+    "firebase": "^13.0.0",
     "react": "19.2.3",
     "react-native": "0.86.3",
     "react-native-gesture-handler": "~2.32.0",
@@ -53,7 +56,8 @@
     "preset": "jest-expo",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/design/"
+      "/design/",
+      "\\.emulator\\.test\\.ts$"
     ]
   }
 }
