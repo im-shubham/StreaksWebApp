@@ -14,6 +14,7 @@ import { AppState } from 'react-native';
 
 import { updateProfile } from '@/db/repositories/profile';
 import { firebaseAuth, firestore, isFirebaseConfigured } from '@/services/firebase';
+import { signInWithGoogle, signOutOfGoogle } from '@/services/googleSignIn';
 import { adoptAccount, pull, push, wipeLocalData } from '@/sync/engine';
 import { firestoreRemote } from '@/sync/firestoreRemote';
 import { getSyncStatus, setSyncStatus } from '@/sync/status';
@@ -30,6 +31,8 @@ export type AuthState =
 type AuthApi = {
   auth: AuthState;
   signIn: (email: string, password: string) => Promise<void>;
+  /** Resolves 'cancelled' if the user dismisses the Google sheet. */
+  signInWithGoogle: () => Promise<'success' | 'cancelled'>;
   signUp: (name: string, email: string, password: string) => Promise<void>;
   resetPassword: (email: string) => Promise<void>;
   /** Signs out and removes this account's data from the device. */
@@ -158,6 +161,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       async signIn(email, password) {
         await signInWithEmailAndPassword(firebaseAuth(), email.trim(), password);
       },
+      signInWithGoogle: () => signInWithGoogle(firebaseAuth()),
       async signUp(name, email, password) {
         const cred = await createUserWithEmailAndPassword(firebaseAuth(), email.trim(), password);
         if (name.trim()) {
@@ -173,6 +177,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         // already warned the user about pending changes.
         await runSync().catch(() => undefined);
         await fbSignOut(firebaseAuth());
+        await signOutOfGoogle();
         uidRef.current = null;
         await wipeLocalData(db);
       },

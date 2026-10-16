@@ -44,5 +44,6 @@ scripts/            Stitch export, token and icon generators.
 - [Local database architecture](docs/architecture/database.md)
 - [Firebase integration plan](docs/architecture/firebase-plan.md)
 - [Firebase Console setup](docs/setup/firebase-console.md)
+- [Google Sign-In setup](docs/setup/google-sign-in.md)
 - [Run on iPhone](docs/setup/run-on-iphone.md)
 - [Stitch archive & design discrepancies](design/stitch/README.md)

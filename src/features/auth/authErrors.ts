@@ -17,7 +17,9 @@ export function authErrorMessage(e: unknown): string {
     case 'auth/network-request-failed':
       return 'No connection to Firebase. Check your internet connection.';
     case 'auth/operation-not-allowed':
-      return 'Email/Password sign-in is disabled. Enable it in Firebase Console → Authentication → Sign-in method.';
+      return 'This sign-in method is disabled. Enable it in Firebase Console → Authentication → Sign-in method.';
+    case 'auth/account-exists-with-different-credential':
+      return 'This email already has an account with a different sign-in method. Sign in with email and password.';
     case 'auth/configuration-not-found':
       return 'Firebase Authentication is not set up. Open Firebase Console → Authentication → Get started.';
     case 'auth/invalid-api-key':

@@ -5,11 +5,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { AuthDivider, GoogleButton } from '@/components/ui/GoogleButton';
 import { Icon } from '@/components/ui/Icon';
 import { IconButton } from '@/components/ui/IconButton';
 import { Text } from '@/components/ui/Text';
 import { TextField } from '@/components/ui/TextField';
 import { isFirebaseConfigured } from '@/services/firebase';
+import { googleAvailability } from '@/services/googleSignIn';
 import { alpha, colors, glow, radius, spacing } from '@/theme';
 import { authErrorMessage } from './authErrors';
 import { useAuth } from './AuthProvider';
@@ -23,12 +25,13 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  */
 export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
   const insets = useSafeAreaInsets();
-  const { auth, signIn, signUp, resetPassword } = useAuth();
+  const { auth, signIn, signUp, resetPassword, signInWithGoogle } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [googleBusy, setGoogleBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const signUpMode = mode === 'sign-up';
 
@@ -57,6 +60,23 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
       setError(authErrorMessage(e));
     } finally {
       setBusy(false);
+    }
+  };
+
+  const google = async () => {
+    setError(null);
+    const availability = googleAvailability();
+    if (!availability.available) {
+      Alert.alert('Google sign-in unavailable', availability.reason);
+      return;
+    }
+    setGoogleBusy(true);
+    try {
+      if ((await signInWithGoogle()) === 'success') setSubmitted(true);
+    } catch (e) {
+      setError(authErrorMessage(e));
+    } finally {
+      setGoogleBusy(false);
     }
   };
 
@@ -111,6 +131,17 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
                 stay on this device.
               </Text>
             </Card>
+          ) : null}
+
+          {isFirebaseConfigured ? (
+            <View style={{ gap: spacing['space-md'] }}>
+              <GoogleButton
+                label={signUpMode ? 'Sign up with Google' : 'Continue with Google'}
+                onPress={() => void google()}
+                loading={googleBusy || (submitted && auth.status !== 'signedIn' && !busy)}
+              />
+              <AuthDivider label={signUpMode ? 'or create with email' : 'or continue with email'} />
+            </View>
           ) : null}
 
           <View style={{ gap: spacing['space-md'] }}>

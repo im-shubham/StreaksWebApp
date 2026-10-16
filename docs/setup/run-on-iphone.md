@@ -46,6 +46,10 @@ Install Expo Go for **SDK 57** from <https://expo.dev/go>, run `npx expo start` 
 
 App Store Expo Go would work right away, but this goes against the SDK 57 baseline you set, so it hasn't been done.
 
+## Google Sign-In
+
+Google Sign-In works only in Option B or another development build; Expo Go (Option A) can't load it. See [google-sign-in.md](google-sign-in.md).
+
 ## Firebase
 
 Without `.env.local` the app runs in guest mode, fully on-device. To turn on accounts and sync, follow [firebase-console.md](firebase-console.md) and restart `npx expo start`.
