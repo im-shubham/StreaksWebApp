@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-tertiary-fixed-variant": "#004787", "surface-container-high": "#2a2a2a", "on-tertiary-fixed": "#001c3b", "error": "#ffb4ab", "primary-fixed-dim": "#a1d820", "tertiary": "#ffffff", "surface-dim": "#131313", "primary-fixed": "#bcf540", "inverse-primary": "#4a6700", "surface-bright": "#3a3939", "outline-variant": "#434935", "secondary": "#c6c5d5", "on-error": "#690005", "error-container": "#93000a", "tertiary-container": "#d5e3ff", "on-background": "#e5e2e1", "tertiary-fixed-dim": "#a6c8ff", "surface": "#131313", "inverse-surface": "#e5e2e1", "on-secondary": "#2f2f3c", "secondary-fixed": "#e2e1f2", "primary": "#ffffff", "on-tertiary-container": "#1165b7", "tertiary-fixed": "#d5e3ff", "on-surface-variant": "#c3c9af", "on-surface": "#e5e2e1", "surface-container-low": "#1c1b1b", "on-tertiary": "#00305f", "on-primary-fixed-variant": "#374e00", "on-primary-container": "#4f6e00", "on-secondary-fixed": "#1a1b26", "surface-container-lowest": "#0e0e0e", "on-secondary-fixed-variant": "#454653", "surface-tint": "#a1d820", "surface-variant": "#353534", "on-primary-fixed": "#141f00", "on-secondary-container": "#b7b7c7", "surface-container": "#201f1f", "on-primary": "#253600", "outline": "#8d937c", "on-error-container": "#ffdad6", "surface-container-highest": "#353534", "inverse-on-surface": "#313030", "secondary-fixed-dim": "#c6c5d5", "secondary-container": "#474855", "primary-container": "#bcf540", "background": "#131313"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-lg": "1.5rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "margin": "1.25rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "space-xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem"}, "fontFamily": {"micro-counter": ["Inter"], "caption-caps": ["Inter"], "display-hero-mobile": ["Inter"], "body-lg": ["Inter"], "display-hero": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"]}, "fontSize": {"micro-counter": ["10px", {"lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700"}], "caption-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700"}], "display-hero-mobile": ["42px", {"lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800"}], "body-lg": ["17px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "display-hero": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800"}], "headline-md": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "label-md": ["14px", {"lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500"}], "body-md": ["15px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}], "headline-xl": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Close modal" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight ml-space-xs truncate">Streak Freeze &amp; Repair</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-space-xl">
+<!-- Subtle ambient aura behind vault -->
+<div class="relative w-full">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary-fixed/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Status Sub-header Chip -->
+<div class="flex items-center justify-between py-space-sm mb-space-sm">
+<div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-fixed"></span>
+</span>
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-primary-fixed">Streak Defense Active</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed-dim">verified_user</span>
+<span class="font-micro-counter text-micro-counter text-tertiary-fixed-dim tracking-normal">TIER 1 VAULT</span>
+</div>
+</div>
+<!-- Hero Card: Freeze Vault & Inventory -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container p-margin mb-space-md shadow-xl">
+<div class="absolute top-0 right-0 w-36 h-36 bg-tertiary-fixed-dim/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10 mb-space-md">
+<div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider block mb-0.5">Inventory Reserve</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">2</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">/ 3 Available</span>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-highest text-primary-fixed hover:bg-surface-bright active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add_moderator</span>
+<span class="font-label-sm text-label-sm font-bold">Get Freeze</span>
+</button>
+</div>
+<!-- Tactile Token Matrix (3 Shield Crystal Slots) -->
+<div class="grid grid-cols-3 gap-space-sm mb-space-md relative z-10">
+<!-- Token 1: Active Frost Crystal -->
+<div class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-high transition-transform hover:scale-[1.02]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center mb-1.5 shadow-inner">
+<span class="material-symbols-outlined text-[24px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-on-surface">CRYSTAL 01</span>
+<span class="font-micro-counter text-[9px] text-primary-fixed mt-0.5">READY</span>
+</div>
+<!-- Token 2: Active Frost Crystal -->
+<div class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-high transition-transform hover:scale-[1.02]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center mb-1.5 shadow-inner">
+<span class="material-symbols-outlined text-[24px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-on-surface">CRYSTAL 02</span>
+<span class="font-micro-counter text-[9px] text-primary-fixed mt-0.5">READY</span>
+</div>
+<!-- Token 3: Depleted / Slotted Outline -->
+<div class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-low opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[22px] text-on-surface-variant">hourglass_empty</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant">SLOT 03</span>
+<span class="font-micro-counter text-[9px] text-on-surface-variant mt-0.5">+3 DAYS</span>
+</div>
+</div>
+<!-- Refill Footer Subtext -->
+<div class="flex items-center gap-space-xs text-on-surface-variant relative z-10 pt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">event_repeat</span>
+<p class="font-label-sm text-label-sm">
+          Refills 1 crystal on <span class="text-on-surface font-semibold">Monday (in 3 days)</span> or instant with Pro.
+        </p>
+</div>
+</section>
+<!-- Emergency Streak Repair Card (Critical Alert Zone) -->
+<section class="rounded-xl bg-surface-container-low p-margin mb-space-md relative overflow-hidden shadow-2xl">
+<!-- High contrast urgency indicator strip -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span class="font-caption-caps text-caption-caps uppercase font-bold tracking-wider">Streak At Risk</span>
+</div>
+<div class="flex items-center gap-1 text-error font-mono font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>Closes in 07h 42m</span>
+</div>
+</div>
+<!-- Missed Streak Details -->
+<div class="mb-space-md">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-1">
+          Deep Work Routine
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Missed yesterday (Tuesday, Oct 22) — 24-Day momentum is currently halted.
+        </p>
+</div>
+<!-- Broken vs Repaired State Comparison Module -->
+<div class="grid grid-cols-2 gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest mb-space-md">
+<!-- Broken State -->
+<div class="p-3 rounded-md bg-surface-container-low flex flex-col justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-error font-bold">Unrepaired Fate</span>
+<div class="my-2">
+<span class="line-through text-on-surface-variant font-headline-md text-headline-md mr-1">24d</span>
+<span class="text-error font-headline-xl text-headline-xl font-extrabold">0d</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant uppercase">Streak Resets to Zero</span>
+</div>
+<!-- Repaired State -->
+<div class="p-3 rounded-md bg-surface-container flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-primary-fixed font-bold">Safeguarded</span>
+<span class="material-symbols-outlined text-[16px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="my-2">
+<span class="text-primary-fixed font-headline-xl text-headline-xl font-extrabold">25d</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold ml-1">Active</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-primary-fixed uppercase tracking-wider">Chain Preserved</span>
+</div>
+</div>
+<!-- Primary Action CTA: One-tap Repair -->
+<button class="w-full h-14 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-extrabold flex items-center justify-center gap-space-xs transition-transform active:scale-[0.98] shadow-lg mb-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+<span>Use 1 Freeze to Repair Streak</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+<!-- Secondary Retroactive Challenge Button -->
+<button class="w-full py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">history_edu</span>
+<span>Log 45m Session to Repair Free</span>
+</button>
+</section>
+<!-- Auto-Defense & Freeze Automation Settings -->
+<section class="mb-space-md">
+<div class="flex items-center justify-between mb-space-sm px-1">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Automation &amp; Defense</h3>
+<span class="font-micro-counter text-micro-counter text-primary-fixed uppercase tracking-wider">Auto Shield ON</span>
+</div>
+<div class="space-y-2">
+<!-- Toggle 1: Auto Freeze Protection -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold leading-snug">Auto-Freeze Protection</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Consumes 1 freeze at 11:59 PM if goals are unlogged.</p>
+</div>
+</div>
+<!-- Toggle Pill (Active state) -->
+<button aria-pressed="true" class="w-12 h-7 rounded-full bg-primary-fixed p-0.5 flex items-center justify-end transition-colors shrink-0" type="button">
+<span class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-md"></span>
+</button>
+</div>
+<!-- Toggle 2: Emergency Alert -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">notifications_active</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold leading-snug">Emergency Push Alert</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Critical notification 2 hours before window expires.</p>
+</div>
+</div>
+<!-- Toggle Pill (Active state) -->
+<button aria-pressed="true" class="w-12 h-7 rounded-full bg-primary-fixed p-0.5 flex items-center justify-end transition-colors shrink-0" type="button">
+<span class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-md"></span>
+</button>
+</div>
+<!-- Planned Freeze / Vacation Mode Navigation Row -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between gap-space-sm active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">flight</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold leading-snug">Schedule Planned Freeze</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Set vacation buffers (e.g. Oct 28 - Oct 30)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Freeze Usage & Audit Log -->
+<section class="mb-space-md">
+<div class="flex items-center justify-between mb-space-sm px-1">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Recent Activity Log</h3>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Last 30 Days</span>
+</div>
+<div class="space-y-2">
+<!-- Log 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Morning Hydration</p>
+<p class="font-micro-counter text-micro-counter text-on-surface-variant uppercase">Oct 14 • Auto-Freeze • 18d saved</p>
+</div>
+</div>
+<span class="font-micro-counter text-micro-counter text-error font-bold px-2 py-0.5 rounded bg-surface-container-high">-1 FREEZE</span>
+</div>
+<!-- Log 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]">build_circle</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Evening Meditation</p>
+<p class="font-micro-counter text-micro-counter text-on-surface-variant uppercase">Sep 29 • Manual Repair • 30d saved</p>
+</div>
+</div>
+<span class="font-micro-counter text-micro-counter text-error font-bold px-2 py-0.5 rounded bg-surface-container-high">-1 FREEZE</span>
+</div>
+<!-- Log 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Weekly Inventory Refill</p>
+<p class="font-micro-counter text-micro-counter text-on-surface-variant uppercase">Oct 21 • Auto-Replenish</p>
+</div>
+</div>
+<span class="font-micro-counter text-micro-counter text-primary-fixed font-bold px-2 py-0.5 rounded bg-surface-container-high">+1 FREEZE</span>
+</div>
+</div>
+</section>
+<!-- Pro Safeguard Banner -->
+<aside class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md shadow-lg">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Streaks Pro Unlimited</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Infinite emergency repairs &amp; weekend buffers.</p>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-primary-fixed hover:bg-surface-bright font-label-sm text-label-sm font-bold tracking-tight shrink-0 transition-transform active:scale-95" type="button">
+          Upgrade
+        </button>
+</div>
+</aside>
+</div>
+</div></main></body></html>

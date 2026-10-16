@@ -1,0 +1,171 @@
+{
+  "name": "projects/13101509909071158775",
+  "title": "Streaks Habit Tracker Design System",
+  "visibility": "PRIVATE",
+  "createTime": "2026-10-13T06:59:08.143776Z",
+  "updateTime": "2026-10-13T13:55:32.830239Z",
+  "projectType": "TEXT_TO_UI_PRO",
+  "origin": "STITCH",
+  "deviceType": "MOBILE",
+  "designTheme": {
+    "colorMode": "DARK",
+    "font": "INTER",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#c5ff4a",
+    "headlineFont": "INTER",
+    "bodyFont": "INTER",
+    "labelFont": "INTER",
+    "namedColors": {
+      "primary": "#ffffff",
+      "surface_container_highest": "#353534",
+      "surface_container_high": "#2a2a2a",
+      "on_error_container": "#ffdad6",
+      "on_secondary_fixed": "#1a1b26",
+      "surface_tint": "#a1d820",
+      "on_primary_container": "#4f6e00",
+      "secondary": "#c6c5d5",
+      "on_secondary": "#2f2f3c",
+      "background": "#131313",
+      "surface_bright": "#3a3939",
+      "surface_container_lowest": "#0e0e0e",
+      "on_tertiary_container": "#1165b7",
+      "surface_container": "#201f1f",
+      "outline_variant": "#434935",
+      "tertiary": "#ffffff",
+      "on_tertiary_fixed_variant": "#004787",
+      "primary_fixed": "#bcf540",
+      "on_primary": "#253600",
+      "on_error": "#690005",
+      "secondary_fixed_dim": "#c6c5d5",
+      "on_secondary_fixed_variant": "#454653",
+      "inverse_surface": "#e5e2e1",
+      "tertiary_container": "#d5e3ff",
+      "tertiary_fixed": "#d5e3ff",
+      "on_background": "#e5e2e1",
+      "surface": "#131313",
+      "on_primary_fixed": "#141f00",
+      "secondary_container": "#474855",
+      "error": "#ffb4ab",
+      "inverse_primary": "#4a6700",
+      "outline": "#8d937c",
+      "primary_fixed_dim": "#a1d820",
+      "secondary_fixed": "#e2e1f2",
+      "on_tertiary": "#00305f",
+      "error_container": "#93000a",
+      "on_secondary_container": "#b7b7c7",
+      "on_surface_variant": "#c3c9af",
+      "on_tertiary_fixed": "#001c3b",
+      "on_primary_fixed_variant": "#374e00",
+      "inverse_on_surface": "#313030",
+      "primary_container": "#bcf540",
+      "surface_dim": "#131313",
+      "tertiary_fixed_dim": "#a6c8ff",
+      "surface_container_low": "#1c1b1b",
+      "on_surface": "#e5e2e1",
+      "surface_variant": "#353534"
+    },
+    "designMd": "---\nname: Obsidian Velocity\ncolors:\n  surface: '#131313'\n  surface-dim: '#131313'\n  surface-bright: '#3a3939'\n  surface-container-lowest: '#0e0e0e'\n  surface-container-low: '#1c1b1b'\n  surface-container: '#201f1f'\n  surface-container-high: '#2a2a2a'\n  surface-container-highest: '#353534'\n  on-surface: '#e5e2e1'\n  on-surface-variant: '#c3c9af'\n  inverse-surface: '#e5e2e1'\n  inverse-on-surface: '#313030'\n  outline: '#8d937c'\n  outline-variant: '#434935'\n  surface-tint: '#a1d820'\n  primary: '#ffffff'\n  on-primary: '#253600'\n  primary-container: '#bcf540'\n  on-primary-container: '#4f6e00'\n  inverse-primary: '#4a6700'\n  secondary: '#c6c5d5'\n  on-secondary: '#2f2f3c'\n  secondary-container: '#474855'\n  on-secondary-container: '#b7b7c7'\n  tertiary: '#ffffff'\n  on-tertiary: '#00305f'\n  tertiary-container: '#d5e3ff'\n  on-tertiary-container: '#1165b7'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#bcf540'\n  primary-fixed-dim: '#a1d820'\n  on-primary-fixed: '#141f00'\n  on-primary-fixed-variant: '#374e00'\n  secondary-fixed: '#e2e1f2'\n  secondary-fixed-dim: '#c6c5d5'\n  on-secondary-fixed: '#1a1b26'\n  on-secondary-fixed-variant: '#454653'\n  tertiary-fixed: '#d5e3ff'\n  tertiary-fixed-dim: '#a6c8ff'\n  on-tertiary-fixed: '#001c3b'\n  on-tertiary-fixed-variant: '#004787'\n  background: '#131313'\n  on-background: '#e5e2e1'\n  surface-variant: '#353534'\ntypography:\n  display-hero:\n    fontFamily: Inter\n    fontSize: 56px\n    fontWeight: '800'\n    lineHeight: 60px\n    letterSpacing: -0.04em\n  display-hero-mobile:\n    fontFamily: Inter\n    fontSize: 42px\n    fontWeight: '800'\n    lineHeight: 46px\n    letterSpacing: -0.035em\n  headline-xl:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 38px\n    letterSpacing: -0.03em\n  headline-lg:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '700'\n    lineHeight: 30px\n    letterSpacing: -0.025em\n  headline-md:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 26px\n    letterSpacing: -0.02em\n  body-lg:\n    fontFamily: Inter\n    fontSize: 17px\n    fontWeight: '400'\n    lineHeight: 24px\n    letterSpacing: -0.01em\n  body-md:\n    fontFamily: Inter\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 22px\n    letterSpacing: 0em\n  label-md:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 18px\n    letterSpacing: -0.005em\n  label-sm:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.02em\n  caption-caps:\n    fontFamily: Inter\n    fontSize: 11px\n    fontWeight: '700'\n    lineHeight: 14px\n    letterSpacing: 0.08em\n  micro-counter:\n    fontFamily: Inter\n    fontSize: 10px\n    fontWeight: '700'\n    lineHeight: 12px\n    letterSpacing: 0.1em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  gutter: 1rem\n  gutter-mobile: 0.75rem\n  margin: 1.25rem\n  margin-mobile: 1rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2rem\n---\n\n## Brand & Style\n\nThis design system is engineered for obsessive habit tracking, physical momentum, and discipline. Built around athletic restraint and high-contrast focus, it eliminates ambient visual clutter to highlight progress, streaks, and accountability.\n\n### Design Movement & Core Sensibility\n- **Tactile Technical Minimalist:** Combines pure obsidian layers, surgical 1px borders, and ultra-high-contrast kinetic accents.\n- **Athletic Precision:** Draws visual cues from performance monitors, track timers, and luxury horology dials.\n- **Restraint Over Decoration:** Glows, blurs, and neon highlights are reserved exclusively for completion events, continuous chains, and core interaction targets.\n\n### Target Audience & Emotional Impact\n- **Audience:** High-performers, athletes, creators, and individuals striving for relentless daily consistency.\n- **Emotional Response:** Sharpness, quiet confidence, dopamine upon completion, and high clarity. Every interaction feels deliberate, physical, and earned.\n\n## Colors\n\nThe palette relies on absolute darkness interrupted by high-velocity kinetic neon. Color distribution must obey an 85/10/5 discipline: 85% obsidian depth, 10% structural grays and typography, and 5% pure electric accent.\n\n### Base Foundations & Surfaces\n- **Canvas / Root Background (`#050505`):** Deep absolute obsidian. Used for screen baselines and safe areas.\n- **Primary Surface (`#101014`):** Elevated container layer for actionable habit cards, list modules, and modal sheets.\n- **Secondary Surface (`#17171D`):** Recessed tracks, day indicator inactive wells, active pill switches, and nested chips.\n- **Subtle Structural Border (`#252530`):** Crisp 1px outline defining edges between cards, separators, and inactive rings.\n\n### Accents & Kinetic State\n- **Electric Neon Lime (`#C5FF4A`):** The primary kinetic signal. Reserved for active streaks, complete state rings, dynamic progress arcs, and primary interaction triggers.\n- **Text Primary (`#F5F5F7`):** Brilliant off-white for numerical readouts, titles, and active labels.\n- **Text Secondary (`#858594`):** Neutral slate for metadata, day-of-week abbreviations, inactive days, and unit indicators.\n\n### Semantic / Status Accents\n- **Warning / At Risk (`#FFC857`):** Pending streak expiration within the final 2 hours of the day.\n- **Error / Broken Streak (`#FF5C5C`):** Missed habits, resets, or destructive settings.\n- **Info / Milestone (`#69A8FF`):** Deep focus trends, metrics, and non-actionable statistical data.\n\n## Typography\n\nTypographic scale is structured around tabular numerals, compressed negative tracking for display impact, and spaced uppercase micro-caps for categorical organization.\n\n### Hierarchical Treatment\n- **Display & Large Digits (`display-hero`, `headline-xl`):** Configured with negative tracking (`-0.03em` to `-0.04em`) and tabular figure settings (`font-variant-numeric: tabular-nums`). Large streak milestones (e.g., `48`) feel monolithic and immediate.\n- **Section Headers & Titles (`headline-lg`, `headline-md`):** High contrast white `#F5F5F7`, tightly anchored directly above metric blocks.\n- **Body & Habit Names (`body-lg`, `body-md`):** Balanced, clean neutral tone with neutral kerning to prioritize immediate scannability.\n- **Micro-Caps & Labels (`caption-caps`, `micro-counter`):** Always transformed to uppercase with positive tracking (`0.08em` to `0.1em`) using `#858594`. Applied to weekday initials (M, T, W, T, F, S, S), category pills, and completion percentages.\n\n## Layout & Spacing\n\nThe layout is built for single-thumb mobile ergonomics and vertical scan efficiency. It uses a fluid vertical stack anchored to device safe areas.\n\n### Layout Rhythm & Fluid Grid\n- **Mobile Grid:** Single-column layout with fluid internal card widths, bounded by a fixed `16px` (`1rem`) lateral canvas margin.\n- **Tablet / Large Form Factor:** Dual-column asymmetrical layout (`5-7` column distribution) with a centered maximum container width of `680px` to maintain focused density.\n- **Component Stack Spacing:** Vertical gaps between habit cards are locked to `12px` (`0.75rem`) to build cohesive, tactile stacks without excessive dead space.\n\n### Edge Insets & Safe Zones\n- **Bottom Navigation Bar Offset:** Maintain `24px` clearance above the physical or software home indicator line. Habit creation and primary triggers sit docked in this thumb-accessible zone.\n- **Header Top Clearances:** Maintain `16px` space below the status bar for large date badges and total completion metrics.\n\n## Elevation & Depth\n\nVisual hierarchy uses physical tonal stacking and precise boundary strokes instead of blurred drop shadows. In an obsidian interface, ambient shadows are replaced by luminescence and edge definition.\n\n### Layer Stacking Model\n- **Level 0 (Canvas Base - `#050505`):** Screen viewport foundation.\n- **Level 1 (Card Plinths - `#101014`):** Habit rows, weekly performance grids, and analytic modules. Every card features a crisp `1px` continuous border of `#252530`.\n- **Level 2 (In-Card Wells & Toggles - `#17171D`):** Day circles, inactive ring tracks, search fields, and slider backgrounds.\n- **Level 3 (Floating Sheets & Alerts - `#1B1B22`):** Drag-to-dismiss detail views and modal interaction drawers. Bounded by a top-edge highlight (`rgba(197, 255, 74, 0.15)` fading to `#252530`).\n\n### Optical Accents & Neon Bloom\n- Standard cards carry zero box-shadow.\n- Upon 100% habit completion, the element receives a surgical kinetic rim: `box-shadow: 0 0 20px -4px rgba(197, 255, 74, 0.35)`.\n- Never use diffused ambient gray shadows; depth is strictly determined by surface luminance shifts.\n\n## Shapes\n\nThe design uses a rounded, tactile geometry that pairs circular metrics with softened rectangular containers.\n\n### Shape Hierarchy\n- **Primary Habit Containers:** Radii set between `16px` and `20px` (`rounded-lg`). Creates a smooth, pebble-like card profile.\n- **Modals, Sheets & Primary Action Triggers:** Max radius of `24px` (`rounded-xl`).\n- **Interactive Day Rings & Progress Wheels:** Full circular geometries (`50%` / `pill-shaped`). Day dots, checkmarks, and hold-to-complete circular indicators maintain geometric circularity.\n- **Metadata Badges & Chips:** Compact `8px` (`rounded-sm`) to `12px` radius.\n\n## Components\n\n### Habit Item Card\n- **Container:** Background `#101014`, border `1px solid #252530`, border-radius `20px`, padding `16px`.\n- **Header Row:** Category micro-badge in `caption-caps` `#858594` on the left; streak counter badge on the right (`#C5FF4A` tabular numerals accompanied by a flame/spark vector).\n- **Body Row:** Habit title in `headline-md` `#F5F5F7` alongside a target frequency subtext in `body-md` `#858594`.\n- **Bottom Activity Array:** Row of 7 circular day indicators representing the current week.\n\n### Circular Day Indicator Rings\n- **Dimensions:** `36px \u00d7 36px` circular containers.\n- **Empty / Incomplete State:** Background `#17171D`, border `1px solid #252530`, weekday letter in `micro-counter` `#858594`.\n- **Completed State:** Background `#C5FF4A`, weekday letter or icon in `#050505` with `fontWeight: 800`.\n- **Today (Pending):** Background `#101014`, animated pulsing outer border in `1.5px solid #C5FF4A`, text `#F5F5F7`.\n\n### Hold-to-Complete Circular Gauge\n- **Core Mechanic:** Central long-press control used for marking habits complete. Prevents accidental taps.\n- **Diameter:** `64px` circular SVG hit area.\n- **Track Layer:** Base circle with `stroke: #252530`, stroke-width `4px`.\n- **Progress Layer:** Animated SVG stroke with `stroke: #C5FF4A`, stroke-width `4px`, round cap. Expands smoothly from `0%` to `100%` over a `450ms` haptic hold duration.\n- **Completion State:** Upon trigger, inner target transforms with a scale punch (`transform: scale(1.08)` to `1.0`), filling the circle with `#C5FF4A` and revealing an obsidian checkmark.\n\n### Primary & Action Buttons\n- **Primary CTA:** Background `#C5FF4A`, text `#050505`, font `label-md` (`fontWeight: 700`), radius `16px`, height `54px`. Pressed state scales down to `0.98` opacity `0.9`.\n- **Secondary / Ghost Button:** Background `transparent`, border `1px solid #252530`, text `#F5F5F7`, radius `16px`, height `54px`. Active state shifts background to `#17171D`.\n\n### Input Fields & Selectors\n- **Input Container:** Background `#101014`, border `1px solid #252530`, radius `14px`, height `50px`, padding `0 16px`.\n- **Text Entry:** Color `#F5F5F7`, placeholder color `#858594`.\n- **Focus State:** Border shifts cleanly to `#C5FF4A`; no generic browser outline.\n\n### Mobile Bottom Navigation Bar\n- **Bar Container:** Fixed to bottom, docked background `rgba(5, 5, 5, 0.85)` with `backdrop-filter: blur(20px)`. Top border `1px solid #252530`.\n- **Height & Insets:** `64px` height plus device safe area bottom margin.\n- **Nav Items:** Clean icon-only or stacked micro-caption. Active item rendered in `#C5FF4A`; inactive items rendered in `#858594`.\n- **Center Quick-Add Trigger:** Raised or highlighted `44px \u00d7 44px` pill, background `#C5FF4A`, icon `#050505`.\n\n### Chips & Streak Badges\n- **Active Streak Tag:** Background `rgba(197, 255, 74, 0.12)`, border `1px solid rgba(197, 255, 74, 0.3)`, text `#C5FF4A`, padding `4px 10px`, radius `20px`.\n- **Neutral Filter Tag:** Background `#17171D`, border `1px solid #252530`, text `#858594`, radius `20px`.",
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#c5ff4a",
+    "overrideSecondaryColor": "#858594",
+    "overrideTertiaryColor": "#69a8ff",
+    "overrideNeutralColor": "#050505",
+    "spacingScale": 2,
+    "typography": {
+      "headline-xl": {
+        "fontFamily": "Inter",
+        "fontSize": "32px",
+        "fontWeight": "700",
+        "lineHeight": "38px",
+        "letterSpacing": "-0.03em"
+      },
+      "display-hero": {
+        "fontFamily": "Inter",
+        "fontSize": "56px",
+        "fontWeight": "800",
+        "lineHeight": "60px",
+        "letterSpacing": "-0.04em"
+      },
+      "micro-counter": {
+        "fontFamily": "Inter",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "lineHeight": "12px",
+        "letterSpacing": "0.1em"
+      },
+      "display-hero-mobile": {
+        "fontFamily": "Inter",
+        "fontSize": "42px",
+        "fontWeight": "800",
+        "lineHeight": "46px",
+        "letterSpacing": "-0.035em"
+      },
+      "body-md": {
+        "fontFamily": "Inter",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "22px",
+        "letterSpacing": "0em"
+      },
+      "headline-md": {
+        "fontFamily": "Inter",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "lineHeight": "26px",
+        "letterSpacing": "-0.02em"
+      },
+      "label-sm": {
+        "fontFamily": "Inter",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "16px",
+        "letterSpacing": "0.02em"
+      },
+      "body-lg": {
+        "fontFamily": "Inter",
+        "fontSize": "17px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.01em"
+      },
+      "caption-caps": {
+        "fontFamily": "Inter",
+        "fontSize": "11px",
+        "fontWeight": "700",
+        "lineHeight": "14px",
+        "letterSpacing": "0.08em"
+      },
+      "headline-lg": {
+        "fontFamily": "Inter",
+        "fontSize": "24px",
+        "fontWeight": "700",
+        "lineHeight": "30px",
+        "letterSpacing": "-0.025em"
+      },
+      "label-md": {
+        "fontFamily": "Inter",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "-0.005em"
+      }
+    },
+    "spacing": {
+      "space-xs": "0.25rem",
+      "gutter-mobile": "0.75rem",
+      "margin-mobile": "1rem",
+      "space-md": "1rem",
+      "space-xl": "2rem",
+      "space-lg": "1.5rem",
+      "margin": "1.25rem",
+      "space-sm": "0.5rem",
+      "gutter": "1rem"
+    },
+    "headlineFontFamily": "Inter",
+    "bodyFontFamily": "Inter",
+    "labelFontFamily": "Inter"
+  },
+  "metadata": {
+    "userRole": "OWNER"
+  }
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error-container": "#ffdad6", "primary-fixed": "#bcf540", "surface-container-highest": "#353534", "inverse-primary": "#4a6700", "background": "#131313", "surface-container-lowest": "#0e0e0e", "outline-variant": "#434935", "on-primary-fixed": "#141f00", "error": "#ffb4ab", "surface-container-low": "#1c1b1b", "on-tertiary-container": "#1165b7", "surface": "#131313", "secondary-fixed": "#e2e1f2", "secondary": "#c6c5d5", "on-surface": "#e5e2e1", "surface-bright": "#3a3939", "surface-container-high": "#2a2a2a", "on-secondary": "#2f2f3c", "on-background": "#e5e2e1", "surface-tint": "#a1d820", "on-tertiary-fixed-variant": "#004787", "error-container": "#93000a", "surface-container": "#201f1f", "on-primary-container": "#4f6e00", "primary": "#ffffff", "tertiary-fixed": "#d5e3ff", "outline": "#8d937c", "on-primary": "#253600", "on-surface-variant": "#c3c9af", "primary-container": "#bcf540", "on-primary-fixed-variant": "#374e00", "primary-fixed-dim": "#a1d820", "tertiary": "#ffffff", "tertiary-container": "#d5e3ff", "on-tertiary": "#00305f", "surface-dim": "#131313", "tertiary-fixed-dim": "#a6c8ff", "on-tertiary-fixed": "#001c3b", "secondary-fixed-dim": "#c6c5d5", "inverse-surface": "#e5e2e1", "surface-variant": "#353534", "on-error": "#690005", "secondary-container": "#474855", "on-secondary-container": "#b7b7c7", "inverse-on-surface": "#313030", "on-secondary-fixed-variant": "#454653", "on-secondary-fixed": "#1a1b26" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "margin": "1.25rem", "space-xl": "2rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "gutter": "1rem", "space-lg": "1.5rem" }, fontFamily: { "display-hero-mobile": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "display-hero": ["Inter"], "micro-counter": ["Inter"], "caption-caps": ["Inter"] }, fontSize: { "display-hero-mobile": ["42px", { "lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "body-lg": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "micro-counter": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "caption-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#131313;color:#e5e2e1;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary-fixed text-[20px]">bolt</span></div><span class="font-headline-md text-headline-md tracking-tight text-on-surface uppercase">Insights Analytics</span></div><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-primary-container/15 text-primary-container hover:bg-primary-container/25 transition-colors" data-path="paywall-modal" href="#"><span class="font-caption-caps text-caption-caps uppercase tracking-wider">PRO</span><span class="material-symbols-outlined text-[14px]">star</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 px-margin-mobile bg-surface"><div class="flex flex-col w-full pb-10 space-y-4">
+<!-- Time Range Segmented Control -->
+<div class="flex items-center justify-between bg-surface-container-low p-1 rounded-xl">
+<button class="flex-1 py-1.5 px-3 rounded-lg text-center transition-all bg-surface-container text-on-surface font-label-md text-label-md shadow-sm" type="button">
+      7D
+    </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-center transition-all text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">
+      30D
+    </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-center transition-all text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">
+      90D
+    </button>
+</div>
+<!-- Primary Insights Summary: Telemetry & Streaks -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Consistency Telemetry Score -->
+<div class="col-span-1 bg-surface-container-low rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider">Consistency</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">94</span>
+<span class="font-label-md text-label-md text-primary-container font-bold">%</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary-container text-[14px]">trending_up</span>
+          +4.2% vs prev week
+        </p>
+</div>
+<!-- Mini Visual Indicator Bar -->
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 94%;"></div>
+</div>
+</div>
+<!-- Current Unbroken Streak Hero Metric -->
+<div class="col-span-1 bg-surface-container-low rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider">Unbroken Run</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">local_fire_department</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">19</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Days</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary-container font-semibold mt-1">
+          All-time high pace
+        </p>
+</div>
+<!-- Progress Bar Track -->
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+<!-- Weekly Completion Vector Chart Module -->
+<div class="bg-surface-container-low rounded-2xl p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Weekly Velocity</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Daily habit load &amp; execution rate</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/15 text-primary-container font-caption-caps text-caption-caps uppercase tracking-wider">
+        Optimal Load
+      </span>
+</div>
+<!-- Inline SVG Velocity Chart -->
+<div class="pt-2 pb-1">
+<svg class="w-full h-20 overflow-visible" fill="none" viewbox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="velocityGrad" x1="0" x2="0" y1="0" y2="80">
+<stop stop-color="#bcf540" stop-opacity="0.35"></stop>
+<stop stop-color="#bcf540" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area fill under line -->
+<path d="M 10 65 Q 50 55, 60 40 T 115 48 T 170 20 T 220 28 T 270 12 T 310 8 L 310 80 L 10 80 Z" fill="url(#velocityGrad)"></path>
+<!-- Stroke Trend Line -->
+<path d="M 10 65 Q 50 55, 60 40 T 115 48 T 170 20 T 220 28 T 270 12 T 310 8" stroke="#bcf540" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Active Target Nodes -->
+<circle cx="170" cy="20" fill="#131313" r="3.5" stroke="#bcf540" stroke-width="2.5"></circle>
+<circle cx="270" cy="12" fill="#131313" r="3.5" stroke="#bcf540" stroke-width="2.5"></circle>
+<circle cx="310" cy="8" fill="#bcf540" r="4"></circle>
+</svg>
+<!-- Weekday Axes -->
+<div class="flex justify-between text-on-surface-variant font-micro-counter text-micro-counter pt-2 px-1">
+<span>MON</span>
+<span>TUE</span>
+<span>WED</span>
+<span>THU</span>
+<span>FRI</span>
+<span>SAT</span>
+<span class="text-primary-container font-bold">SUN</span>
+</div>
+</div>
+</div>
+<!-- NATIVE ADVERTISING SYSTEM SHOWCASE -->
+<div class="space-y-2 pt-2">
+<!-- State Switcher Header for Native Ad System Demo -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">ad_units</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider">Free Tier Integration</span>
+</div>
+<!-- Interactive Selector To Demo Active / Loading / Fallback States -->
+<div class="flex items-center gap-1 bg-surface-container p-0.5 rounded-lg text-on-surface-variant text-label-sm font-label-sm" id="adStateSwitcher">
+<button class="px-2 py-0.5 rounded text-on-surface bg-surface-container-high transition-all" id="btn-state-active" onclick="switchAdState('active')" type="button">Active</button>
+<button class="px-2 py-0.5 rounded hover:text-on-surface transition-all" id="btn-state-loading" onclick="switchAdState('loading')" type="button">Skeleton</button>
+<button class="px-2 py-0.5 rounded hover:text-on-surface transition-all" id="btn-state-unavailable" onclick="switchAdState('unavailable')" type="button">Organic</button>
+</div>
+</div>
+<!-- 1. ACTIVE SPONSORED CARD -->
+<div class="bg-surface-container-low rounded-2xl p-4 flex flex-col space-y-3 transition-opacity duration-200" id="ad-container-active">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<!-- Non-Deceptive Clear Badge -->
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-micro-counter text-micro-counter uppercase tracking-widest font-bold">
+            SPONSORED
+          </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container inline-block"></span>
+            WHOOP 4.0 Performance Strap
+          </span>
+</div>
+<!-- Transparency Disclosure Button -->
+<button class="text-on-surface-variant hover:text-on-surface flex items-center p-1 rounded-full hover:bg-surface-container transition-colors" onclick="alert('STREAKS Free is supported by vetted performance partners. Upgrade to Pro for an ad-free obsidian experience.')" title="Why am I seeing this?" type="button">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<!-- Main Ad Content Split -->
+<div class="flex items-center gap-3">
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">
+            Biometric Recovery Meets Habit Discipline
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 line-clamp-2">
+            Track HRV, sleep stages, and physiological strain to optimize unbroken daily streak consistency.
+          </p>
+</div>
+<!-- High Contrast Hardware Thumbnail Placeholder -->
+<div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A minimalist hyper-tactile studio photograph of the sleek black WHOOP 4.0 recovery band sensor sitting on matte black volcanic obsidian texture with subtle neon lime studio rim lighting, athletic precision tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxXh06JhMN_sCI57Grdg0wd-a9zDcroxbnWAOHi50S7qHYRzBxM1XWT7CGGKa1f8nuJJ8XYV7YX8_UyvX5UnPEQgKbVl1uuGAGySxM_xBC6w3nUiZ1x1S9pzMdTPeENcGxwRPdKX14Y_YcoIYHzJOp35B2165DvnQG0s6HYpgA9tM_OHsEOPxe1DsqdV1RSMR0klbJld9IEBl6PJvlR0Qi9VlF_1bWxLhptysUeekcGiS2vXlMCl9bjA"/>
+</div>
+</div>
+<!-- Footer CTA & Upsell Callout -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-on-surface-variant font-micro-counter text-micro-counter">
+          PRO IS AD-FREE
+        </span>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface transition-all font-label-md text-label-md font-semibold" href="#">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- 2. EXACT RESERVED DIMENSIONS LOADING STATE (CLS = 0) -->
+<div class="hidden bg-surface-container-low rounded-2xl p-4 flex flex-col space-y-3 min-h-[168px] justify-between transition-opacity duration-200" id="ad-container-loading">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<!-- Skeleton Badge -->
+<div class="w-20 h-4 bg-surface-container rounded animate-pulse"></div>
+<div class="w-32 h-4 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+<div class="w-4 h-4 bg-surface-container rounded-full animate-pulse"></div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex-1 space-y-2">
+<div class="w-full h-5 bg-surface-container-high rounded animate-pulse"></div>
+<div class="w-4/5 h-3.5 bg-surface-container rounded animate-pulse"></div>
+<div class="w-3/5 h-3.5 bg-surface-container rounded animate-pulse"></div>
+</div>
+<div class="w-20 h-20 rounded-xl bg-surface-container-high shrink-0 animate-pulse"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="w-24 h-3 bg-surface-container rounded animate-pulse"></div>
+<div class="w-28 h-7 bg-surface-container-high rounded-xl animate-pulse"></div>
+</div>
+</div>
+<!-- 3. UNAVAILABLE STATE (Seamless Organic Discipline Micro-Tip Fallback) -->
+<div class="hidden bg-surface-container-low rounded-2xl p-4 flex items-center justify-between gap-3 transition-opacity duration-200" id="ad-container-unavailable">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[20px]">psychology</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider">Discipline Tip</span>
+<span class="w-1 h-1 rounded-full bg-on-surface-variant"></span>
+<span class="font-caption-caps text-caption-caps text-primary-container uppercase">Zero Distraction</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface truncate mt-0.5">
+            Never miss twice: The second missed day starts a destructive habit.
+          </p>
+</div>
+</div>
+<button class="shrink-0 p-2 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+</button>
+</div>
+</div>
+<!-- SECONDARY ANALYTICS: Circadian Execution Rhythm Chart -->
+<div class="bg-surface-container-low rounded-2xl p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Circadian Rhythm</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Time-of-day habit completion clusters</p>
+</div>
+<div class="flex items-center gap-1 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Peak 06:30 AM</span>
+</div>
+</div>
+<!-- Circadian Visual Histogram -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<!-- Dawn -->
+<div class="bg-surface-container rounded-xl p-3 flex flex-col justify-between h-24">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">05 - 09</span>
+<div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary-container h-full rounded-full" style="width: 88%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">88%</span>
+</div>
+</div>
+<!-- Midday -->
+<div class="bg-surface-container rounded-xl p-3 flex flex-col justify-between h-24">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">09 - 13</span>
+<div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary-container h-full rounded-full" style="width: 42%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">42%</span>
+</div>
+</div>
+<!-- Twilight -->
+<div class="bg-surface-container rounded-xl p-3 flex flex-col justify-between h-24">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">13 - 18</span>
+<div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary-container h-full rounded-full" style="width: 25%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">25%</span>
+</div>
+</div>
+<!-- Nocturnal -->
+<div class="bg-surface-container rounded-xl p-3 flex flex-col justify-between h-24">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">18 - 23</span>
+<div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary-container h-full rounded-full" style="width: 65%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">65%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECONDARY ANALYTICS: Core Habits Consistency Breakdown -->
+<div class="bg-surface-container-low rounded-2xl p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Habit Chains</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Top 3 Active</span>
+</div>
+<div class="space-y-2">
+<!-- Habit Item 1 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[18px]">water_drop</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold block truncate">Hydration &amp; Electrolytes</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Daily • Target 3.5L</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">local_fire_department</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">19</span>
+</div>
+</div>
+<!-- Habit Item 2 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[18px]">fitness_center</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold block truncate">Zone 2 Aerobic Base</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">45 min • 5x / week</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">local_fire_department</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">14</span>
+</div>
+</div>
+<!-- Habit Item 3 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[18px]">bedtime</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold block truncate">Cold Dark Sleep Protocol</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Screens off by 22:30</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">local_fire_department</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">9</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchAdState(targetState) {
+    const states = ['active', 'loading', 'unavailable'];
+    states.forEach(s => {
+      const container = document.getElementById('ad-container-' + s);
+      const btn = document.getElementById('btn-state-' + s);
+      if (container) {
+        if (s === targetState) {
+          container.classList.remove('hidden');
+        } else {
+          container.classList.add('hidden');
+        }
+      }
+      if (btn) {
+        if (s === targetState) {
+          btn.classList.add('text-on-surface', 'bg-surface-container-high');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('text-on-surface', 'bg-surface-container-high');
+          btn.classList.add('text-on-surface-variant');
+        }
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-20 px-space-sm"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="streaks-home" href="#"><span class="material-symbols-outlined text-[24px]">track_changes</span><span class="font-label-sm text-label-sm">Today</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-1 transition-colors text-primary-container font-semibold" data-path="insights-analytics" href="#"><span class="material-symbols-outlined text-[24px]">monitoring</span><span class="font-label-sm text-label-sm">Insights</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="explore-chains" href="#"><span class="material-symbols-outlined text-[24px]">diamond</span><span class="font-label-sm text-label-sm">Chains</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="monetization-settings" href="#"><span class="material-symbols-outlined text-[24px]">tune</span><span class="font-label-sm text-label-sm">Settings</span></a></div></nav></body></html>

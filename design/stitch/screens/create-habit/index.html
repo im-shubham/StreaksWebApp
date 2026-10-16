@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>STREAKS</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#131313;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#0e0e0e", "on-primary-fixed-variant": "#374e00", "outline": "#8d937c", "tertiary-container": "#d5e3ff", "on-secondary-fixed-variant": "#454653", "tertiary-fixed": "#d5e3ff", "background": "#131313", "on-secondary-container": "#b7b7c7", "inverse-primary": "#4a6700", "surface-container-highest": "#353534", "on-secondary": "#2f2f3c", "surface-bright": "#3a3939", "secondary": "#c6c5d5", "surface-variant": "#353534", "surface-dim": "#131313", "on-tertiary-fixed": "#001c3b", "error": "#ffb4ab", "on-surface-variant": "#c3c9af", "on-primary-fixed": "#141f00", "on-error-container": "#ffdad6", "on-error": "#690005", "outline-variant": "#434935", "secondary-fixed-dim": "#c6c5d5", "secondary-container": "#474855", "surface": "#131313", "surface-container-high": "#2a2a2a", "primary-container": "#bcf540", "error-container": "#93000a", "surface-container": "#201f1f", "on-primary": "#253600", "on-surface": "#e5e2e1", "tertiary": "#ffffff", "secondary-fixed": "#e2e1f2", "on-tertiary-fixed-variant": "#004787", "inverse-on-surface": "#313030", "on-primary-container": "#4f6e00", "on-tertiary-container": "#1165b7", "inverse-surface": "#e5e2e1", "primary": "#ffffff", "primary-fixed": "#bcf540", "surface-container-low": "#1c1b1b", "on-background": "#e5e2e1", "surface-tint": "#a1d820", "primary-fixed-dim": "#a1d820", "on-secondary-fixed": "#1a1b26", "on-tertiary": "#00305f", "tertiary-fixed-dim": "#a6c8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "margin": "1.25rem" }, "fontFamily": { "caption-caps": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "micro-counter": ["Inter"], "body-lg": ["Inter"], "display-hero": ["Inter"], "display-hero-mobile": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "caption-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-lg": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}], "headline-xl": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "micro-counter": ["10px", {"lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700"}], "body-lg": ["17px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "display-hero": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800"}], "display-hero-mobile": ["42px", {"lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800"}], "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "label-md": ["14px", {"lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500"}] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.5)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go Back" class="min-h-[44px] min-w-[44px] h-11 w-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors -ml-2" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><span class="font-headline-md text-headline-md text-on-surface tracking-tight truncate leading-none">Habit Configuration</span></div><div class="flex items-center gap-space-xs"><button class="min-h-[44px] min-w-[44px] h-11 px-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest flex items-center gap-1.5 transition-colors" type="button"><span class="material-symbols-outlined text-outline text-[20px]">more_vert</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile pb-space-xl">
+<!-- Subtle Header Introduction & Motivational Cue -->
+<div class="mt-space-sm mb-space-lg flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-caption-caps text-caption-caps text-primary-container tracking-wider uppercase">Discipline Protocol</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">New Habit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Start with one habit and build momentum from there.</p>
+</div>
+<!-- Main Creation Form Flow -->
+<form class="flex flex-col gap-space-lg" id="createHabitForm" onsubmit="event.preventDefault(); validateAndSubmit();">
+<!-- Section 1: Habit Identification -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center px-0.5">
+<label class="font-label-md text-label-md text-on-surface" for="habitNameInput">Habit Name</label>
+<span class="font-caption-caps text-caption-caps text-outline">Target Action</span>
+</div>
+<div class="relative flex items-center bg-surface-container-low rounded-xl px-4 h-14 shadow-sm transition-all focus-within:bg-surface-container">
+<input autocomplete="off" autofocus="" class="w-full bg-transparent text-on-surface placeholder:text-outline font-body-lg text-body-lg focus:outline-none" id="habitNameInput" placeholder="e.g. Morning Gym Session, Deep Reading" type="text"/>
+<button class="hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-outline hover:text-on-surface" id="clearInputBtn" onclick="document.getElementById('habitNameInput').value=''; this.classList.add('hidden');" type="button">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+<!-- Validation warning placeholder slot -->
+<div class="hidden items-center gap-1.5 px-1 pt-1 text-error" id="nameValidationMsg">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span class="font-label-sm text-label-sm">Please define your habit focus before locking in.</span>
+</div>
+</div>
+<!-- Section 2: Icon Emblem Selection -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center px-0.5">
+<span class="font-label-md text-label-md text-on-surface">Visual Emblem</span>
+<span class="font-caption-caps text-caption-caps text-primary-container uppercase" id="selectedIconLabel">Fitness</span>
+</div>
+<div class="grid grid-cols-5 gap-2.5 p-3 bg-surface-container-low rounded-xl">
+<!-- Fitness -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-primary-container text-on-primary-container shadow-md transition-all active:scale-95" onclick="selectIcon(this, 'Fitness', 'fitness_center')" type="button">
+<span class="material-symbols-outlined text-[24px]">fitness_center</span>
+</button>
+<!-- Reading -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Deep Reading', 'menu_book')" type="button">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</button>
+<!-- Study -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Academic Focus', 'school')" type="button">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</button>
+<!-- Terminal / Code -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Software &amp; Code', 'terminal')" type="button">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</button>
+<!-- Meditation -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Mindfulness', 'spa')" type="button">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+</button>
+<!-- Footsteps -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Daily Steps', 'directions_walk')" type="button">
+<span class="material-symbols-outlined text-[24px]">directions_walk</span>
+</button>
+<!-- Water -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Hydration', 'water_drop')" type="button">
+<span class="material-symbols-outlined text-[24px]">water_drop</span>
+</button>
+<!-- Sleep -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Sleep Hygiene', 'bedtime')" type="button">
+<span class="material-symbols-outlined text-[24px]">bedtime</span>
+</button>
+<!-- Journaling -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Daily Journal', 'edit_note')" type="button">
+<span class="material-symbols-outlined text-[24px]">edit_note</span>
+</button>
+<!-- Focus -->
+<button class="icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95" onclick="selectIcon(this, 'Precision Focus', 'adjust')" type="button">
+<span class="material-symbols-outlined text-[24px]">adjust</span>
+</button>
+</div>
+</div>
+<!-- Section 3: Cadence & Weekly Frequency -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex justify-between items-center px-0.5">
+<span class="font-label-md text-label-md text-on-surface">Frequency &amp; Cadence</span>
+<span class="font-caption-caps text-caption-caps text-outline" id="frequencySubtext">7 OF 7 DAYS</span>
+</div>
+<!-- Segmented Frequency Pills -->
+<div class="flex p-1 bg-surface-container-low rounded-xl gap-1">
+<button class="cadence-tab flex-1 py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" onclick="setCadenceTab(this, 'Daily')" type="button">
+          Daily
+        </button>
+<button class="cadence-tab flex-1 py-2 rounded-lg text-outline font-label-md text-label-md transition-colors hover:text-on-surface" onclick="setCadenceTab(this, 'Specific Days')" type="button">
+          Specific Days
+        </button>
+<button class="cadence-tab flex-1 py-2 rounded-lg text-outline font-label-md text-label-md transition-colors hover:text-on-surface" onclick="setCadenceTab(this, 'Interval')" type="button">
+          Interval
+        </button>
+</div>
+<!-- Day Selector Array (7 circles) -->
+<div class="p-3 bg-surface-container-low rounded-xl flex items-center justify-between gap-1">
+<!-- Monday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">M</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+<!-- Tuesday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">T</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+<!-- Wednesday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">W</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+<!-- Thursday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">T</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+<!-- Friday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">F</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+<!-- Saturday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">S</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+<!-- Sunday -->
+<button class="day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90" data-active="true" onclick="toggleDay(this)" type="button">
+<span class="day-letter">S</span>
+<span class="material-symbols-outlined check-icon absolute text-[16px] hidden">check</span>
+</button>
+</div>
+</div>
+<!-- Section 4: Daily Reminder & Notification System -->
+<div class="flex flex-col gap-space-sm">
+<div class="p-4 bg-surface-container-low rounded-xl flex flex-col gap-3">
+<!-- Toggle Header Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Daily Push Trigger</span>
+<span class="font-label-sm text-label-sm text-outline">Direct alert to device</span>
+</div>
+</div>
+<!-- Neon Switch -->
+<button aria-checked="true" class="relative inline-flex h-8 w-14 shrink-0 cursor-pointer rounded-full bg-primary-container p-1 transition-colors duration-200 ease-in-out focus:outline-none" id="reminderToggle" onclick="toggleReminderSwitch(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-6 w-6 translate-x-6 transform rounded-full bg-on-primary-container shadow-md transition duration-200 ease-in-out" id="switchPill"></span>
+</button>
+</div>
+<!-- Time Picker Preview Card -->
+<div class="flex items-center justify-between pt-2" id="timePickerBox">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Scheduled window</span>
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container text-primary-container font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="adjustTime()" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span id="reminderTimeDisplay">06:30 AM</span>
+</button>
+</div>
+<!-- System Notification Disclosure Badge -->
+<div class="flex items-start gap-2 pt-2 bg-surface-container-lowest/60 p-2.5 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[16px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-label-sm text-label-sm text-outline leading-tight">
+            Notification permissions enabled. Streaks will dispatch high-priority daily haptic pings.
+          </p>
+</div>
+</div>
+</div>
+<!-- Motivational Habit Blueprint Preview Card -->
+<div class="flex items-center gap-3 p-3.5 bg-surface-container-lowest rounded-xl">
+<div class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-caption-caps text-caption-caps text-on-surface truncate">The 21-Day Threshold</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Consistency creates automated neural pathways.</span>
+</div>
+</div>
+<!-- Sticky Docked Action CTA Section -->
+<div class="sticky bottom-4 w-full pt-space-xs z-20">
+<div class="flex flex-col gap-2">
+<button class="w-full h-14 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold tracking-tight shadow-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-all hover:opacity-95" id="submitButton" type="submit">
+<span class="material-symbols-outlined text-[20px]">add_task</span>
+<span>Create Habit</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<script>
+  // Input Auto-Focus and Realtime Handling
+  const nameInput = document.getElementById('habitNameInput');
+  const clearBtn = document.getElementById('clearInputBtn');
+  const validationMsg = document.getElementById('nameValidationMsg');
+
+  if (nameInput) {
+    nameInput.addEventListener('input', () => {
+      if (nameInput.value.trim().length > 0) {
+        clearBtn.classList.remove('hidden');
+        validationMsg.classList.add('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+    });
+  }
+
+  // Icon Selection Logic
+  function selectIcon(el, labelName, iconName) {
+    document.querySelectorAll('.icon-chip').forEach(btn => {
+      btn.className = "icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all active:scale-95";
+    });
+    
+    // Select active element
+    el.className = "icon-chip flex flex-col items-center justify-center aspect-square rounded-lg bg-primary-container text-on-primary-container shadow-md transition-all active:scale-95";
+    const labelSpan = document.getElementById('selectedIconLabel');
+    if (labelSpan) {
+      labelSpan.textContent = labelName;
+    }
+  }
+
+  // Cadence Switching
+  function setCadenceTab(tabEl, mode) {
+    document.querySelectorAll('.cadence-tab').forEach(btn => {
+      btn.className = "cadence-tab flex-1 py-2 rounded-lg text-outline font-label-md text-label-md transition-colors hover:text-on-surface";
+    });
+    tabEl.className = "cadence-tab flex-1 py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors";
+    
+    // Adjust day selection preset if Daily
+    if (mode === 'Daily') {
+      document.querySelectorAll('.day-btn').forEach(btn => {
+        setDayState(btn, true);
+      });
+      updateDayCounter();
+    }
+  }
+
+  // Day Circle Multi-select
+  function toggleDay(btn) {
+    const isCurrentlyActive = btn.getAttribute('data-active') === 'true';
+    setDayState(btn, !isCurrentlyActive);
+    updateDayCounter();
+  }
+
+  function setDayState(btn, active) {
+    const letter = btn.querySelector('.day-letter');
+    const check = btn.querySelector('.check-icon');
+
+    if (active) {
+      btn.setAttribute('data-active', 'true');
+      btn.className = "day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-micro-counter text-micro-counter shadow-sm transition-transform active:scale-90";
+      if (check) check.classList.add('hidden');
+      if (letter) letter.classList.remove('hidden');
+    } else {
+      btn.setAttribute('data-active', 'false');
+      btn.className = "day-btn group relative flex items-center justify-center w-10 h-10 rounded-full bg-surface-container text-outline font-micro-counter text-micro-counter transition-transform active:scale-90";
+      if (check) check.classList.add('hidden');
+      if (letter) letter.classList.remove('hidden');
+    }
+  }
+
+  function updateDayCounter() {
+    const activeDays = document.querySelectorAll('.day-btn[data-active="true"]').length;
+    const subtext = document.getElementById('frequencySubtext');
+    if (subtext) {
+      subtext.textContent = `${activeDays} OF 7 DAYS`;
+    }
+  }
+
+  // Reminder Switch State
+  let reminderEnabled = true;
+  function toggleReminderSwitch(btn) {
+    reminderEnabled = !reminderEnabled;
+    const pill = document.getElementById('switchPill');
+    const timeBox = document.getElementById('timePickerBox');
+
+    if (reminderEnabled) {
+      btn.setAttribute('aria-checked', 'true');
+      btn.className = "relative inline-flex h-8 w-14 shrink-0 cursor-pointer rounded-full bg-primary-container p-1 transition-colors duration-200 ease-in-out focus:outline-none";
+      pill.className = "pointer-events-none inline-block h-6 w-6 translate-x-6 transform rounded-full bg-on-primary-container shadow-md transition duration-200 ease-in-out";
+      if (timeBox) timeBox.style.opacity = '1';
+    } else {
+      btn.setAttribute('aria-checked', 'false');
+      btn.className = "relative inline-flex h-8 w-14 shrink-0 cursor-pointer rounded-full bg-surface-container-highest p-1 transition-colors duration-200 ease-in-out focus:outline-none";
+      pill.className = "pointer-events-none inline-block h-6 w-6 translate-x-0 transform rounded-full bg-outline shadow-md transition duration-200 ease-in-out";
+      if (timeBox) timeBox.style.opacity = '0.35';
+    }
+  }
+
+  // Time Rotator for preview demo
+  const sampleTimes = ["06:00 AM", "06:30 AM", "07:15 AM", "08:00 AM", "09:00 PM"];
+  let timeIndex = 1;
+  function adjustTime() {
+    timeIndex = (timeIndex + 1) % sampleTimes.length;
+    const display = document.getElementById('reminderTimeDisplay');
+    if (display) {
+      display.textContent = sampleTimes[timeIndex];
+    }
+  }
+
+  // Form Validation & Interaction Polish
+  function validateAndSubmit() {
+    const inputVal = nameInput ? nameInput.value.trim() : '';
+    if (!inputVal) {
+      validationMsg.classList.remove('hidden');
+      nameInput.focus();
+      return;
+    }
+
+    // Success State Flash
+    const btn = document.getElementById('submitButton');
+    btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-bounce">check_circle</span><span>Habit Locked!</span>`;
+    btn.classList.add('scale-[0.98]');
+
+    setTimeout(() => {
+      window.history.back();
+    }, 700);
+  }
+</script></main></body></html>

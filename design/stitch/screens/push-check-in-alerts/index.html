@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-high": "#2a2a2a", "on-error": "#690005", "surface-bright": "#3a3939", "on-tertiary-container": "#1165b7", "surface-container-low": "#1c1b1b", "on-tertiary-fixed-variant": "#004787", "on-surface": "#e5e2e1", "secondary": "#c6c5d5", "secondary-container": "#474855", "on-secondary-fixed-variant": "#454653", "error-container": "#93000a", "tertiary": "#ffffff", "tertiary-fixed-dim": "#a6c8ff", "inverse-primary": "#4a6700", "primary-fixed": "#bcf540", "inverse-on-surface": "#313030", "surface-variant": "#353534", "error": "#ffb4ab", "on-surface-variant": "#c3c9af", "on-secondary-fixed": "#1a1b26", "surface-container-lowest": "#0e0e0e", "on-secondary": "#2f2f3c", "surface": "#131313", "on-primary-fixed-variant": "#374e00", "background": "#131313", "outline-variant": "#434935", "primary-fixed-dim": "#a1d820", "secondary-fixed": "#e2e1f2", "on-background": "#e5e2e1", "surface-tint": "#a1d820", "outline": "#8d937c", "secondary-fixed-dim": "#c6c5d5", "surface-dim": "#131313", "on-primary-fixed": "#141f00", "tertiary-container": "#d5e3ff", "on-tertiary": "#00305f", "inverse-surface": "#e5e2e1", "on-primary-container": "#4f6e00", "on-secondary-container": "#b7b7c7", "on-error-container": "#ffdad6", "surface-container-highest": "#353534", "surface-container": "#201f1f", "tertiary-fixed": "#d5e3ff", "primary-container": "#bcf540", "on-primary": "#253600", "on-tertiary-fixed": "#001c3b", "primary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "gutter": "1rem", "gutter-mobile": "0.75rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-sm": "0.5rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "display-hero": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "display-hero-mobile": ["Inter"], "caption-caps": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Inter"], "micro-counter": ["Inter"] }, fontSize: { "display-hero": ["56px", { lineHeight: "60px", letterSpacing: "-0.04em", fontWeight: "800" }], "headline-lg": ["24px", { lineHeight: "30px", letterSpacing: "-0.025em", fontWeight: "700" }], "label-md": ["14px", { lineHeight: "18px", letterSpacing: "-0.005em", fontWeight: "500" }], "headline-md": ["20px", { lineHeight: "26px", letterSpacing: "-0.02em", fontWeight: "600" }], "body-md": ["15px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "display-hero-mobile": ["42px", { lineHeight: "46px", letterSpacing: "-0.035em", fontWeight: "800" }], "caption-caps": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }], "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-lg": ["17px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }], "headline-xl": ["32px", { lineHeight: "38px", letterSpacing: "-0.03em", fontWeight: "700" }], "micro-counter": ["10px", { lineHeight: "12px", letterSpacing: "0.1em", fontWeight: "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-95" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold truncate max-w-[200px]">Push &amp; Check In Alerts</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Test Alert" class="min-w-[44px] h-[44px] px-space-sm rounded-lg bg-surface-container-high text-primary-container hover:bg-surface-variant active:scale-95 transition-all flex items-center gap-space-xs" type="button"><span class="material-symbols-outlined text-[18px]">notifications_active</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Test</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe px-gutter-mobile bg-surface"><div class="flex flex-col w-full pb-12 space-y-5">
+<!-- Toast Notification Simulator Overlay -->
+<div class="fixed top-18 inset-x-3 z-50 transform -translate-y-36 opacity-0 transition-all duration-300 pointer-events-none" id="live-toast">
+<div class="bg-surface-container-high rounded-xl p-space-md shadow-2xl flex flex-col space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-caption-caps text-caption-caps tracking-widest text-primary-container">STREAKS DISPATCH</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Just now</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug" id="toast-body">Test trigger executed. Streak preserved!</p>
+</div>
+</div>
+<!-- Intro / Strategic Context Banner -->
+<section class="bg-surface-container-low rounded-xl p-space-md flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-caption-caps text-caption-caps text-primary-container uppercase tracking-wider">Rich Actions Enabled</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant tracking-widest">TACTILE ENGINE</span>
+</div>
+<div class="space-y-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Smart Notifications &amp; Prompts</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Receive high-cadence kinetic nudges with actionable lock-screen shortcuts to preserve your streak momentum without launching the app.
+      </p>
+</div>
+</section>
+<!-- Live Lock-Screen Previews Deck -->
+<section class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Lock Screen Interactive Preview</span>
+<span class="font-micro-counter text-micro-counter text-primary-container uppercase">3 Scenarios Active</span>
+</div>
+<!-- Alert 1: High Urgency Evening Saver -->
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-3.5 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface tracking-wide">STREAKS</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">18m ago</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-error font-caption-caps text-caption-caps uppercase tracking-wider">Critical</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-1.5">
+<span>🔥</span> Your 24-day streak is on the line!
+        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          2 habits remaining: <span class="text-on-surface font-semibold">Read 20 pages</span> &amp; <span class="text-on-surface font-semibold">Evening Meditation</span> before midnight.
+        </p>
+</div>
+<!-- Notification Action Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1" id="alert-actions-1">
+<button class="h-10 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-transform" onclick="triggerSimulatedAction('Reading session logged &amp; registered! Streak intact.', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Log Read Done</span>
+</button>
+<button class="h-10 px-3 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-variant active:scale-95 transition-all" onclick="triggerSimulatedAction('Snoozed for 30 minutes.', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">snooze</span>
+<span>Snooze 30m</span>
+</button>
+<button class="h-10 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium flex items-center justify-center gap-1.5 active:scale-95 transition-all" onclick="triggerSimulatedAction('Streak Freeze applied for tonight.', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">ac_unit</span>
+<span>Use Freeze</span>
+</button>
+</div>
+</div>
+<!-- Alert 2: Morning Kickoff Prompt -->
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[16px]">wb_sunny</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface tracking-wide">STREAKS</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">08:00 AM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary-container font-caption-caps text-caption-caps uppercase tracking-wider">Morning Cadence</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">☀️ Morning Hydration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Drink 500ml water to start your day with velocity. Physical energy threshold initialized.
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-10 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-transform" onclick="triggerSimulatedAction('500ml logged. 1st morning habit checked!', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+<span>+ 500ml Done</span>
+</button>
+<button class="h-10 px-3 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-variant active:scale-95 transition-all" onclick="triggerSimulatedAction('Launching 15-minute hydration timer...', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>Open Timer</span>
+</button>
+</div>
+</div>
+<!-- Alert 3: Midday Momentum Progress Check-in -->
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[16px]">insights</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface tracking-wide">STREAKS</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">01:15 PM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-micro-counter text-micro-counter uppercase">67% TARGET</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Deep Work Routine</span>
+<span class="font-caption-caps text-caption-caps text-primary-container">4 of 6 Completed</span>
+</div>
+<!-- Progress bar track -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 66.6%;"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-1">
+          Quick momentum pulse: Are you focused on the current execution sprint?
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-10 px-3 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-all" onclick="triggerSimulatedAction('Logged: Deep Work sprint currently On Track! ⚡️', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">bolt</span>
+<span>On Track ⚡️</span>
+</button>
+<button class="h-10 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container-high active:scale-95 transition-all" onclick="triggerSimulatedAction('Reminder queued for 02:15 PM.', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Nudge in 1h</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Notification Timing & Circadian Scheduling -->
+<section class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Circadian Dispatch Engine</span>
+<span class="font-micro-counter text-micro-counter text-primary-container uppercase">Smart Windows</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-4">
+<!-- AI Toggle Row -->
+<div class="flex items-center justify-between gap-4">
+<div class="space-y-0.5">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary-container">psychology</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Circadian AI Timing</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Delivers alerts 45 minutes before your personalized typical completion hour.
+          </p>
+</div>
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center transition-colors" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="w-6 h-6 rounded-full bg-on-primary transform translate-x-5 transition-transform shadow-sm"></span>
+</button>
+</div>
+<!-- Time Selectors Horizontal Grid -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="bg-surface-container rounded-lg p-3 space-y-1.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Morning Kickoff</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">07:30</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary-container font-micro-counter text-micro-counter">AM</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant">Hydration &amp; Movement</span>
+</div>
+<div class="bg-surface-container rounded-lg p-3 space-y-1.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Cutoff Warning</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">09:30</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary-container font-micro-counter text-micro-counter">PM</span>
+</div>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant">2.5h before midnight</span>
+</div>
+</div>
+<!-- Weekend Flexibility Toggle -->
+<div class="flex items-center justify-between gap-4 pt-1">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Weekend Flexibility Mode</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Softens notification tone and delays morning kickoff by 90 minutes on Sat/Sun.
+          </p>
+</div>
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center transition-colors" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="w-6 h-6 rounded-full bg-on-primary transform translate-x-5 transition-transform shadow-sm"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Haptic & Audio Preference Configuration -->
+<section class="flex flex-col space-y-3">
+<div class="flex items-center justify-between px-1">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Tactile &amp; Audio Feedback</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant uppercase">Haptic Engine 2.0</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-4">
+<!-- Sound Chips -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface font-medium">Custom Acoustic Signature</label>
+<div class="grid grid-cols-3 gap-2" id="sound-selector">
+<button class="p-2.5 rounded-lg bg-surface-container-high text-primary-container flex flex-col items-center justify-center space-y-1 transition-all" onclick="selectAudio(this)" type="button">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+<span class="font-label-sm text-label-sm font-bold text-center leading-tight">Obsidian Strike</span>
+</button>
+<button class="p-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface flex flex-col items-center justify-center space-y-1 transition-all" onclick="selectAudio(this)" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="font-label-sm text-label-sm font-semibold text-center leading-tight">Velocity Chime</span>
+</button>
+<button class="p-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface flex flex-col items-center justify-center space-y-1 transition-all" onclick="selectAudio(this)" type="button">
+<span class="material-symbols-outlined text-[20px]">vibration</span>
+<span class="font-label-sm text-label-sm font-semibold text-center leading-tight">Silent Haptic</span>
+</button>
+</div>
+</div>
+<!-- Quick Action Toggle -->
+<div class="flex items-center justify-between gap-4 pt-1">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Lock-Screen 1-Tap Logs</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Allow instant completion logging straight from banners without biometric unlocking.
+          </p>
+</div>
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center transition-colors" onclick="toggleSwitch(this)" role="switch" type="button">
+<span class="w-6 h-6 rounded-full bg-on-primary transform translate-x-5 transition-transform shadow-sm"></span>
+</button>
+</div>
+<!-- App Icon Badge Count Mode -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">App Icon Badge Counter</label>
+<span class="font-micro-counter text-micro-counter text-primary-container">DYNAMIC</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 p-1 rounded-lg bg-surface-container" id="badge-selector">
+<button class="py-2 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold transition-all text-center" onclick="selectSegment(this)" type="button">Remaining</button>
+<button class="py-2 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium transition-all text-center" onclick="selectSegment(this)" type="button">Streak Days</button>
+<button class="py-2 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium transition-all text-center" onclick="selectSegment(this)" type="button">Off</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Test & Dispatch CTA -->
+<section class="flex flex-col space-y-3 pt-2">
+<button class="w-full h-14 rounded-xl bg-primary-container text-on-primary font-headline-md text-headline-md font-bold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-[0_0_24px_-4px_rgba(188,245,64,0.35)]" onclick="simulateFullPushTest()" type="button">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+<span>Simulate Push Dispatch</span>
+</button>
+<div class="bg-surface-container-low rounded-lg px-4 py-3 flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">System Alerts Status: <span class="text-on-surface font-semibold">Priority 1 Active</span></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+</div>
+</section>
+</div>
+<script>
+  function showBannerToast(message) {
+    const toast = document.getElementById('live-toast');
+    const toastBody = document.getElementById('toast-body');
+    if (!toast || !toastBody) return;
+    toastBody.textContent = message;
+    toast.classList.remove('-translate-y-36', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.add('-translate-y-36', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 2800);
+  }
+
+  function triggerSimulatedAction(msg, btn) {
+    if (btn) {
+      btn.classList.add('scale-95');
+      setTimeout(() => btn.classList.remove('scale-95'), 150);
+    }
+    showBannerToast(msg);
+  }
+
+  function simulateFullPushTest() {
+    showBannerToast('⚡️ Lock screen alert dispatched: "Evening Streak Saver" ready on lock screen!');
+  }
+
+  function toggleSwitch(button) {
+    const isChecked = button.getAttribute('aria-checked') === 'true';
+    const knob = button.querySelector('span');
+    if (isChecked) {
+      button.setAttribute('aria-checked', 'false');
+      button.classList.remove('bg-primary-container');
+      button.classList.add('bg-surface-container-highest');
+      knob.classList.remove('translate-x-5', 'bg-on-primary');
+      knob.classList.add('translate-x-0', 'bg-on-surface-variant');
+    } else {
+      button.setAttribute('aria-checked', 'true');
+      button.classList.add('bg-primary-container');
+      button.classList.remove('bg-surface-container-highest');
+      knob.classList.add('translate-x-5', 'bg-on-primary');
+      knob.classList.remove('translate-x-0', 'bg-on-surface-variant');
+    }
+  }
+
+  function selectAudio(selected) {
+    const container = document.getElementById('sound-selector');
+    if (!container) return;
+    container.querySelectorAll('button').forEach(btn => {
+      btn.classList.remove('bg-surface-container-high', 'text-primary-container');
+      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+    selected.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    selected.classList.add('bg-surface-container-high', 'text-primary-container');
+  }
+
+  function selectSegment(selected) {
+    const container = document.getElementById('badge-selector');
+    if (!container) return;
+    container.querySelectorAll('button').forEach(btn => {
+      btn.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-bold');
+      btn.classList.add('text-on-surface-variant', 'font-medium');
+    });
+    selected.classList.add('bg-surface-container-high', 'text-on-surface', 'font-bold');
+    selected.classList.remove('text-on-surface-variant', 'font-medium');
+  }
+</script></main></body></html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error-container": "#ffdad6", "primary-fixed": "#bcf540", "surface-container-highest": "#353534", "inverse-primary": "#4a6700", "background": "#131313", "surface-container-lowest": "#0e0e0e", "outline-variant": "#434935", "on-primary-fixed": "#141f00", "error": "#ffb4ab", "surface-container-low": "#1c1b1b", "on-tertiary-container": "#1165b7", "surface": "#131313", "secondary-fixed": "#e2e1f2", "secondary": "#c6c5d5", "on-surface": "#e5e2e1", "surface-bright": "#3a3939", "surface-container-high": "#2a2a2a", "on-secondary": "#2f2f3c", "on-background": "#e5e2e1", "surface-tint": "#a1d820", "on-tertiary-fixed-variant": "#004787", "error-container": "#93000a", "surface-container": "#201f1f", "on-primary-container": "#4f6e00", "primary": "#ffffff", "tertiary-fixed": "#d5e3ff", "outline": "#8d937c", "on-primary": "#253600", "on-surface-variant": "#c3c9af", "primary-container": "#bcf540", "on-primary-fixed-variant": "#374e00", "primary-fixed-dim": "#a1d820", "tertiary": "#ffffff", "tertiary-container": "#d5e3ff", "on-tertiary": "#00305f", "surface-dim": "#131313", "tertiary-fixed-dim": "#a6c8ff", "on-tertiary-fixed": "#001c3b", "secondary-fixed-dim": "#c6c5d5", "inverse-surface": "#e5e2e1", "surface-variant": "#353534", "on-error": "#690005", "secondary-container": "#474855", "on-secondary-container": "#b7b7c7", "inverse-on-surface": "#313030", "on-secondary-fixed-variant": "#454653", "on-secondary-fixed": "#1a1b26" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-sm": "0.5rem", "margin": "1.25rem", "space-xl": "2rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "gutter": "1rem", "space-lg": "1.5rem" }, fontFamily: { "display-hero-mobile": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "display-hero": ["Inter"], "micro-counter": ["Inter"], "caption-caps": ["Inter"] }, fontSize: { "display-hero-mobile": ["42px", { "lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "body-lg": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "micro-counter": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "caption-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#131313;color:#e5e2e1;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Dismiss" class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">close</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase">Habit Limit Sheet</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe px-margin-mobile bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Parent Background Context: Mimicking the Settings and Habit Dashboard View Behind Sheet -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-lowest p-margin-mobile flex flex-col gap-space-md opacity-40 select-none pointer-events-none">
+<!-- Settings Section Preview (Underlying screen) -->
+<div class="flex items-center justify-between py-space-xs">
+<span class="font-caption-caps text-caption-caps uppercase text-secondary tracking-widest">Account &amp; Membership</span>
+<span class="font-label-sm text-label-sm text-primary-fixed bg-surface-container px-2 py-0.5 rounded-full">Free Tier</span>
+</div>
+<!-- Underlying Settings Upgrade Entry Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md text-on-surface truncate">Streaks Free Tier</div>
+<div class="font-caption-caps text-caption-caps text-secondary truncate">Upgrade for unlimited habits &amp; ad-free focus</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">chevron_right</span>
+</div>
+<!-- Underlying Habit Card Preview -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps text-secondary">PHYSICAL MOMENTUM</span>
+<span class="font-micro-counter text-micro-counter text-primary-fixed uppercase tracking-wider">19 Day Streak</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">Morning Workout</div>
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-md text-[11px] font-bold">M</div>
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-md text-[11px] font-bold">T</div>
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-md text-[11px] font-bold">W</div>
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-md text-[11px] font-bold">T</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-secondary font-headline-md text-[11px]">F</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-secondary font-headline-md text-[11px]">S</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-secondary font-headline-md text-[11px]">S</div>
+</div>
+</div>
+</div>
+<!-- Sheet Dim Overlay & Interactive Bottom Sheet (Elevated Obsidian Surface) -->
+<div class="relative -mt-36 z-20 w-full flex flex-col">
+<!-- Elevated Sheet Container -->
+<div class="w-full bg-surface-container-low rounded-t-xl shadow-2xl flex flex-col pt-3 pb-6 px-margin-mobile">
+<!-- Tactile Drag Handle -->
+<div class="w-full flex justify-center pb-4">
+<div class="w-10 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<!-- Capacity Status Pill -->
+<div class="flex items-center justify-center mb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary-fixed">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-micro-counter text-micro-counter tracking-widest uppercase">FREE CAPACITY REACHED (1/1)</span>
+</div>
+</div>
+<!-- Honest Headline & Hook -->
+<div class="text-center mb-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">You've Mastered Habit #1.</h2>
+</div>
+<p class="font-body-md text-body-md text-secondary text-center mb-5 px-2">
+        The Free plan supports 1 active habit to help you build unbreakable focus. Upgrade to Streaks Pro to track unlimited habits concurrently with zero ads.
+      </p>
+<!-- Visual Slot Split Card (Active vs Locked) -->
+<div class="grid grid-cols-2 gap-space-sm mb-5">
+<!-- Slot 1: Active Habit -->
+<div class="bg-surface-container rounded-lg p-space-sm flex flex-col justify-between h-28 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps text-secondary">SLOT 01</span>
+<div class="w-5 h-5 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-[14px] font-bold">check</span>
+</div>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold truncate">Morning Workout</div>
+<div class="font-label-sm text-label-sm text-primary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span>19 Days Solid</span>
+</div>
+</div>
+</div>
+<!-- Slot 2: Locked State -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col justify-between h-28 relative">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps text-secondary">SLOT 02</span>
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[14px]">lock</span>
+</div>
+</div>
+<div>
+<div class="font-label-md text-label-md text-secondary font-medium truncate">+ Add Habit</div>
+<div class="font-label-sm text-label-sm text-secondary">Locked in Free</div>
+</div>
+</div>
+</div>
+<!-- Reassurance Banner: Safe Habit Promise -->
+<div class="bg-surface-container rounded-lg p-3.5 mb-5 flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-fixed text-[16px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Your progress is protected</span>
+<p class="font-body-md text-[13px] text-secondary leading-snug mt-0.5">
+            Your existing habit (<span class="text-on-surface font-medium">Morning Workout • Day 19</span>) remains completely safe and active. No habits will be paused or deleted.
+          </p>
+</div>
+</div>
+<!-- Pro Benefit Value Bullets -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md mb-6 flex flex-col gap-2.5">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed text-[11px] font-bold">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Unlimited simultaneous active habits</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed text-[11px] font-bold">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">100% ad-free athletic minimalist experience</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed text-[11px] font-bold">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Dynamic lock-screen widgets &amp; Obsidian themes</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-space-sm">
+<!-- Primary Kinetic CTA -->
+<button class="w-full h-14 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-[0_0_24px_-4px_rgba(188,245,64,0.35)]" id="upgrade-pro-btn">
+<span>Upgrade to Pro — Unlimited Habits</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Secondary Ghost Action -->
+<button class="w-full h-12 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center justify-center" id="dismiss-sheet-btn">
+          Continue with Free (1 Active Habit)
+        </button>
+</div>
+<!-- Footnote Link -->
+<div class="w-full flex justify-center mt-4">
+<button class="font-label-sm text-label-sm text-secondary hover:text-on-surface transition-colors flex items-center gap-1" id="pro-features-link">
+<span>Learn more about Pro features</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Context Micro-Feedback Toast (Client Script) -->
+<div class="fixed bottom-6 left-4 right-4 z-50 bg-surface-bright text-on-surface py-3 px-4 rounded-lg shadow-xl font-label-sm text-label-sm flex items-center justify-between opacity-0 pointer-events-none transition-opacity duration-200" id="toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">info</span>
+<span id="toast-message">Plan status updated</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">close</span>
+</div>
+</div>
+<script>
+  (function() {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    const upgradeBtn = document.getElementById('upgrade-pro-btn');
+    const dismissBtn = document.getElementById('dismiss-sheet-btn');
+    const proLink = document.getElementById('pro-features-link');
+
+    let toastTimer;
+
+    function showNotification(msg) {
+      if (!toast || !toastMessage) return;
+      toastMessage.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2600);
+    }
+
+    if (upgradeBtn) {
+      upgradeBtn.addEventListener('click', () => {
+        showNotification('Redirecting to Streaks Pro activation checkout...');
+      });
+    }
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        showNotification('Continuing with 1 active habit.');
+      });
+    }
+
+    if (proLink) {
+      proLink.addEventListener('click', () => {
+        showNotification('Streaks Pro features breakdown: Unlimited habits, widgets, cloud backup.');
+      });
+    }
+  })();
+</script></main></body></html>

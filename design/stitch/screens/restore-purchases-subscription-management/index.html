@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#1a1b26", "on-primary-container": "#4f6e00", "inverse-surface": "#e5e2e1", "secondary-container": "#474855", "outline-variant": "#434935", "outline": "#8d937c", "surface-container-high": "#2a2a2a", "primary-container": "#bcf540", "on-background": "#e5e2e1", "surface-container-low": "#1c1b1b", "secondary": "#c6c5d5", "surface-variant": "#353534", "on-tertiary": "#00305f", "on-tertiary-fixed-variant": "#004787", "background": "#131313", "tertiary-fixed-dim": "#a6c8ff", "inverse-primary": "#4a6700", "error": "#ffb4ab", "on-error": "#690005", "on-tertiary-container": "#1165b7", "primary-fixed-dim": "#a1d820", "tertiary": "#ffffff", "on-secondary-container": "#b7b7c7", "primary": "#ffffff", "secondary-fixed": "#e2e1f2", "primary-fixed": "#bcf540", "surface-dim": "#131313", "tertiary-fixed": "#d5e3ff", "surface-tint": "#a1d820", "on-primary": "#253600", "on-secondary-fixed-variant": "#454653", "tertiary-container": "#d5e3ff", "on-tertiary-fixed": "#001c3b", "surface-bright": "#3a3939", "surface-container": "#201f1f", "surface-container-highest": "#353534", "on-error-container": "#ffdad6", "on-surface-variant": "#c3c9af", "on-secondary": "#2f2f3c", "surface-container-lowest": "#0e0e0e", "surface": "#131313", "secondary-fixed-dim": "#c6c5d5", "inverse-on-surface": "#313030", "on-primary-fixed-variant": "#374e00", "on-surface": "#e5e2e1", "error-container": "#93000a", "on-primary-fixed": "#141f00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "margin": "1.25rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-md": "1rem" }, "fontFamily": { "display-hero": ["Inter"], "label-md": ["Inter"], "caption-caps": ["Inter"], "headline-xl": ["Inter"], "display-hero-mobile": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "micro-counter": ["Inter"] }, "fontSize": { "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "caption-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "display-hero-mobile": ["42px", { "lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800" }], "body-lg": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "micro-counter": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="h-16 px-gutter flex items-center justify-between"><button aria-label="Dismiss modal" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:bg-surface-variant transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">close</span></button><h1 class="font-headline-md text-headline-md tracking-tight uppercase text-on-surface truncate px-space-sm">Restore</h1><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full px-gutter pt-16 bg-surface pb-safe flex-1"><div class="flex flex-col w-full pb-10">
+<!-- Status Card / Current Entitlement Plinth -->
+<section class="bg-surface-container rounded-2xl p-4 shadow-xl relative overflow-hidden mb-3">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-primary-fixed/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary-fixed text-caption-caps font-caption-caps tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span>
+        Receipt Validator
+      </span>
+<span class="text-caption-caps font-caption-caps text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">verified</span>
+        STORE ENCLAVE
+      </span>
+</div>
+<div class="flex flex-col gap-1 mb-3">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Store Profile</span>
+<span class="text-label-md font-label-md text-on-surface font-semibold truncate max-w-[200px]">alex.chen@domain.com</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Linked Store ID</span>
+<span class="text-caption-caps font-caption-caps text-secondary font-mono tracking-wider bg-surface-container-low px-2 py-0.5 rounded">#STR-8921-PAY</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">workspace_premium</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">Streaks Pro Annual</p>
+<p class="text-caption-caps font-caption-caps text-on-surface-variant">Active • Renews Oct 24, 2026</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-caption-caps font-caption-caps font-extrabold uppercase">
+        ACTIVE
+      </span>
+</div>
+</section>
+<!-- Primary Action Block: Instant Restore Card -->
+<section class="bg-surface-container rounded-2xl p-4 shadow-xl mb-3 relative">
+<div class="flex items-start gap-3 mb-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">sync_saved_locally</span>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Restore Purchases</h2>
+<p class="text-body-md font-body-md text-on-surface-variant text-[13px] leading-relaxed mt-1">
+          If you previously subscribed to Streaks Pro or purchased a Lifetime Founder pass on this or another device, restoring will reactivate your entitlements immediately.
+        </p>
+</div>
+</div>
+<button class="w-full h-13 py-3.5 px-4 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-extrabold flex items-center justify-center gap-2 shadow-lg hover:brightness-105 active:scale-[0.98] transition-transform" id="restore-cta-btn" onclick="triggerRestoreScan()">
+<span class="material-symbols-outlined text-[20px] transition-transform" id="scan-icon">refresh</span>
+<span id="scan-btn-text">Scan Store Receipts ↻</span>
+</button>
+</section>
+<!-- Live Validation Diagnostics Container -->
+<section class="bg-surface-container rounded-2xl p-4 shadow-xl mb-3">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">query_stats</span>
+<h3 class="text-label-md font-label-md text-on-surface font-bold uppercase tracking-wider text-[12px]">Diagnostics &amp; Cryptographic Proof</h3>
+</div>
+<span class="text-caption-caps font-caption-caps text-primary-fixed bg-surface-container-highest px-2 py-0.5 rounded-full font-bold" id="diag-status-pill">
+        VALIDATED
+      </span>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<!-- Receipt Signature -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-caps font-caption-caps text-on-surface-variant">Receipt Signature</span>
+<span class="text-label-md font-label-md text-on-surface font-semibold font-mono text-[13px]" id="diag-signature">RSA-4096 SHA256</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">verified_user</span>
+</div>
+<!-- Entitlement Found -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-caps font-caption-caps text-on-surface-variant">Entitlement Found</span>
+<span class="text-label-md font-label-md text-on-surface font-semibold text-[13px]" id="diag-entitlement">Streaks Pro Annual (Oct 24, 2026)</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+</div>
+<!-- Original Purchase Date -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-caps font-caption-caps text-on-surface-variant">Original Purchase Date</span>
+<span class="text-label-md font-label-md text-on-surface font-semibold text-[13px]">October 24, 2024</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span>
+</div>
+<!-- Cloud Sync Entitlement -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-caps font-caption-caps text-on-surface-variant">Cloud Sync State</span>
+<span class="text-label-md font-label-md text-primary-fixed font-semibold text-[13px]" id="diag-cloud">Transferred &amp; Enclave Synchronized</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">cloud_done</span>
+</div>
+</div>
+</section>
+<!-- Subscription Management Details Card -->
+<section class="bg-surface-container rounded-2xl p-4 shadow-xl mb-3">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-headline-md font-headline-md text-on-surface">Manage Subscription</h3>
+<span class="text-caption-caps font-caption-caps text-primary-fixed font-bold bg-surface-container-highest px-2 py-0.5 rounded-full">TIER 1 PRO</span>
+</div>
+<!-- Quick Stats Grid -->
+<div class="grid grid-cols-2 gap-2 mb-3">
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col justify-between">
+<span class="text-caption-caps font-caption-caps text-on-surface-variant">Price &amp; Cycle</span>
+<span class="text-headline-md font-headline-md text-on-surface font-extrabold mt-1">$39.99<span class="text-caption-caps font-caption-caps text-on-surface-variant font-normal">/yr</span></span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col justify-between">
+<span class="text-caption-caps font-caption-caps text-on-surface-variant">Auto-Renewal</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span class="text-label-md font-label-md text-on-surface font-bold">Enabled</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 mb-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">event_repeat</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Next billing scheduled</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface font-semibold">Oct 24, 2026</span>
+</div>
+<!-- Native App Store Deep Link Button -->
+<a class="w-full py-3.5 px-4 rounded-xl bg-surface-container-high text-on-surface text-label-md font-label-md font-bold flex items-center justify-center gap-2 hover:bg-surface-variant active:scale-[0.98] transition-all" href="https://apps.apple.com/account/subscriptions" rel="noopener noreferrer" target="_blank">
+<span>Open Apple Subscriptions / Play Store</span>
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">open_in_new</span>
+</a>
+</section>
+<!-- Troubleshooting & FAQ Accordion Section -->
+<section class="bg-surface-container rounded-2xl p-4 shadow-xl mb-4">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">help_center</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Troubleshooting &amp; FAQ</h3>
+</div>
+<div class="flex flex-col gap-2">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<button class="w-full p-3.5 flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion('faq-1', 'faq-icon-1')">
+<span class="text-label-md font-label-md text-on-surface font-semibold pr-2">Purchased on a different Apple ID or Google account?</span>
+<span class="material-symbols-outlined text-secondary text-[20px] transition-transform duration-200" id="faq-icon-1">expand_more</span>
+</button>
+<div class="hidden px-3.5 pb-3.5 text-body-md font-body-md text-on-surface-variant text-[13px] leading-relaxed" id="faq-1">
+          Store receipts are cryptographically linked to the primary account signed into your mobile OS. To restore a subscription bought under another ID, sign into that account in device settings, tap 'Scan Store Receipts', and your entitlements will register to this device.
+        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<button class="w-full p-3.5 flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion('faq-2', 'faq-icon-2')">
+<span class="text-label-md font-label-md text-on-surface font-semibold pr-2">Switched between iOS and Android?</span>
+<span class="material-symbols-outlined text-secondary text-[20px] transition-transform duration-200" id="faq-icon-2">expand_more</span>
+</button>
+<div class="hidden px-3.5 pb-3.5 text-body-md font-body-md text-on-surface-variant text-[13px] leading-relaxed" id="faq-2">
+          Active cross-platform memberships transfer seamlessly when linked to your Streaks Enclave Cloud Profile (alex.chen@domain.com). Restore while authenticated to automatically pull server entitlements across operating systems.
+        </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<button class="w-full p-3.5 flex items-center justify-between text-left focus:outline-none" onclick="toggleAccordion('faq-3', 'faq-icon-3')">
+<span class="text-label-md font-label-md text-on-surface font-semibold pr-2">Refund policy &amp; App Store billing rules</span>
+<span class="material-symbols-outlined text-secondary text-[20px] transition-transform duration-200" id="faq-icon-3">expand_more</span>
+</button>
+<div class="hidden px-3.5 pb-3.5 text-body-md font-body-md text-on-surface-variant text-[13px] leading-relaxed" id="faq-3">
+          All subscription purchases, renewals, and refunds are handled directly by Apple Media Services or Google Play Billing under their merchant terms. Developers cannot issue direct card refunds for store-billed products.
+        </div>
+</div>
+</div>
+</section>
+<!-- Support & Incident Reference Block -->
+<section class="flex flex-col items-center gap-3 px-2">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span class="text-caption-caps font-caption-caps font-mono tracking-wider">INCIDENT ID: #RST-2026-9041B</span>
+</div>
+<button class="w-full py-3 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface text-label-md font-label-md font-semibold flex items-center justify-center gap-2 transition-colors" onclick="copyIncidentAndContact()">
+<span class="material-symbols-outlined text-secondary text-[18px]">support_agent</span>
+<span id="support-btn-label">Contact Billing Support</span>
+</button>
+</section>
+</div>
+<script>
+  function toggleAccordion(contentId, iconId) {
+    const content = document.getElementById(contentId);
+    const icon = document.getElementById(iconId);
+    if (!content || !icon) return;
+
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('rotate-180');
+    }
+  }
+
+  function triggerRestoreScan() {
+    const btn = document.getElementById('restore-cta-btn');
+    const icon = document.getElementById('scan-icon');
+    const label = document.getElementById('scan-btn-text');
+    const statusPill = document.getElementById('diag-status-pill');
+    const cloudSync = document.getElementById('diag-cloud');
+
+    if (!btn || !icon || !label) return;
+
+    btn.disabled = true;
+    icon.classList.add('animate-spin');
+    label.innerText = 'Verifying Store Receipts...';
+
+    if (statusPill) {
+      statusPill.innerText = 'VALIDATING...';
+      statusPill.className = 'text-caption-caps font-caption-caps text-secondary font-bold bg-surface-container-high px-2 py-0.5 rounded-full';
+    }
+
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      btn.disabled = false;
+      label.innerText = 'Receipts Re-synchronized ✓';
+
+      if (statusPill) {
+        statusPill.innerText = '100% VERIFIED';
+        statusPill.className = 'text-caption-caps font-caption-caps text-on-primary-fixed bg-primary-fixed font-bold px-2 py-0.5 rounded-full';
+      }
+
+      if (cloudSync) {
+        cloudSync.innerText = 'Enclave Synced (Just now)';
+      }
+
+      setTimeout(() => {
+        label.innerText = 'Scan Store Receipts ↻';
+      }, 3500);
+    }, 1400);
+  }
+
+  function copyIncidentAndContact() {
+    const btnLabel = document.getElementById('support-btn-label');
+    if (!btnLabel) return;
+    
+    btnLabel.innerText = 'Reference ID Copied to Clipboard ✓';
+    setTimeout(() => {
+      btnLabel.innerText = 'Contact Billing Support';
+    }, 2500);
+  }
+</script></main></body></html>

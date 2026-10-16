@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#e5e2e1", "outline": "#8d937c", "on-secondary-fixed": "#1a1b26", "background": "#131313", "surface-variant": "#353534", "outline-variant": "#434935", "secondary-fixed-dim": "#c6c5d5", "on-tertiary-fixed": "#001c3b", "primary-fixed": "#bcf540", "on-error": "#690005", "on-primary-fixed": "#141f00", "surface-container-low": "#1c1b1b", "surface-container-lowest": "#0e0e0e", "on-secondary-fixed-variant": "#454653", "tertiary-container": "#d5e3ff", "on-background": "#e5e2e1", "surface-dim": "#131313", "primary-fixed-dim": "#a1d820", "on-tertiary-fixed-variant": "#004787", "secondary-container": "#474855", "on-secondary": "#2f2f3c", "error-container": "#93000a", "on-tertiary-container": "#1165b7", "secondary": "#c6c5d5", "surface-tint": "#a1d820", "surface": "#131313", "inverse-on-surface": "#313030", "primary-container": "#bcf540", "primary": "#ffffff", "on-surface-variant": "#c3c9af", "error": "#ffb4ab", "inverse-primary": "#4a6700", "on-primary-fixed-variant": "#374e00", "secondary-fixed": "#e2e1f2", "surface-container-highest": "#353534", "surface-container": "#201f1f", "tertiary-fixed": "#d5e3ff", "on-primary-container": "#4f6e00", "surface-bright": "#3a3939", "surface-container-high": "#2a2a2a", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#a6c8ff", "inverse-surface": "#e5e2e1", "on-secondary-container": "#b7b7c7", "on-primary": "#253600", "tertiary": "#ffffff", "on-tertiary": "#00305f" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter": "1rem", "margin": "1.25rem", "gutter-mobile": "0.75rem", "space-xl": "2rem", "space-md": "1rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "display-hero-mobile": ["Inter"], "headline-xl": ["Inter"], "micro-counter": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "display-hero": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "caption-caps": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-hero-mobile": ["42px", { "lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800" }], "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "micro-counter": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "body-lg": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "caption-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><button aria-label="Close or go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors active:scale-95" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">close</span></button><h1 class="font-headline-md text-headline-md font-semibold tracking-tight text-on-surface truncate text-center px-space-xs flex-1">Planned Buffer &amp; Vacation</h1><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile pb-12 space-y-space-md">
+<!-- Vacation Shield Status Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-md">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary-fixed/5 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+<span class="font-caption-caps text-caption-caps text-primary-fixed uppercase tracking-wider">PLANNED DEFENSE READY</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight mt-1">
+      Schedule Vacation Buffer
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+      Freeze streaks automatically while traveling or taking planned rest without losing momentum or breaking records.
+    </p>
+</div>
+<!-- Date Range Selection Module -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-md space-y-space-md">
+<!-- Range Display Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Departure</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface truncate">Thu, Oct 24</span>
+</div>
+<div class="flex flex-col items-center px-2 flex-shrink-0">
+<div class="px-2.5 py-0.5 rounded-full bg-primary-fixed/10 mb-1">
+<span class="font-micro-counter text-micro-counter font-bold text-primary-fixed whitespace-nowrap">5 DAYS TOTAL</span>
+</div>
+<div class="flex items-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">trending_flat</span>
+</div>
+</div>
+<div class="flex flex-col items-end min-w-0">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Return</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface truncate">Mon, Oct 28</span>
+</div>
+</div>
+<!-- Quick Presets Pill Row -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<button class="preset-pill px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all duration-200 active:scale-95" type="button">
+        Weekend (2d)
+      </button>
+<button class="preset-pill px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all duration-200 active:scale-95" type="button">
+        Work Trip (4d)
+      </button>
+<button class="preset-pill px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm whitespace-nowrap shadow-sm active:scale-95" type="button">
+        Vacation (5d)
+      </button>
+<button class="preset-pill px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all duration-200 active:scale-95" type="button">
+        Custom Range
+      </button>
+</div>
+<!-- Calendar View (October 2024) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md">
+<!-- Calendar Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">October 2024</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-micro-counter text-micro-counter text-on-surface-variant">UTC-4</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Weekday Headers -->
+<div class="grid grid-cols-7 text-center mb-2">
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">M</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">T</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">W</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">T</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">F</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">S</span>
+<span class="font-micro-counter text-micro-counter text-on-surface-variant py-1">S</span>
+</div>
+<!-- Calendar Days Grid -->
+<div class="grid grid-cols-7 gap-y-1.5 text-center items-center">
+<!-- Oct 1-6 -->
+<span class="font-label-sm text-label-sm text-on-surface-variant/40 py-1.5">30</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">1</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">2</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">3</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">4</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">5</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">6</span>
+<!-- Oct 7-13 -->
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">7</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">8</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">9</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">10</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">11</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">12</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">13</span>
+<!-- Oct 14-20 -->
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">14</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">15</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">16</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">17</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">18</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">19</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">20</span>
+<!-- Oct 21-27 (Span across Oct 24 - 27) -->
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">21</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">22</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">23</span>
+<!-- Oct 24 (Start Range) -->
+<div class="relative py-1 flex items-center justify-center bg-primary-fixed/20 rounded-l-full">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+            24
+          </div>
+</div>
+<!-- Oct 25 (Middle) -->
+<div class="relative py-1 flex items-center justify-center bg-primary-fixed/20">
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">25</span>
+</div>
+<!-- Oct 26 (Middle) -->
+<div class="relative py-1 flex items-center justify-center bg-primary-fixed/20">
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">26</span>
+</div>
+<!-- Oct 27 (Middle end of row) -->
+<div class="relative py-1 flex items-center justify-center bg-primary-fixed/20 rounded-r-none">
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">27</span>
+</div>
+<!-- Oct 28-Nov 3 (Oct 28 completes range) -->
+<!-- Oct 28 (End Range) -->
+<div class="relative py-1 flex items-center justify-center bg-primary-fixed/20 rounded-r-full">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+            28
+          </div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">29</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">30</span>
+<span class="font-label-sm text-label-sm text-on-surface py-1.5">31</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/40 py-1.5">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/40 py-1.5">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/40 py-1.5">3</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-micro-counter text-micro-counter">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed inline-block"></span>
+          Selected Buffer Window
+        </span>
+<span class="text-on-surface-variant">Tap dates to expand</span>
+</div>
+</div>
+</div>
+<!-- Protected Habits Scope Selector -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Habits Shield Scope</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Select routines covered by vacation defense</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/15 font-micro-counter text-micro-counter text-primary-fixed font-bold">
+        4 OF 5 ACTIVE
+      </span>
+</div>
+<!-- Segmented Filter Control -->
+<div class="grid grid-cols-2 p-1 rounded-xl bg-surface-container-lowest gap-1">
+<button class="py-2 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-colors" type="button">
+        Protect All (6)
+      </button>
+<button class="py-2 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold shadow-sm transition-colors" type="button">
+        Custom Select
+      </button>
+</div>
+<!-- Habits List -->
+<div class="space-y-2">
+<!-- Habit Item 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Morning Hydration</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Daily</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-caption-caps text-caption-caps text-primary-fixed flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> 18d Streak
+              </span>
+</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Habit Item 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Deep Work Sprint</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Weekdays</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-caption-caps text-caption-caps text-primary-fixed flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> 24d Streak
+              </span>
+</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Habit Item 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">self_improvement</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Evening Meditation</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Daily</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-caption-caps text-caption-caps text-primary-fixed flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> 30d Streak
+              </span>
+</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Habit Item 4 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Read 20 Pages</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Daily</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-caption-caps text-caption-caps text-primary-fixed flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> 12d Streak
+              </span>
+</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Habit Item 5 (Paused) -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low opacity-75 transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">shower</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Cold Shower</p>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-caption-caps text-caption-caps text-on-surface-variant">Paused</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Daily</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> 5d Streak
+              </span>
+</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-surface-container-highest p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-surface-variant transform translate-x-0 transition-transform"></span>
+</button>
+</div>
+</div>
+<!-- Explanation Footnote -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mt-0.5 flex-shrink-0">info</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs leading-relaxed">
+        Paused habits are frozen without penalty. Shielded habits are automatically marked as verified rest days in your physical logs.
+      </p>
+</div>
+</div>
+<!-- Freeze Calculation & Quota Breakdown Card -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Buffer Balance &amp; Quota</h3>
+<div class="flex items-center gap-1 text-primary-fixed font-caption-caps text-caption-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+        PRO TIER
+      </div>
+</div>
+<!-- Balance Metrics Grid -->
+<div class="grid grid-cols-2 gap-2">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">REQUIRED SHIELD</span>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">5</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">Days</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">FREEZE CRYSTALS</span>
+<div class="mt-2 flex items-center justify-between">
+<div>
+<span class="font-headline-xl text-headline-xl font-bold text-primary-fixed">2</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 3</span>
+</div>
+<div class="flex -space-x-1">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="material-symbols-outlined text-[20px] text-surface-variant">diamond</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pro Allowance Banner -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-primary-fixed/20 text-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Pro Vacation Pass Active</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-micro-counter text-micro-counter font-bold flex-shrink-0">
+        0 CRYSTALS USED
+      </span>
+</div>
+<!-- Visual Halo Notification Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold text-on-surface">Vacation Halo Activated</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-1 leading-normal">
+          Your 24-day and 30-day streak flames will display a warm vacation halo ✈️ and will resume seamlessly on <strong class="text-on-surface">Tuesday, Oct 29 at 08:00 AM</strong>.
+        </p>
+</div>
+</div>
+</div>
+<!-- Automation & Return Settings -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-md space-y-space-md">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Automation &amp; Return</h3>
+<div class="space-y-3">
+<!-- Setting 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex-1 pr-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Auto-Resume on Return Date</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">Re-enables reminders automatically on Oct 29</p>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Setting 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex-1 pr-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Soft Return Day (No Penalties)</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">First day back provides 24h grace window before cutoff</p>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Setting 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex-1 pr-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Mute Push Notifications</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">Suppress daily check-ins during vacation window</p>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-fixed p-1 transition-colors flex items-center flex-shrink-0" onclick="this.classList.toggle('bg-primary-fixed'); this.classList.toggle('bg-surface-container-highest'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('bg-on-primary-fixed'); dot.classList.toggle('bg-on-surface-variant');" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary-fixed transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary & Secondary Action CTAs -->
+<div class="pt-space-xs space-y-2.5">
+<button class="w-full h-14 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-lg hover:brightness-105 active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">flight_takeoff</span>
+<span>Confirm &amp; Activate Vacation Buffer</span>
+</button>
+<button class="w-full h-12 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center active:scale-[0.98] hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button">
+      Cancel &amp; Keep Active Schedule
+    </button>
+</div>
+</div></main></body></html>

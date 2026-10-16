@@ -1,0 +1,817 @@
+{
+  "projectId": "13101509909071158775",
+  "title": "Streaks Habit Tracker Design System",
+  "screenCount": 45,
+  "screens": [
+    {
+      "id": "6cee65d1ec3f4b2e8fe01205a2c4625c",
+      "slug": "main-dashboard",
+      "title": "STREAKS - Main Dashboard",
+      "canvasLabel": "STREAKS - Main Dashboard",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2364",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1024,
+        "y": 0
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "dc7e61d7c8f54382afbb63f9cc987f1a",
+      "slug": "insights-analytics",
+      "title": "STREAKS - Insights & Analytics",
+      "canvasLabel": "STREAKS - Insights & Analytics",
+      "inListScreens": true,
+      "width": "780",
+      "height": "3540",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1478,
+        "y": 0
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "b9d7fcc4266a4e78a02aa87a5739fef2",
+      "slug": "habits-manager",
+      "title": "STREAKS - Habits Manager",
+      "canvasLabel": "STREAKS - Habits Manager",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2602",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1932,
+        "y": 0
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "c1753df5fa4f4488ad4fc154d625f405",
+      "slug": "welcome-onboarding",
+      "title": "STREAKS - Welcome & Onboarding",
+      "canvasLabel": "STREAKS - Welcome & Onboarding",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 2026
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "1d664b43dfb64fdc8822fbe1f182702b",
+      "slug": "create-habit",
+      "title": "STREAKS - Create Habit",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2076",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 2026
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "c1fd52536a5d4e52aa4899bf2e6ea697",
+      "slug": "authentication",
+      "title": "STREAKS - Authentication",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1928",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 2026
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "21b4c794f398450aa675d1b58f2b8d78",
+      "slug": "profile-settings",
+      "title": "STREAKS - Profile & Settings",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2564",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1362,
+        "y": 2026
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "49ae6bbc432c46528bbc701e5f3d85a4",
+      "slug": "habit-details-calendar-history",
+      "title": "STREAKS - Habit Details & Calendar History",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "3248",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 3166
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "cff8aa87182e4e45879d8f45959e833b",
+      "slug": "edit-habit",
+      "title": "STREAKS - Edit Habit",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "3624",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 5046
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "5839315ca9464a37bd66e8ef014e4caf",
+      "slug": "habit-archive-deletion-confirmation",
+      "title": "STREAKS - Habit Archive & Deletion Confirmation",
+      "canvasLabel": "STREAKS - Habit Archive & Deletion Confirmation",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 6186
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "9cb66d183d284cab855ef50a24b1493c",
+      "slug": "onboarding-step-2",
+      "title": "STREAKS - Onboarding Step 2",
+      "canvasLabel": "STREAKS - Onboarding Step 2",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 7326
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "d007905083fd4494a978660f9c38b84f",
+      "slug": "onboarding-step-3",
+      "title": "STREAKS - Onboarding Step 3",
+      "canvasLabel": "STREAKS - Onboarding Step 3",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 7326
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "b93e35fc0faa4040ae25a7b7fa5afa82",
+      "slug": "onboarding-step-1",
+      "title": "STREAKS - Onboarding Step 1",
+      "canvasLabel": "STREAKS - Onboarding Step 1",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 7326
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "b2105b5e002041c1998996e017be78de",
+      "slug": "sign-in",
+      "title": "STREAKS - Sign In",
+      "canvasLabel": "STREAKS - Sign In",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1970",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 8466
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "d85e69bc245347a897e229616c041d59",
+      "slug": "create-account",
+      "title": "STREAKS - Create Account",
+      "canvasLabel": "STREAKS - Create Account",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2604",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 8466
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "f8aa1dda088f43889ccb5888d0f8f862",
+      "slug": "forgot-password",
+      "title": "STREAKS - Forgot Password",
+      "canvasLabel": "STREAKS - Forgot Password",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1792",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 10024
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "adb84727a1a64bf2b2e94fb189877d45",
+      "slug": "password-reset-email-sent",
+      "title": "STREAKS - Password Reset Email Sent",
+      "canvasLabel": "STREAKS - Password Reset Email Sent",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2148",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 10024
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "94b50a4a6021494f844934eb919046af",
+      "slug": "auth-error-recovery",
+      "title": "STREAKS - Auth Error & Recovery",
+      "canvasLabel": "STREAKS - Auth Error & Recovery",
+      "inListScreens": true,
+      "width": "780",
+      "height": "1972",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 10024
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "8ace8a2878e44a34ae5da692ef29a684",
+      "slug": "session-expired-account-confirmation",
+      "title": "STREAKS - Session Expired & Account Confirmation",
+      "canvasLabel": "STREAKS - Session Expired & Account Confirmation",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2334",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1362,
+        "y": 10024
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "853a785d69a0448397f04d4a51ace1fe",
+      "slug": "empty-dashboard",
+      "title": "STREAKS - Empty Dashboard",
+      "canvasLabel": "STREAKS - Empty Dashboard",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2068",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 11447
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "77bf941ac82144458532889b34ad240c",
+      "slug": "empty-habits-manager",
+      "title": "STREAKS - Empty Habits Manager",
+      "canvasLabel": "STREAKS - Empty Habits Manager",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2696",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 11447
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "5d8bf74b821043719177a35cd52f8d2e",
+      "slug": "empty-insights-analytics",
+      "title": "STREAKS - Empty Insights & Analytics",
+      "canvasLabel": "STREAKS - Empty Insights & Analytics",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2724",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 11447
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "6f0d54b400f14767ae8879e843b2545d",
+      "slug": "habit-already-completed-today",
+      "title": "STREAKS - Habit Already Completed Today",
+      "canvasLabel": "STREAKS - Habit Already Completed Today",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2504",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 13065
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "7a4499fc03d34c1f8af3ad6002435c07",
+      "slug": "hold-to-complete-success-interaction",
+      "title": "STREAKS - Hold-to-Complete Success Interaction",
+      "canvasLabel": "STREAKS - Hold-to-Complete Success Interaction",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2500",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 13065
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "8aee2b038f0b45f8b6bf01938f608829",
+      "slug": "streak-milestone-celebration",
+      "title": "STREAKS - Streak Milestone Celebration",
+      "canvasLabel": "STREAKS - Streak Milestone Celebration",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2708",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 13065
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "c3a555505cd44885aafd33cd6f70cd17",
+      "slug": "completion-history-calendar-empty-state",
+      "title": "STREAKS - Completion History & Calendar Empty State",
+      "canvasLabel": "STREAKS - Completion History & Calendar Empty State",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2488",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1362,
+        "y": 13065
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "1264404c1c0f490f87e6f4ae262f5d3e",
+      "slug": "pending-synchronization-queue",
+      "title": "STREAKS - Pending Synchronization Queue",
+      "canvasLabel": "STREAKS - Pending Synchronization Queue",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2444",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 14675
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "7d7dda087db644a8b5a3a3a6118ce160",
+      "slug": "sync-failure-recovery",
+      "title": "STREAKS - Sync Failure & Recovery",
+      "canvasLabel": "STREAKS - Sync Failure & Recovery",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2406",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 14675
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "d503188fbdfe40248e495a4538df780d",
+      "slug": "offline-mode-local-cache",
+      "title": "STREAKS - Offline Mode & Local Cache",
+      "canvasLabel": "STREAKS - Offline Mode & Local Cache",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2888",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 14675
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "9b5dc7df7986487eb5d354b08e2e6b2a",
+      "slug": "account-data-loading-sync-confirmation",
+      "title": "STREAKS - Account Data Loading & Sync Confirmation",
+      "canvasLabel": "STREAKS - Account Data Loading & Sync Confirmation",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2664",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1362,
+        "y": 14675
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "9080457d54364a768e1495aa0ea1dc96",
+      "slug": "streaks-pro-paywall",
+      "title": "STREAKS - Streaks Pro Paywall",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2816",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 16375
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "d416a67286484b2db5dc3f1ed5352054",
+      "slug": "premium-feature-comparison",
+      "title": "STREAKS - Premium Feature Comparison",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "4510",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 16375
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "a41b8d1b4b714e9ba54ca5cbb78d5d9b",
+      "slug": "restore-purchases-subscription-management",
+      "title": "STREAKS - Restore Purchases & Subscription Management",
+      "canvasLabel": "Generating Screen...",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2980",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 16375
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "c1f4b9469ffe4cdbb24de6b5de66250e",
+      "slug": "insights-native-ad-ad-states",
+      "title": "STREAKS - Insights Native Ad & Ad States",
+      "canvasLabel": "STREAKS - Insights Native Ad & Ad States",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2764",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 18886
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "6b4a142ea1924e9297c0158f0120579f",
+      "slug": "free-habit-limit-upgrade-sheet",
+      "title": "STREAKS - Free Habit Limit & Upgrade Sheet",
+      "canvasLabel": "STREAKS - Free Habit Limit & Upgrade Sheet",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2098",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 18886
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "65f0985d18bd4332ba8277ab0fb4e89f",
+      "slug": "pro-paywall-modal",
+      "title": "STREAKS - Pro Paywall Modal",
+      "canvasLabel": "STREAKS - Pro Paywall Modal",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2796",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 908,
+        "y": 18886
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "ccb35e784a85497d8fe7c5626d86145c",
+      "slug": "purchase-states-subscription-management",
+      "title": "STREAKS - Purchase States & Subscription Management",
+      "canvasLabel": "STREAKS - Purchase States & Subscription Management",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2146",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 1362,
+        "y": 18886
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "6691a184686a49ca843c78ab789b4e9f",
+      "slug": "app-icon-picker-custom-themes",
+      "title": "STREAKS - App Icon Picker & Custom Themes",
+      "canvasLabel": "STREAKS - App Icon Picker & Custom Themes",
+      "inListScreens": true,
+      "width": "780",
+      "height": "3716",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 20540
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "1a058fe29191440dac0348769be068d8",
+      "slug": "lock-screen-live-activity-widgets",
+      "title": "STREAKS - Lock Screen & Live Activity Widgets",
+      "canvasLabel": "STREAKS - Lock Screen & Live Activity Widgets",
+      "inListScreens": true,
+      "width": "780",
+      "height": "3330",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 22654
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "3a5ec197b0434a47841cfee56630daa2",
+      "slug": "push-check-in-alerts",
+      "title": "STREAKS - Push & Check-in Alerts",
+      "canvasLabel": "STREAKS - Push & Check-in Alerts",
+      "inListScreens": true,
+      "width": "780",
+      "height": "4080",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 24575
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "12e33292c0334bf78e5aef613b92793e",
+      "slug": "streak-freeze-repair",
+      "title": "STREAKS - Streak Freeze & Repair",
+      "canvasLabel": "STREAKS - Streak Freeze & Repair",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2898",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 26871
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "cb7b44ee8ffe4f59b2177946ba3bb415",
+      "slug": "vacation-planned-buffer",
+      "title": "STREAKS - Vacation & Planned Buffer",
+      "canvasLabel": "STREAKS - Vacation & Planned Buffer",
+      "inListScreens": true,
+      "width": "780",
+      "height": "4444",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 28576
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "7a714bf4c0134c0fb77583a6ada0e168",
+      "slug": "dashboard-active-vacation-mode",
+      "title": "STREAKS - Dashboard (Active Vacation Mode)",
+      "canvasLabel": "STREAKS - Dashboard (Active Vacation Mode)",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2966",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 31054
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "9325990ab3ae428396121b377fe981c9",
+      "slug": "guest-mode-experience",
+      "title": "STREAKS - Guest Mode Experience",
+      "canvasLabel": "STREAKS - Guest Mode Experience",
+      "inListScreens": true,
+      "width": "780",
+      "height": "2652",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 0,
+        "y": 32793
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    },
+    {
+      "id": "ce34e5f7af2441d69f4e3d1ef2340436",
+      "slug": "starter-habit-templates",
+      "title": "STREAKS - Starter Habit Templates",
+      "canvasLabel": "STREAKS - Starter Habit Templates",
+      "inListScreens": true,
+      "width": "780",
+      "height": "4642",
+      "deviceType": "MOBILE",
+      "canvas": {
+        "x": 454,
+        "y": 32793
+      },
+      "files": {
+        "htmlCode": "index.html",
+        "screenshot": "screenshot.png"
+      }
+    }
+  ]
+}

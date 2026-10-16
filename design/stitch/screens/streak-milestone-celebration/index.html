@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#1c1b1b", "on-primary-fixed-variant": "#374e00", "secondary-fixed-dim": "#c6c5d5", "secondary": "#c6c5d5", "secondary-container": "#474855", "on-secondary-container": "#b7b7c7", "surface": "#131313", "surface-dim": "#131313", "primary-container": "#bcf540", "tertiary-container": "#d5e3ff", "on-tertiary-fixed": "#001c3b", "surface-variant": "#353534", "on-background": "#e5e2e1", "tertiary-fixed-dim": "#a6c8ff", "on-tertiary-fixed-variant": "#004787", "on-secondary": "#2f2f3c", "surface-container-high": "#2a2a2a", "on-error": "#690005", "primary-fixed-dim": "#a1d820", "on-surface-variant": "#c3c9af", "primary": "#ffffff", "tertiary-fixed": "#d5e3ff", "on-tertiary": "#00305f", "background": "#131313", "surface-container": "#201f1f", "inverse-surface": "#e5e2e1", "primary-fixed": "#bcf540", "outline-variant": "#434935", "on-primary-container": "#4f6e00", "on-secondary-fixed": "#1a1b26", "error": "#ffb4ab", "tertiary": "#ffffff", "surface-container-lowest": "#0e0e0e", "surface-container-highest": "#353534", "on-primary": "#253600", "inverse-on-surface": "#313030", "outline": "#8d937c", "surface-bright": "#3a3939", "on-surface": "#e5e2e1", "inverse-primary": "#4a6700", "surface-tint": "#a1d820", "error-container": "#93000a", "on-primary-fixed": "#141f00", "on-secondary-fixed-variant": "#454653", "on-tertiary-container": "#1165b7", "secondary-fixed": "#e2e1f2", "on-error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "gutter": "1rem", "gutter-mobile": "0.75rem", "margin": "1.25rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, fontFamily: { "body-md": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "display-hero": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "display-hero-mobile": ["Inter"], "micro-counter": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "caption-caps": ["Inter"] }, fontSize: { "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-hero-mobile": ["42px", { "lineHeight": "46px", "letterSpacing": "-0.035em", "fontWeight": "800" }], "micro-counter": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "caption-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col items-center pt-space-xs"><div class="w-12 h-1.5 rounded-full bg-surface-variant"></div></div><div class="h-14 px-gutter flex items-center justify-between"><button aria-label="Dismiss Modal" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">close</span></button><h1 class="text-headline-md font-headline-md text-on-surface tracking-tight uppercase">Milestone Celebration</h1><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 w-full pt-14 pb-safe px-margin-mobile bg-surface"><div class="flex flex-col w-full pb-8 relative select-none">
+<!-- Glowing Neon Radial Aura -->
+<div class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-primary-fixed/15 blur-3xl -z-10"></div>
+<!-- Milestone Unlocked Kinetic Header -->
+<div class="flex flex-col items-center justify-center pt-2 pb-4">
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-primary-fixed/10 shadow-[0_0_16px_-2px_rgba(188,245,64,0.35)]">
+<span class="material-symbols-outlined text-[15px] text-primary-fixed animate-pulse" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-primary-fixed font-bold">Milestone Unlocked</span>
+<span class="material-symbols-outlined text-[15px] text-primary-fixed animate-pulse" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<!-- Interactive Milestone Segmented Tabs -->
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center justify-between mb-6 shadow-inner">
+<button class="flex-1 py-2 rounded-lg text-center font-label-sm text-label-sm transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="tab-7" onclick="switchMilestone(7)">
+      7 DAYS
+    </button>
+<button class="flex-1 py-2 rounded-lg text-center font-label-sm text-label-sm transition-all duration-200 bg-surface-container-high text-primary-fixed font-bold shadow-md" id="tab-30" onclick="switchMilestone(30)">
+      30 DAYS <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-fixed ml-0.5 animate-ping"></span>
+</button>
+<button class="flex-1 py-2 rounded-lg text-center font-label-sm text-label-sm transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="tab-100" onclick="switchMilestone(100)">
+      100 DAYS
+    </button>
+</div>
+<!-- Grand Celebratory Emblem Display -->
+<div class="relative w-full flex flex-col items-center justify-center py-5 overflow-visible">
+<!-- Spark / Ray burst SVG -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+<svg class="w-64 h-64 animate-[spin_40s_linear_infinite]" fill="none" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="88" stroke="#bcf540" stroke-dasharray="2 12" stroke-opacity="0.6" stroke-width="1"></circle>
+<circle cx="100" cy="100" r="72" stroke="#bcf540" stroke-dasharray="4 8" stroke-opacity="0.3" stroke-width="1.5"></circle>
+<path d="M100 0 L100 20M100 180 L100 200M0 100 L20 100M180 100 L200 100M29 29 L43 43M157 157 L171 171M29 171 L43 157M157 43 L171 29" stroke="#bcf540" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<!-- Tier Emblem Core SVG Graphic with Tactile Depth -->
+<div class="relative z-10 w-44 h-44 flex items-center justify-center">
+<!-- Outer Glow Ring Frame -->
+<div class="absolute inset-0 rounded-full bg-gradient-to-b from-primary-fixed/20 to-transparent blur-md"></div>
+<svg class="w-40 h-40 filter drop-shadow-[0_0_24px_rgba(188,245,64,0.45)] transition-transform duration-500 hover:scale-105" fill="none" id="emblem-svg" viewbox="0 0 160 160">
+<!-- Outer faceted hexagon -->
+<polygon fill="#1c1b1b" points="80,8 144,45 144,115 80,152 16,115 16,45" stroke="#353534" stroke-width="2"></polygon>
+<!-- Inner glowing neon runic track -->
+<polygon fill="#131313" points="80,16 136,49 136,111 80,144 24,111 24,49" stroke="#bcf540" stroke-dasharray="90 8" stroke-width="2"></polygon>
+<!-- Accent corner rivets -->
+<circle cx="80" cy="16" fill="#bcf540" r="3"></circle>
+<circle cx="136" cy="49" fill="#bcf540" r="3"></circle>
+<circle cx="136" cy="111" fill="#bcf540" r="3"></circle>
+<circle cx="80" cy="144" fill="#bcf540" r="3"></circle>
+<circle cx="24" cy="111" fill="#bcf540" r="3"></circle>
+<circle cx="24" cy="49" fill="#bcf540" r="3"></circle>
+<!-- Obsidian Well Badge Inner -->
+<circle cx="80" cy="80" fill="#201f1f" r="48"></circle>
+<circle cx="80" cy="80" fill="#0e0e0e" r="44"></circle>
+<!-- Flame Wings Icon Vector -->
+<path d="M80 42 C85 52 94 58 94 68 C94 76 88 82 80 82 C72 82 66 76 66 68 C66 58 75 52 80 42 Z" fill="#bcf540" fill-opacity="0.18"></path>
+<path d="M80 48 C83 55 89 60 89 68 C89 73 85 77 80 77 C75 77 71 73 71 68 C71 60 77 55 80 48 Z" fill="#bcf540" fill-opacity="0.85"></path>
+<path d="M80 57 C81.5 61 84.5 64 84.5 69 C84.5 71.5 82.5 73.5 80 73.5 C77.5 73.5 75.5 71.5 75.5 69 C75.5 64 78.5 61 80 57 Z" fill="#ffffff"></path>
+<!-- Engraved Milestone Number Text -->
+<text fill="#ffffff" font-family="Inter" font-size="28" font-weight="800" id="badge-number" letter-spacing="-0.04em" text-anchor="middle" x="80" y="112">30</text>
+<text fill="#bcf540" font-family="Inter" font-size="9" font-weight="700" id="badge-unit" letter-spacing="0.15em" text-anchor="middle" x="80" y="125">DAYS STREAK</text>
+</svg>
+</div>
+<!-- Radiant Micro Ticker -->
+<div class="mt-3 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+<span class="font-micro-counter text-micro-counter tracking-widest uppercase text-on-surface-variant font-bold" id="badge-subtitle">VERIFIED DISCIPLINE CADENCE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+</div>
+</div>
+<!-- Achievement Accolade Card -->
+<div class="mt-2 bg-surface-container rounded-2xl p-5 shadow-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/15 text-primary-fixed font-caption-caps text-caption-caps font-bold uppercase tracking-wider" id="tier-pill">
+        TIER II: HABIT INSTINCT
+      </span>
+<span class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">verified</span>
+        Chain Intact
+      </span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight" id="accolade-title">
+        30-Day Instinct Achieved!
+      </h2>
+<p class="font-label-md text-label-md text-primary-fixed font-semibold mt-0.5" id="accolade-habit">
+        Hypertrophy Block A • Zero Missed Days
+      </p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="accolade-desc">
+      Neuroplastic consolidation complete. What began as conscious willpower is now hardwired automatic discipline. The cognitive friction has broken.
+    </p>
+<!-- Visual Progress Highlight Pill -->
+<div class="mt-1 pt-3 flex items-center justify-between border-t border-surface-variant/40">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant tracking-wider">PRACTICE STABILITY</span>
+<div class="flex items-center gap-1.5">
+<div class="w-24 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary-fixed rounded-full shadow-[0_0_8px_rgba(188,245,64,0.8)]" id="stability-bar"></div>
+</div>
+<span class="font-micro-counter text-micro-counter font-bold text-primary-fixed" id="stability-val">100% SOLID</span>
+</div>
+</div>
+</div>
+<!-- Milestone Telemetry Stats: 3-column metric grid -->
+<div class="grid grid-cols-3 gap-2.5 mt-3">
+<!-- Metric 1 -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mb-1">event_available</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="stat-sessions">30 / 30</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant mt-0.5 uppercase tracking-wide">Sessions Logged</span>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mb-1">speed</span>
+<span class="font-headline-md text-headline-md font-bold text-primary-fixed" id="stat-consistency">100%</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant mt-0.5 uppercase tracking-wide">Consistency Idx</span>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mb-1">local_fire_department</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="stat-velocity">Top 4%</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant mt-0.5 uppercase tracking-wide">Peer Velocity</span>
+</div>
+</div>
+<!-- Other Milestones Progression Rail -->
+<div class="bg-surface-container-low rounded-2xl p-4 mt-3 flex flex-col gap-3 shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider font-bold">
+        DISCIPLINE ARCHITECTURE MILESTONES
+      </span>
+<span class="font-micro-counter text-micro-counter text-primary-fixed font-bold">2 OF 3 CLAIMED</span>
+</div>
+<!-- Step 1: 7 Days (Unlocked) -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-sm shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Iron Foundation (7 Days)</span>
+<span class="font-label-sm text-label-sm text-primary-fixed font-semibold">Unlocked ✓</span>
+</div>
+<p class="font-caption-caps text-caption-caps text-on-surface-variant mt-0.5">Initial inertial friction conquered</p>
+</div>
+</div>
+<div class="h-px bg-surface-variant/30 ml-11"></div>
+<!-- Step 2: 30 Days (Just Now) -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-sm shrink-0 shadow-[0_0_12px_rgba(188,245,64,0.6)]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Habit Instinct (30 Days)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/20 text-primary-fixed font-caption-caps text-caption-caps font-bold">Just Now 🎉</span>
+</div>
+<p class="font-caption-caps text-caption-caps text-on-surface-variant mt-0.5">Automated subcortical reflex formed</p>
+</div>
+</div>
+<div class="h-px bg-surface-variant/30 ml-11"></div>
+<!-- Step 3: 100 Days (In Progress) -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold text-label-sm shrink-0 mt-0.5">
+<span class="font-micro-counter text-micro-counter">100</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Centurion Mastery (100 Days)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium" id="next-goal-counter">30/100 Days</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full mt-1.5 overflow-hidden">
+<div class="w-[30%] h-full bg-primary-fixed rounded-full transition-all duration-300" id="centurion-progress-fill"></div>
+</div>
+<p class="font-caption-caps text-caption-caps text-on-surface-variant mt-1.5" id="centurion-subtext">70 days remaining to permanent biological rewiring</p>
+</div>
+</div>
+</div>
+<!-- Celebratory Momentum Quotes -->
+<div class="mt-3 p-3.5 rounded-xl bg-surface-container flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex-1">
+<span class="font-caption-caps text-caption-caps uppercase text-primary-fixed font-bold tracking-wider">NEUROLOGICAL MOMENTUM</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-[13px] leading-tight mt-0.5">
+        "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+      </p>
+</div>
+</div>
+<!-- High-Impact Action Triggers -->
+<div class="mt-6 flex flex-col gap-2.5">
+<!-- Primary CTA: Share Milestone Card with Neon Bloom -->
+<button class="w-full h-14 bg-primary-fixed hover:bg-primary-fixed-dim active:scale-[0.98] transition-all rounded-2xl flex items-center justify-center gap-2 shadow-[0_0_24px_-4px_rgba(188,245,64,0.5)] cursor-pointer" onclick="triggerShareAction()">
+<span class="material-symbols-outlined text-on-primary-fixed text-[22px]">share</span>
+<span class="font-label-md text-label-md font-bold text-on-primary-fixed tracking-tight uppercase">Share Milestone Card</span>
+<span class="material-symbols-outlined text-on-primary-fixed text-[18px]">north_east</span>
+</button>
+<!-- Secondary CTA: Claim & Return -->
+<button class="w-full h-12 bg-surface-container-high hover:bg-surface-bright active:scale-[0.99] transition-all rounded-2xl flex items-center justify-center gap-2 text-on-surface cursor-pointer" onclick="triggerClaimAction()">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-label-md text-label-md font-medium text-on-surface tracking-normal">Claim Milestone Badge &amp; Return</span>
+</button>
+</div>
+</div>
+<script>
+  const milestoneData = {
+    7: {
+      number: "7",
+      unit: "DAYS STREAK",
+      subtitle: "THRESHOLD OF CONTINUITY",
+      tier: "TIER I: IRON FOUNDATION",
+      title: "7-Day Iron Foundation!",
+      habit: "Hypertrophy Block A • First Full Week",
+      desc: "Activation energy cleared. You navigated the initial inertia curve and built the baseline routine necessary for long-term physiological adaptation.",
+      stability: "65%",
+      stabilityLabel: "INITIAL BOND",
+      sessions: "7 / 7",
+      consistency: "100%",
+      velocity: "Top 18%",
+      color: "#bcf540"
+    },
+    30: {
+      number: "30",
+      unit: "DAYS STREAK",
+      subtitle: "VERIFIED DISCIPLINE CADENCE",
+      tier: "TIER II: HABIT INSTINCT",
+      title: "30-Day Instinct Achieved!",
+      habit: "Hypertrophy Block A • Zero Missed Days",
+      desc: "Neuroplastic consolidation complete. What began as conscious willpower is now hardwired automatic discipline. The cognitive friction has broken.",
+      stability: "100%",
+      stabilityLabel: "100% SOLID",
+      sessions: "30 / 30",
+      consistency: "100%",
+      velocity: "Top 4%",
+      color: "#bcf540"
+    },
+    100: {
+      number: "100",
+      unit: "DAYS STREAK",
+      subtitle: "APEX UNBREAKABLE CADENCE",
+      tier: "TIER III: CENTURION MASTERY",
+      title: "Centurion Mastery Achieved!",
+      habit: "Hypertrophy Block A • Triple Digit Club",
+      desc: "Monumental consistency. This habit is no longer a scheduled effort—it is an inseparable cornerstone of your physical identity.",
+      stability: "100%",
+      stabilityLabel: "PERMANENT ARCHITECTURE",
+      sessions: "100 / 100",
+      consistency: "100%",
+      velocity: "Top 0.5%",
+      color: "#bcf540"
+    }
+  };
+
+  function switchMilestone(days) {
+    const data = milestoneData[days];
+    if (!data) return;
+
+    // Update active tab styles
+    [7, 30, 100].forEach(d => {
+      const tab = document.getElementById('tab-' + d);
+      if (d === days) {
+        tab.className = "flex-1 py-2 rounded-lg text-center font-label-sm text-label-sm transition-all duration-200 bg-surface-container-high text-primary-fixed font-bold shadow-md";
+        tab.innerHTML = d + " DAYS " + (d === 30 ? '<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-fixed ml-0.5 animate-ping"></span>' : '');
+      } else {
+        tab.className = "flex-1 py-2 rounded-lg text-center font-label-sm text-label-sm transition-all duration-200 text-on-surface-variant hover:text-on-surface";
+        tab.innerText = d + " DAYS";
+      }
+    });
+
+    // Animate emblem badge update
+    const emblem = document.getElementById('emblem-svg');
+    emblem.classList.add('scale-95');
+    setTimeout(() => {
+      document.getElementById('badge-number').textContent = data.number;
+      document.getElementById('badge-unit').textContent = data.unit;
+      document.getElementById('badge-subtitle').textContent = data.subtitle;
+      document.getElementById('tier-pill').textContent = data.tier;
+      document.getElementById('accolade-title').textContent = data.title;
+      document.getElementById('accolade-habit').textContent = data.habit;
+      document.getElementById('accolade-desc').textContent = data.desc;
+      document.getElementById('stability-bar').style.width = data.stability;
+      document.getElementById('stability-val').textContent = data.stabilityLabel;
+      document.getElementById('stat-sessions').textContent = data.sessions;
+      document.getElementById('stat-consistency').textContent = data.consistency;
+      document.getElementById('stat-velocity').textContent = data.velocity;
+      emblem.classList.remove('scale-95');
+    }, 120);
+  }
+
+  function triggerShareAction() {
+    if (navigator.share) {
+      navigator.share({
+        title: '30-Day Streak Milestone Unlocked!',
+        text: 'I just locked in 30 days of consecutive Hypertrophy training on STREAKS. Hardwired automatic discipline.',
+        url: window.location.href
+      }).catch(() => {});
+    } else {
+      // Tactile visual feedback if native share unavailable
+      const btn = event.currentTarget;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-on-primary-fixed text-[22px]">done_all</span><span class="font-label-md text-label-md font-bold text-on-primary-fixed uppercase">Milestone Link Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 1800);
+    }
+  }
+
+  function triggerClaimAction() {
+    const btn = event.currentTarget;
+    btn.innerHTML = '<span class="material-symbols-outlined text-primary-fixed text-[18px]">verified</span><span class="font-label-md text-label-md font-semibold text-primary-fixed">Claimed to Profile Trophy Room</span>';
+    setTimeout(() => {
+      if (window.history.length > 1) {
+        window.history.back();
+      }
+    }, 800);
+  }
+</script></main></body></html>
