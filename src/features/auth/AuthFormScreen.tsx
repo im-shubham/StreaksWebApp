@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { BrandLogo } from '@/components/brand/BrandLogo';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { AuthDivider, GoogleButton } from '@/components/ui/GoogleButton';
@@ -12,7 +13,7 @@ import { Text } from '@/components/ui/Text';
 import { TextField } from '@/components/ui/TextField';
 import { isFirebaseConfigured } from '@/services/firebase';
 import { googleAvailability } from '@/services/googleSignIn';
-import { alpha, colors, glow, radius, spacing } from '@/theme';
+import { colors, glow, radius, spacing } from '@/theme';
 import { authErrorMessage } from './authErrors';
 import { useAuth } from './AuthProvider';
 
@@ -105,13 +106,9 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + spacing['space-xl'] }]} keyboardShouldPersistTaps="handled">
           <View style={{ alignItems: 'center' }}>
-            <View style={[styles.mark, glow]}>
-              <View style={styles.markInner}>
-                <Icon name="local_fire_department" size={32} color="primary-fixed" />
-              </View>
-            </View>
+            <BrandLogo size={72} />
             <Text variant="caption-caps" color="primary-fixed" style={{ marginTop: spacing['space-lg'] }}>
-              {signUpMode ? 'Streaks Core Engine' : 'Momentum Engine'}
+              {signUpMode ? 'Join Momentum' : 'Momentum Engine'}
             </Text>
             <Text variant="headline-xl" align="center">
               {signUpMode ? 'Start your streak.' : 'Welcome back.'}
@@ -127,7 +124,7 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
             <Card tone="surface-container" padding={spacing['space-md']} style={styles.notice}>
               <Icon name="cloud_off" size={20} color="warning" />
               <Text variant="label-md" color="on-surface-variant" style={{ flex: 1 }}>
-                Cloud accounts aren’t configured in this build yet. You can keep using STREAKS as a guest; your habits
+                Cloud accounts aren’t configured in this build yet. You can keep using MOMENTUM as a guest; your habits
                 stay on this device.
               </Text>
             </Card>
@@ -227,23 +224,6 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.surface },
   topBar: { height: 56, flexDirection: 'row', alignItems: 'center', paddingHorizontal: spacing['space-sm'] },
   body: { paddingHorizontal: spacing['margin-mobile'] + 4, paddingTop: spacing['space-md'], gap: spacing['space-lg'] },
-  mark: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    borderWidth: 6,
-    borderColor: alpha(colors['primary-fixed'], 0.15),
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  markInner: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
-    backgroundColor: colors['surface-container-high'],
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   notice: { flexDirection: 'row', alignItems: 'center', gap: spacing['space-sm'] + 4, borderRadius: radius.xl },
   switchRow: { flexDirection: 'row', justifyContent: 'center', gap: 8, flexWrap: 'wrap' },
 });

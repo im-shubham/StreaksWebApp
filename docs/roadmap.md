@@ -8,12 +8,17 @@ The Stitch designs (`design/stitch`) are implemented in stages. The live per-scr
 | 1 | Core tracking | Main Dashboard, Empty Dashboard, Habits Manager, Empty Habits Manager, Create Habit | **Done** |
 | MVP | Usable app: guest mode, Welcome, Sign In, Create Account, Profile (account + sync + sign out), Firebase Auth (email/password, persisted session), Firestore sync, Free plan = 1 active habit | Welcome & Onboarding, Sign In, Create Account, Profile & Settings (subset) | **Done**: needs your Firebase project to go live ([setup](setup/firebase-console.md)) |
 | 2 | Habit depth | Edit Habit, Habit Details & Calendar, Completion History empty state, Hold-to-Complete Success, Already Completed Today, Archive & Delete, Starter Templates, Streak Freeze & Repair, Vacation Buffer, Dashboard (Vacation Mode), Milestone Celebration, Push & Check-in Alerts (local notifications) | Next |
-| 3 | Insights & settings | Insights & Analytics, Empty Insights, Profile & Settings, App Icon & Themes | Planned |
+| 3 | Insights & settings | Insights & Analytics, Empty Insights, Profile & Settings, App Icon & Themes | **Insights done** (consistency, streaks, 14-week heatmap, recent activity; Temporal Peak, Top Habits and Export deferred). App icon = MOMENTUM logo. Settings/themes planned |
 | 4 | Onboarding & accounts (Firebase Auth) | Welcome, Onboarding 1–3, Authentication, Sign In, Create Account, Forgot Password, Reset Email Sent, Auth Error, Session Expired, Guest Mode | Planned |
 | 5 | Sync & offline (Firestore) | Account Data Loading, Offline Mode, Pending Sync Queue, Sync Failure & Recovery | Planned |
 | 6 | Monetization & platform | Pro Paywall, Paywall Modal, Feature Comparison, Free Limit Sheet, Purchase States, Restore Purchases, Native Ads, Widgets & Live Activities | Planned |
 
 Deferred by decision: Pro purchases, ads, AI features, advanced streak features (freeze, vacation), and the remaining non-essential screens.
+
+Insights notes:
+
+- Rates use scheduled occurrences: done (completed or frozen) ÷ (done + missed). Rest days, vacation days, days before a habit started and today-not-yet-done are excluded. Paused habits keep their check-ins, but their unchecked days are not counted as missed (no pause date is stored).
+- Archived habits are excluded, matching the Streaks and Habits tabs.
 
 Stage 1 caveats:
 

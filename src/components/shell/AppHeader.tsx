@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 
-import { FlameMark } from '@/components/streaks/FlameMark';
+import { APP_NAME, BrandLogo } from '@/components/brand/BrandLogo';
 import { Icon } from '@/components/ui/Icon';
 import { Text } from '@/components/ui/Text';
 import { alpha, colors, radius, spacing } from '@/theme';
@@ -10,7 +10,7 @@ import { alpha, colors, radius, spacing } from '@/theme';
 export const HEADER_HEIGHT = 64;
 
 /**
- * Tab-screen header from the Stitch tab screens: flame logo, "STREAKS"
+ * Tab-screen header from the Stitch tab screens: brand logo, app-name
  * micro-caps over the screen title, "All Daily" filter pill, avatar.
  */
 export function AppHeader({ title, avatarInitial }: { title: string; avatarInitial?: string }) {
@@ -19,10 +19,10 @@ export function AppHeader({ title, avatarInitial }: { title: string; avatarIniti
     <View style={[styles.wrap, { paddingTop: insets.top }]}>
       <View style={styles.row}>
         <View style={styles.brand}>
-          <FlameMark size={32} />
+          <BrandLogo size={36} />
           <View>
             <Text variant="caption-caps" color="primary-fixed">
-              Streaks
+              {APP_NAME}
             </Text>
             <Text variant="headline-md" style={{ lineHeight: 22 }}>
               {title}

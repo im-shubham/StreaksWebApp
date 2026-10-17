@@ -17,7 +17,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { FlameMark } from '@/components/streaks/FlameMark';
+import { APP_NAME, APP_TAGLINE, BrandLogo } from '@/components/brand/BrandLogo';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
@@ -31,10 +31,10 @@ import { alpha, colors, glow, radius, spacing } from '@/theme';
 const enter = (delay: number) => FadeInDown.delay(delay).duration(420).easing(Easing.out(Easing.cubic)).reduceMotion(ReduceMotion.System);
 
 /**
- * Stitch: "STREAKS - Welcome & Onboarding". "Get Started" continues as a guest.
+ * Stitch: "STREAKS - Welcome & Onboarding", rebranded MOMENTUM. "Get Started" continues as a guest.
  *
  * Sizes follow the Stitch markup (display-hero-mobile title, headline-md
- * tagline, body-md subtitle, w-28 badge with a w-16 flame, p-space-md card,
+ * tagline, body-md subtitle, w-28 logo badge, p-space-md card,
  * h-14 pill buttons with gap-space-sm). Short screens (iPhone SE / mini)
  * tighten vertical spacing; the action buttons stay docked to the bottom
  * safe area and the content scrolls only if Dynamic Type makes it taller
@@ -77,24 +77,20 @@ export function WelcomeScreen() {
           <RadialGlow size={320} opacity={0.14} style={styles.backlight} />
           <Animated.View entering={ZoomIn.springify().damping(14).reduceMotion(ReduceMotion.System)} style={styles.badgeWrap}>
             <PulseHalo size={badge} />
-            <View style={[styles.badge, { width: badge, height: badge, borderRadius: badge / 2 }]}>
-              <View style={glow}>
-                <FlameMark size={compact ? 56 : 64} />
-              </View>
-            </View>
+            <BrandLogo size={badge} />
           </Animated.View>
 
           <Animated.View entering={enter(120)} style={styles.titles}>
             <Text variant="display-hero-mobile" align="center" uppercase fit accessibilityRole="header">
-              Streaks
+              {APP_NAME}
             </Text>
             <Text variant="headline-md" color="primary-fixed" align="center" style={{ marginTop: spacing['space-xs'] }}>
-              Build habits. Keep your streak.
+              {APP_TAGLINE}
             </Text>
           </Animated.View>
           <Animated.View entering={enter(200)}>
             <Text variant="body-md" color="secondary" align="center" style={{ marginTop: 4 }}>
-              Small actions. Big momentum.
+              Build habits. Keep your streak.
             </Text>
           </Animated.View>
         </View>
@@ -156,11 +152,14 @@ export function WelcomeScreen() {
             style={{ borderRadius: radius.full, minHeight: 56, backgroundColor: colors['surface-container-low'] }}
           />
         </Animated.View>
-        <Animated.View entering={FadeIn.delay(620).duration(400).reduceMotion(ReduceMotion.System)} style={styles.footer}>
-          <Icon name="cloud_done" size={13} color="secondary" />
-          <Text variant="micro-counter" color="secondary" align="center" style={{ flexShrink: 1 }}>
-            Start as a guest · Create an account anytime
-          </Text>
+        {/* FadeIn animates opacity, so the footer's resting 0.7 opacity lives on an inner view. */}
+        <Animated.View entering={FadeIn.delay(620).duration(400).reduceMotion(ReduceMotion.System)}>
+          <View style={styles.footer}>
+            <Icon name="cloud_done" size={13} color="secondary" />
+            <Text variant="micro-counter" color="secondary" align="center" style={{ flexShrink: 1 }}>
+              Start as a guest · Create an account anytime
+            </Text>
+          </View>
         </Animated.View>
       </View>
     </ScrollView>
@@ -191,7 +190,6 @@ const styles = StyleSheet.create({
   hero: { alignItems: 'center' },
   backlight: { position: 'absolute', top: -40 },
   badgeWrap: { alignItems: 'center', justifyContent: 'center', padding: spacing['space-md'] },
-  badge: { backgroundColor: colors['surface-container-low'], alignItems: 'center', justifyContent: 'center' },
   titles: { alignItems: 'center', alignSelf: 'stretch', marginTop: spacing['space-sm'] },
   previewHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: spacing['space-sm'] },
   streakChip: {

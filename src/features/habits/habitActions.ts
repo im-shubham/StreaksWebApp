@@ -13,7 +13,7 @@ export function showHabitLimit(tier: AccountTier = 'free') {
   const max = PLAN_LIMITS[tier].maxActiveHabits;
   Alert.alert(
     `Free capacity reached (${max}/${max})`,
-    `The Free plan supports ${max} active habit to help you build unbreakable focus. Pause or archive your current habit to start a new one.\n\nStreaks Pro with unlimited habits is coming soon.`,
+    `The Free plan supports ${max} active habit to help you build unbreakable focus. Pause or archive your current habit to start a new one.\n\nMomentum Pro with unlimited habits is coming soon.`,
     [
       { text: 'Manage Habits', onPress: () => router.navigate('/habits') },
       { text: 'OK', style: 'cancel' },

@@ -24,7 +24,7 @@ export function googleAvailability(): GoogleAvailability {
   if (Constants.executionEnvironment === ExecutionEnvironment.StoreClient) {
     return {
       available: false,
-      reason: 'Google sign-in needs the installed STREAKS app (development build). In Expo Go, use email and password.',
+      reason: 'Google sign-in needs the installed MOMENTUM app (development build). In Expo Go, use email and password.',
     };
   }
   if (!webClientId || (Platform.OS === 'ios' && !iosClientId)) {

@@ -4,6 +4,7 @@ import { useSQLiteContext } from 'expo-sqlite';
 import { useState } from 'react';
 import { Alert, Pressable, StyleSheet, View } from 'react-native';
 
+import { APP_NAME } from '@/components/brand/BrandLogo';
 import { TabScreen } from '@/components/shell/TabScreen';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -39,7 +40,7 @@ export function ProfileScreen() {
   const confirmSignOut = () => {
     const unsynced = pending > 0 && sync.state !== 'idle';
     Alert.alert(
-      'Sign Out of STREAKS?',
+      `Sign Out of ${APP_NAME}?`,
       unsynced
         ? `${pending} change${pending === 1 ? '' : 's'} haven’t reached the cloud yet and will be lost. This device’s copy of your habits is removed on sign out.`
         : 'Your habits are saved to your account. This device’s copy is removed and comes back when you sign in again.',
@@ -133,7 +134,7 @@ export function ProfileScreen() {
       </Card>
 
       <Text variant="micro-counter" color="outline" align="center" style={{ marginTop: spacing['space-md'] }}>
-        STREAKS · v{Constants.expoConfig?.version ?? '1.0.0'}
+        {APP_NAME} · v{Constants.expoConfig?.version ?? '1.0.0'}
       </Text>
     </TabScreen>
   );

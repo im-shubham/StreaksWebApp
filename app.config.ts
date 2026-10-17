@@ -13,5 +13,5 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     const id = iosClientId.replace(/\.apps\.googleusercontent\.com$/, '');
     plugins.push(['@react-native-google-signin/google-signin', { iosUrlScheme: `com.googleusercontent.apps.${id}` }]);
   }
-  return { ...config, name: config.name ?? 'STREAKS', slug: config.slug ?? 'streaks', plugins };
+  return { ...config, name: config.name ?? 'MOMENTUM', slug: config.slug ?? 'streaks', plugins };
 };

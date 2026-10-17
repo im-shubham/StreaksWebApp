@@ -29,7 +29,7 @@ export type HabitView = Habit & {
 type VacationRow = { id: string; start_date: string; end_date: string; habit_ids: string | null; ended_early_on: string | null };
 
 /** Today's local date; updates at midnight and when the app returns to the foreground. */
-function useToday(): LocalDate {
+export function useToday(): LocalDate {
   const [date, setDate] = useState(todayDate);
   useEffect(() => {
     const refresh = () => setDate((d) => (d === todayDate() ? d : todayDate()));

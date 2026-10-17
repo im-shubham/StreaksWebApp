@@ -41,8 +41,8 @@ export const STITCH_SCREENS: StitchScreen[] = [
   { slug: 'streak-milestone-celebration', title: 'Streak Milestone Celebration', stage: 2, status: 'planned' },
   { slug: 'push-check-in-alerts', title: 'Push & Check-in Alerts', stage: 2, status: 'planned' },
 
-  { slug: 'insights-analytics', title: 'Insights & Analytics', stage: 3, status: 'planned' },
-  { slug: 'empty-insights-analytics', title: 'Empty Insights & Analytics', stage: 3, status: 'planned' },
+  { slug: 'insights-analytics', title: 'Insights & Analytics', stage: 3, status: 'built', route: '/insights' },
+  { slug: 'empty-insights-analytics', title: 'Empty Insights & Analytics', stage: 3, status: 'built', route: '/insights' },
   { slug: 'profile-settings', title: 'Profile & Settings', stage: 3, status: 'built', route: '/profile' }, // MVP subset: account, sync, sign out
   { slug: 'app-icon-picker-custom-themes', title: 'App Icon Picker & Custom Themes', stage: 3, status: 'planned' },
 

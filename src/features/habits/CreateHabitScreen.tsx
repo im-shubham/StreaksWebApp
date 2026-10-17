@@ -305,7 +305,7 @@ export function CreateHabitScreen() {
               <View style={styles.note}>
                 <Icon name="verified_user" size={18} color="on-surface-variant" />
                 <Text variant="label-md" color="on-surface-variant" style={{ flex: 1 }}>
-                  Streaks will dispatch a daily reminder at {formatTime(time)}.
+                  Momentum will send a daily reminder at {formatTime(time)}.
                 </Text>
               </View>
             ) : null}

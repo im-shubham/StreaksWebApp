@@ -195,7 +195,7 @@ function EmptyHabits() {
       <View style={[styles.sectionHead, { justifyContent: 'flex-start', gap: spacing['space-sm'] }]}>
         <Icon name="info" size={18} color="primary-fixed" />
         <Text variant="caption-caps" color="on-surface">
-          How Habits Work in Streaks
+          How Habits Work in Momentum
         </Text>
       </View>
       {EXPLAINERS.map((e) => (

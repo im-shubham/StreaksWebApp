@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "STREAKS",
+    "name": "MOMENTUM",
     "slug": "streaks",
     "scheme": "streaks",
     "version": "1.0.0",
@@ -15,10 +15,8 @@
     "android": {
       "package": "app.streaks.mobile",
       "adaptiveIcon": {
-        "backgroundColor": "#131313",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#000000",
+        "foregroundImage": "./assets/android-icon-foreground.png"
       },
       "predictiveBackGestureEnabled": false
     },
@@ -29,9 +27,9 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#131313",
+          "backgroundColor": "#000000",
           "image": "./assets/splash-icon.png",
-          "imageWidth": 120
+          "imageWidth": 200
         }
       ],
       "@react-native-community/datetimepicker",
