@@ -87,7 +87,7 @@ export function ProfileScreen() {
           <Text variant="headline-md" numberOfLines={1}>
             {name}
           </Text>
-          <Text variant="body-md" color="on-surface-variant" numberOfLines={1}>
+          <Text variant="body-md" color="on-surface-variant" numberOfLines={2}>
             {signedIn ? auth.user.email : 'Local device storage · Unsynced'}
           </Text>
           <View style={{ flexDirection: 'row', gap: 6, marginTop: 8 }}>
@@ -108,7 +108,7 @@ export function ProfileScreen() {
           <View style={styles.row}>
             <Icon name="warning" size={22} color="warning" filled />
             <View style={{ flex: 1 }}>
-              <Text variant="body-lg" weight="600">
+              <Text variant="label-md" weight="600">
                 Streaks are saved locally
               </Text>
               <Text variant="body-md" color="on-surface-variant">
@@ -161,7 +161,7 @@ function SyncCard({ status, pending, onSync }: { status: SyncStatus; pending: nu
           <Text variant="caption-caps" color="on-surface-variant">
             Cloud Sync
           </Text>
-          <Text variant="body-lg" weight="600" color={view.color === 'error' ? 'error' : 'on-surface'}>
+          <Text variant="label-md" weight="600" color={view.color === 'error' ? 'error' : 'on-surface'}>
             {view.title}
           </Text>
           <Text variant="body-md" color="on-surface-variant">
@@ -199,7 +199,7 @@ function Row({
     >
       <Icon name={icon} size={22} color={color} />
       <View style={{ flex: 1 }}>
-        <Text variant="body-lg" weight="500" color={color}>
+        <Text variant="label-md" weight="600" color={color}>
           {label}
         </Text>
         {sub ? (

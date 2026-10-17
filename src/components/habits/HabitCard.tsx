@@ -37,11 +37,11 @@ export function HabitCard({ habit }: { habit: HabitView }) {
         <View style={[styles.emblem, habit.isPrimary && { backgroundColor: alpha(colors['primary-fixed'], 0.15) }]}>
           <Icon name={habit.emblem} size={24} color={habit.isPrimary ? 'primary-fixed' : 'on-surface-variant'} />
         </View>
-        <View style={{ flex: 1 }}>
-          <Text variant="headline-md" weight="600" numberOfLines={1} color={paused ? 'on-surface-variant' : 'on-surface'}>
+        <View style={styles.titleCol}>
+          <Text variant="headline-md" weight="600" numberOfLines={2} color={paused ? 'on-surface-variant' : 'on-surface'}>
             {habit.name}
           </Text>
-          <Text variant="caption-caps" color="on-surface-variant" numberOfLines={1}>
+          <Text variant="caption-caps" color="on-surface-variant" numberOfLines={2}>
             {meta}
           </Text>
         </View>
@@ -62,7 +62,7 @@ export function HabitCard({ habit }: { habit: HabitView }) {
         {!paused ? (
           <>
             <View style={styles.dot} />
-            <Text variant="label-md" color="on-surface-variant" style={{ flex: 1 }} numberOfLines={1}>
+            <Text variant="label-md" color="on-surface-variant" style={{ flexGrow: 1, flexShrink: 1 }}>
               {done && habit.todayCompletion
                 ? `Completed ${formatClock(habit.todayCompletion.completedAt)}`
                 : habit.todayStatus === 'rest'
@@ -130,18 +130,14 @@ export function HabitCard({ habit }: { habit: HabitView }) {
           {habit.targetLabel ? `Target: ${habit.targetLabel}` : habit.notes ?? ''}
         </Text>
         {!paused && habit.todayStatus === 'pending' ? (
-          <View style={styles.holdChip}>
-            <HoldToComplete
-              icon={habit.emblem}
-              completed={false}
-              size={36}
-              onComplete={() => void checkIn(db, habit.id)}
-              accessibilityLabel={`Hold to complete ${habit.name}`}
-            />
-            <Text variant="label-md" weight="600" color="primary-fixed">
-              Hold to Complete
-            </Text>
-          </View>
+          <HoldToComplete
+            icon={habit.emblem}
+            completed={false}
+            size={32}
+            label="Hold to Complete"
+            onComplete={() => checkIn(db, habit.id)}
+            accessibilityLabel={`Hold to complete ${habit.name}`}
+          />
         ) : null}
         <IconButton icon="more_horiz" accessibilityLabel={`${habit.name} options`} size={36} tone="transparent" onPress={openMenu} />
       </View>
@@ -151,7 +147,9 @@ export function HabitCard({ habit }: { habit: HabitView }) {
 
 const styles = StyleSheet.create({
   primary: { borderLeftWidth: 4, borderLeftColor: colors['primary-fixed'] },
-  head: { flexDirection: 'row', alignItems: 'center', gap: spacing['space-sm'] + 4 },
+  // Wraps so the dashboard pill drops below the title on narrow phones instead of truncating it.
+  head: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: spacing['space-sm'] + 4 },
+  titleCol: { flex: 1, minWidth: 150 },
   emblem: {
     width: 44,
     height: 44,
@@ -163,6 +161,7 @@ const styles = StyleSheet.create({
   statusRow: {
     marginTop: spacing['space-md'],
     flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
     gap: spacing['space-sm'],
     paddingHorizontal: spacing['space-md'] - 4,
@@ -188,13 +187,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   footer: { marginTop: spacing['space-md'], flexDirection: 'row', alignItems: 'center', gap: spacing['space-sm'] },
-  holdChip: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing['space-sm'],
-    paddingLeft: 4,
-    paddingRight: spacing['space-md'],
-    borderRadius: radius.full,
-    backgroundColor: colors['surface-container-high'],
-  },
 });

@@ -1,3 +1,4 @@
+import { View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
 import { colors, type ColorToken } from '@/theme';
@@ -14,8 +15,10 @@ const FLAME_PATH =
 
 export function FlameMark({ size = 80, color = 'primary-fixed' }: { size?: number; color?: ColorToken }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 48 48" accessibilityElementsHidden>
-      <Path d={FLAME_PATH} fill={colors[color]} />
-    </Svg>
+    <View aria-hidden>
+      <Svg width={size} height={size} viewBox="0 0 48 48">
+        <Path d={FLAME_PATH} fill={colors[color]} />
+      </Svg>
+    </View>
   );
 }

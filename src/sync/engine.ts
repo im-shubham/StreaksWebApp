@@ -1,5 +1,6 @@
 import type { SyncEntity } from '@/db/outbox';
 import type { LocalDb, RemoteCollection, RemoteStore } from './types';
+import { ALL_TABLES, notifyTablesChanged, writeTransaction } from '@/db/changes';
 
 /**
  * Local-first sync between SQLite and a remote store (Firestore).
@@ -76,10 +77,11 @@ export async function push(db: LocalDb, remote: RemoteStore, uid: string, limit 
       Date.now(),
       items[items.length - 1].seq,
     );
+    notifyTablesChanged('sync_outbox');
     throw e;
   }
 
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['sync_outbox'], async (txn) => {
     for (const it of items) {
       await txn.runAsync(
         'DELETE FROM sync_outbox WHERE seq = ? AND created_at = ? AND payload = ?',
@@ -109,7 +111,7 @@ export async function pull(db: LocalDb, remote: RemoteStore, uid: string): Promi
     const writable = cols.filter((c) => !def.localOnly.includes(c));
     let cursor = state?.last_pulled_at ?? 0;
 
-    await db.withExclusiveTransactionAsync(async (txn) => {
+    await writeTransaction(db, ALL_TABLES, async (txn) => {
       for (const doc of docs) {
         cursor = Math.max(cursor, Math.floor(doc.serverUpdatedAt));
         const remoteUpdated = Number(doc.data.updatedAt ?? 0);
@@ -170,7 +172,7 @@ export async function pull(db: LocalDb, remote: RemoteStore, uid: string): Promi
 /** Enqueues every local row, used when a guest's data moves into a new account. */
 export async function enqueueAll(db: LocalDb): Promise<number> {
   let n = 0;
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['sync_outbox'], async (txn) => {
     const now = Date.now();
     for (const def of ENTITIES) {
       const rows = await txn.getAllAsync<Record<string, unknown> & { id: string }>(`SELECT * FROM ${def.table}`);
@@ -194,7 +196,7 @@ const SYNCED_TABLES = ['milestones', 'freeze_events', 'completions', 'vacations'
 
 /** Removes all user data from this device and resets the profile to a fresh guest. */
 export async function wipeLocalData(db: LocalDb): Promise<void> {
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ALL_TABLES, async (txn) => {
     for (const t of SYNCED_TABLES) await txn.runAsync(`DELETE FROM ${t}`);
     await txn.runAsync('DELETE FROM sync_outbox');
     await txn.runAsync('DELETE FROM sync_state');
@@ -216,6 +218,7 @@ export async function adoptAccount(
   const profile = await db.getFirstAsync<{ account_uid: string | null }>(`SELECT account_uid FROM profile WHERE id = 'me'`);
   if (profile?.account_uid === user.uid) {
     await db.runAsync(`UPDATE profile SET email = ? WHERE id = 'me'`, user.email);
+    notifyTablesChanged('profile');
     return 'same';
   }
   const switched = !!profile?.account_uid;
@@ -228,6 +231,7 @@ export async function adoptAccount(
     user.displayName ?? null,
     Date.now(),
   );
+  notifyTablesChanged('profile');
   if (!switched) await enqueueAll(db);
   return switched ? 'switched' : 'adopted-guest';
 }

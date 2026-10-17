@@ -6,6 +6,7 @@ import { today } from '@/domain/dates';
 import { canAddHabit, HabitLimitError } from '@/domain/plans';
 import type { AccountTier, CadenceType, Habit, HabitCategory, HabitStatus } from '@/domain/types';
 import { enqueue } from '../outbox';
+import { writeTransaction } from '../changes';
 
 export type HabitRow = {
   id: string;
@@ -96,7 +97,7 @@ async function upsertOutbox(db: SQLiteDatabase, id: string) {
 export async function createHabit(db: SQLiteDatabase, input: NewHabit): Promise<string> {
   const id = randomUUID();
   const now = Date.now();
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['habits', 'sync_outbox'], async (txn) => {
     const { activeCount, maxOrder } = await assertCanActivate(txn);
     const isFirst = activeCount === 0;
     await txn.runAsync(
@@ -131,7 +132,7 @@ export async function createHabit(db: SQLiteDatabase, input: NewHabit): Promise<
 
 export async function setHabitStatus(db: SQLiteDatabase, id: string, status: HabitStatus): Promise<void> {
   const now = Date.now();
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['habits', 'sync_outbox'], async (txn) => {
     if (status === 'active') {
       const current = await txn.getFirstAsync<{ status: HabitStatus }>('SELECT status FROM habits WHERE id = ?', id);
       if (current?.status !== 'active') await assertCanActivate(txn);
@@ -152,7 +153,7 @@ export async function setHabitStatus(db: SQLiteDatabase, id: string, status: Hab
 /** Pins a habit to the dashboard hero ("On Dashboard"). Exactly one primary. */
 export async function setPrimaryHabit(db: SQLiteDatabase, id: string): Promise<void> {
   const now = Date.now();
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['habits', 'sync_outbox'], async (txn) => {
     const prev = await txn.getAllAsync<{ id: string }>(
       'SELECT id FROM habits WHERE is_primary = 1 AND id != ? AND deleted_at IS NULL',
       id,
@@ -167,7 +168,7 @@ export async function setPrimaryHabit(db: SQLiteDatabase, id: string): Promise<v
 /** Soft delete; the tombstone syncs, then can be purged. */
 export async function deleteHabit(db: SQLiteDatabase, id: string): Promise<void> {
   const now = Date.now();
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['habits', 'sync_outbox'], async (txn) => {
     await txn.runAsync('UPDATE habits SET deleted_at = ?, is_primary = 0, updated_at = ? WHERE id = ?', now, now, id);
     await enqueue(txn, 'habits', id, 'delete', { id, deleted_at: now, updated_at: now });
   });

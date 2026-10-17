@@ -42,7 +42,7 @@ export function HabitsScreen() {
           <Text variant="caption-caps" color="primary-fixed">
             Tactical Habit Deck
           </Text>
-          <Text variant="headline-xl">My Habits</Text>
+          <Text variant="headline-lg">My Habits</Text>
           <Text variant="label-md" color="on-surface-variant">
             {board.active.length} Active • {board.paused.length} Paused
           </Text>
@@ -55,7 +55,7 @@ export function HabitsScreen() {
             const tier = board.profile?.tier ?? 'guest';
             if (canAddHabit(tier, board.active.length)) router.push('/habit/new');
             else showHabitLimit(tier);
-          }} style={{ borderRadius: radius['2xl'], height: 52 }} />
+          }} style={{ borderRadius: radius['2xl'], minHeight: 52 }} />
       </View>
 
       <View style={styles.segment}>
@@ -78,7 +78,7 @@ export function HabitsScreen() {
             <Icon name="analytics" size={20} color="primary-fixed" />
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="body-lg" weight="500">
+            <Text variant="label-md" weight="600">
               Daily Completion Score
             </Text>
             <Text variant="caption-caps" color="on-surface-variant">
@@ -152,10 +152,10 @@ function EmptyHabits() {
             <Icon name="add_circle" size={18} color="primary-fixed" style={{ marginLeft: 'auto' }} />
           </View>
         </View>
-        <Text variant="headline-lg" align="center" style={{ fontSize: 28, lineHeight: 34, marginTop: spacing['space-lg'] }}>
+        <Text variant="headline-lg" align="center" style={{ marginTop: spacing['space-lg'] }}>
           Your habit deck is empty.
         </Text>
-        <Text variant="body-lg" color="on-surface-variant" align="center" style={{ marginTop: spacing['space-sm'] }}>
+        <Text variant="body-md" color="on-surface-variant" align="center" style={{ marginTop: spacing['space-sm'] }}>
           Create and organize multiple independent routines. Track custom cadences, frequencies, and target metrics for
           each goal.
         </Text>
@@ -181,7 +181,7 @@ function EmptyHabits() {
           >
             <Icon name={t.emblem} size={22} color="primary-fixed" />
             <View style={{ flex: 1 }}>
-              <Text variant="label-md" weight="600" numberOfLines={1}>
+              <Text variant="label-sm" numberOfLines={1}>
                 {t.name}
               </Text>
               <Text variant="label-sm" color="on-surface-variant" numberOfLines={1}>
@@ -205,7 +205,7 @@ function EmptyHabits() {
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="headline-md">{e.title}</Text>
-            <Text variant="body-lg" color="on-surface-variant">
+            <Text variant="body-md" color="on-surface-variant">
               {e.body}
             </Text>
           </View>
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   },
   track: { marginTop: spacing['space-md'], height: 8, borderRadius: 4, backgroundColor: colors['surface-container'], overflow: 'hidden' },
   fill: { height: 8, borderRadius: 4, backgroundColor: colors['primary-fixed'] },
-  chips: { flexDirection: 'row', gap: spacing['space-sm'] },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing['space-sm'] },
   chip: {
     flexDirection: 'row',
     alignItems: 'center',

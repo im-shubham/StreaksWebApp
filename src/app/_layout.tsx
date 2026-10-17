@@ -37,7 +37,8 @@ export default function RootLayout() {
                   animation: 'slide_from_right',
                 }}
               >
-                <Stack.Screen name="(tabs)" />
+                {/* Fade (not slide) when onboarding / sign-in replaces itself with the main app. */}
+                <Stack.Screen name="(tabs)" options={{ animation: 'fade' }} />
                 <Stack.Screen name="welcome" options={{ animation: 'fade' }} />
                 <Stack.Screen name="auth/sign-in" />
                 <Stack.Screen name="auth/sign-up" />

@@ -1,4 +1,6 @@
-import { ActivityIndicator, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
+import { useState } from 'react';
+import { ActivityIndicator, Pressable, StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 
 import { colors, radius, space, type ColorToken } from '@/theme';
 import { Icon, type IconName } from './Icon';
@@ -13,6 +15,8 @@ type Props = {
   variant?: Variant;
   size?: Size;
   icon?: IconName;
+  /** Icon after the label (e.g. "Get Started →"). */
+  iconPosition?: 'leading' | 'trailing';
   disabled?: boolean;
   loading?: boolean;
   style?: StyleProp<ViewStyle>;
@@ -26,7 +30,13 @@ const PALETTE: Record<Variant, { bg: ColorToken; fg: ColorToken; pressed: ColorT
   ghost: { bg: 'transparent', fg: 'on-surface', pressed: 'surface-container' },
 };
 
+/** Minimum heights (DESIGN.md primary CTA is 54). minHeight, not height, so larger text never clips. */
 const HEIGHT: Record<Size, number> = { lg: 54, md: 44, sm: 36 };
+
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+
+/** DESIGN.md: "Pressed state scales down to 0.98 opacity 0.9". */
+const PRESSED_SCALE = 0.98;
 
 export function Button({
   label,
@@ -34,46 +44,79 @@ export function Button({
   variant = 'primary',
   size = 'lg',
   icon,
+  iconPosition = 'leading',
   disabled,
   loading,
   style,
   pill,
 }: Props) {
   const p = PALETTE[variant];
+  const reduceMotion = useReducedMotion();
+  const pressed = useSharedValue(0);
+  // Tracked in state: Animated components don't support Pressable's style *function*.
+  const [isPressed, setIsPressed] = useState(false);
+
+  const animated = useAnimatedStyle(() => {
+    const v = pressed.get();
+    return { transform: [{ scale: 1 - v * (1 - PRESSED_SCALE) }], opacity: 1 - v * 0.1 };
+  });
+
+  const press = (to: 0 | 1) => {
+    setIsPressed(to === 1);
+    pressed.set(reduceMotion ? withTiming(to, { duration: 0 }) : withSpring(to, { damping: 18, stiffness: 420, mass: 0.6 }));
+  };
+
   return (
-    <Pressable
+    <AnimatedPressable
       accessibilityRole="button"
+      accessibilityLabel={label}
       accessibilityState={{ disabled: !!disabled, busy: !!loading }}
       disabled={disabled || loading}
       onPress={onPress}
-      style={({ pressed }) => [
+      onPressIn={() => press(1)}
+      onPressOut={() => press(0)}
+      style={[
         styles.base,
         {
-          height: HEIGHT[size],
+          minHeight: HEIGHT[size],
           paddingHorizontal: size === 'sm' ? space(3) : space(5),
           borderRadius: pill || size !== 'lg' ? radius.full : radius['2xl'],
-          backgroundColor: colors[pressed ? p.pressed : p.bg],
-          opacity: disabled ? 0.4 : pressed ? 0.9 : 1,
-          transform: [{ scale: pressed ? 0.98 : 1 }],
+          backgroundColor: colors[isPressed ? p.pressed : p.bg],
         },
+        disabled && { opacity: 0.4 },
         style,
+        !disabled && animated,
       ]}
     >
       {loading ? (
         <ActivityIndicator color={colors[p.fg]} />
       ) : (
-        <View style={styles.row}>
-          {icon ? <Icon name={icon} size={size === 'sm' ? 16 : 20} color={p.fg} /> : null}
-          <Text variant={size === 'sm' ? 'label-sm' : 'label-md'} weight="700" color={p.fg} numberOfLines={1}>
+        <>
+          {icon && iconPosition === 'leading' ? <Icon name={icon} size={size === 'sm' ? 16 : 20} color={p.fg} /> : null}
+          <Text
+            variant={size === 'sm' ? 'label-sm' : 'label-md'}
+            weight="700"
+            color={p.fg}
+            numberOfLines={1}
+            style={styles.label}
+          >
             {label}
           </Text>
-        </View>
+          {icon && iconPosition === 'trailing' ? <Icon name={icon} size={size === 'sm' ? 16 : 20} color={p.fg} /> : null}
+        </>
       )}
-    </Pressable>
+    </AnimatedPressable>
   );
 }
 
 const styles = StyleSheet.create({
-  base: { alignItems: 'center', justifyContent: 'center' },
-  row: { flexDirection: 'row', alignItems: 'center', gap: space(2) },
+  base: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: space(2),
+    paddingVertical: space(2),
+    maxWidth: '100%',
+  },
+  label: { flexShrink: 1 },
 });

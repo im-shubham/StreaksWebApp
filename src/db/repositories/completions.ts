@@ -3,6 +3,7 @@ import type { SQLiteDatabase } from 'expo-sqlite';
 import { today as todayDate, type LocalDate } from '@/domain/dates';
 import type { Completion, CompletionSource } from '@/domain/types';
 import { enqueue } from '../outbox';
+import { writeTransaction } from '../changes';
 
 export type CompletionRow = {
   id: string;
@@ -53,7 +54,7 @@ export async function checkIn(
   const date = opts.date ?? todayDate();
   const id = completionId(habitId, date);
   const now = Date.now();
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['completions', 'sync_outbox'], async (txn) => {
     const existing = await txn.getFirstAsync<{ deleted_at: number | null }>('SELECT deleted_at FROM completions WHERE id = ?', id);
     if (existing && existing.deleted_at === null) return;
     await txn.runAsync(
@@ -82,7 +83,7 @@ export async function checkIn(
 export async function undoCheckIn(db: SQLiteDatabase, habitId: string, date: LocalDate = todayDate()): Promise<void> {
   const id = completionId(habitId, date);
   const now = Date.now();
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['completions', 'sync_outbox'], async (txn) => {
     const res = await txn.runAsync(
       'UPDATE completions SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL',
       now,

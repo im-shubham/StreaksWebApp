@@ -10,6 +10,7 @@ import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
 import { IconButton } from '@/components/ui/IconButton';
 import { Pill } from '@/components/ui/Pill';
+import { RadialGlow } from '@/components/ui/RadialGlow';
 import { Text } from '@/components/ui/Text';
 import { checkIn, undoCheckIn } from '@/db/repositories/completions';
 import { setPrimaryHabit } from '@/db/repositories/habits';
@@ -93,7 +94,7 @@ function StreakHero({ habit }: { habit: HabitView }) {
   return (
     <Card style={styles.hero}>
       {/* Ambient radial atmosphere glow */}
-      <View pointerEvents="none" style={styles.heroGlow} />
+      <RadialGlow size={300} opacity={0.16} style={styles.heroGlow} />
       <View style={styles.flameWrap}>
         <View style={[styles.ring, styles.ringOuter]} />
         <View style={[styles.ring, styles.ringInner]} />
@@ -101,7 +102,7 @@ function StreakHero({ habit }: { habit: HabitView }) {
           <FlameMark size={80} />
         </View>
       </View>
-      <Text variant="display-hero-mobile" color="primary" tabular style={{ fontSize: 56, lineHeight: 60 }}>
+      <Text variant="display-hero-mobile" color="primary" tabular fit>
         {habit.streak}
       </Text>
       <Text variant="micro-counter" color="primary-fixed" style={{ letterSpacing: 2, marginTop: -2 }}>
@@ -151,8 +152,7 @@ function CheckInCard({ habit }: { habit: HabitView }) {
         icon={habit.emblem}
         completed={done}
         completedLabel={time}
-        duration={1500}
-        onComplete={() => void checkIn(db, habit.id)}
+        onComplete={() => checkIn(db, habit.id)}
         accessibilityLabel={`Hold to complete ${habit.name}`}
       />
       <View style={styles.feedback}>
@@ -171,7 +171,7 @@ function CheckInCard({ habit }: { habit: HabitView }) {
             </Pressable>
           </>
         ) : (
-          <Text variant="body-lg" color="on-surface-variant" align="center">
+          <Text variant="body-md" color="on-surface-variant" align="center">
             {rest
               ? 'Rest day. Log an optional session if you want to.'
               : "Press and hold firmly to lock in today's momentum."}
@@ -219,10 +219,10 @@ function InfoTile({
           {label}
         </Text>
       </View>
-      <Text variant="headline-md" weight="700" tabular>
+      <Text variant="headline-md" weight="700" tabular fit>
         {value}
       </Text>
-      <Text variant="body-md" color="on-surface-variant" numberOfLines={1}>
+      <Text variant="body-md" color="on-surface-variant" numberOfLines={2}>
         {sub}
       </Text>
     </Card>
@@ -246,15 +246,7 @@ const styles = StyleSheet.create({
   dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.outline },
   dotSmall: { width: 4, height: 4, borderRadius: 2, backgroundColor: colors.outline },
   hero: { alignItems: 'center' },
-  heroGlow: {
-    position: 'absolute',
-    top: -48,
-    alignSelf: 'center',
-    width: 256,
-    height: 256,
-    borderRadius: 128,
-    backgroundColor: alpha(colors['primary-fixed'], 0.06),
-  },
+  heroGlow: { position: 'absolute', top: -70, alignSelf: 'center' },
   flameWrap: { width: 96, height: 96, alignItems: 'center', justifyContent: 'center', marginBottom: spacing['space-xs'] },
   ring: { position: 'absolute', borderRadius: radius.full, borderWidth: 1 },
   ringOuter: { top: -8, left: -8, right: -8, bottom: -8, borderColor: alpha(colors['primary-fixed'], 0.15) },
@@ -273,7 +265,15 @@ const styles = StyleSheet.create({
   },
   center: { alignItems: 'center' },
   cardGlow: { ...glow, shadowRadius: 24, shadowOpacity: 0.35, overflow: 'visible' },
-  cardHead: { width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: spacing['space-lg'] },
+  cardHead: {
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8,
+    marginBottom: spacing['space-lg'],
+  },
   feedback: { marginTop: spacing['space-lg'], alignItems: 'center', minHeight: 48 },
   tileHead: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 },
 });

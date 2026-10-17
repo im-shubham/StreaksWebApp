@@ -21,12 +21,12 @@ export function TextField({ label, icon, accessory, error, secure, ...input }: P
   return (
     <View style={{ gap: spacing['space-sm'] }}>
       <View style={styles.labelRow}>
-        <Text variant="label-md" weight="600" color="on-surface-variant">
+        <Text variant="label-sm" color="on-surface-variant">
           {label}
         </Text>
         {accessory ? (
           <Pressable onPress={accessory.onPress} hitSlop={8} accessibilityRole="button">
-            <Text variant="label-md" weight="600" color="primary-fixed">
+            <Text variant="label-sm" weight="700" color="primary-fixed">
               {accessory.label}
             </Text>
           </Pressable>
@@ -77,7 +77,7 @@ export function TextField({ label, icon, accessory, error, secure, ...input }: P
 const styles = StyleSheet.create({
   labelRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 4 },
   box: {
-    height: 52,
+    minHeight: 52,
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing['space-sm'] + 4,
@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    height: '100%',
+    minWidth: 0,
+    alignSelf: 'stretch',
     color: colors['on-surface'],
     fontFamily: fontFamily['400'],
     fontSize: typography['body-lg'].fontSize,

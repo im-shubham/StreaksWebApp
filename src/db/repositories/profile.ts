@@ -2,6 +2,7 @@ import type { SQLiteDatabase } from 'expo-sqlite';
 
 import type { AccountTier } from '@/domain/types';
 import { enqueue } from '../outbox';
+import { writeTransaction } from '../changes';
 
 export type ProfileRow = {
   id: 'me';
@@ -44,7 +45,7 @@ const COLUMNS: (keyof Editable)[] = [
 export async function updateProfile(db: SQLiteDatabase, patch: Editable): Promise<void> {
   const keys = COLUMNS.filter((k) => k in patch);
   if (keys.length === 0) return;
-  await db.withExclusiveTransactionAsync(async (txn) => {
+  await writeTransaction(db, ['profile', 'sync_outbox'], async (txn) => {
     await txn.runAsync(
       `UPDATE profile SET ${keys.map((k) => `${k} = ?`).join(', ')}, updated_at = ? WHERE id = 'me'`,
       ...keys.map((k) => patch[k] ?? null),

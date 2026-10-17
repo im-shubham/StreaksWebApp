@@ -39,10 +39,10 @@ export function EmptyDashboard({ date }: { date: LocalDate }) {
         <Text variant="caption-caps" color="primary-fixed" style={{ marginTop: spacing['space-lg'] }}>
           Fresh Slate
         </Text>
-        <Text variant="headline-xl" align="center" style={{ fontSize: 28, lineHeight: 34 }}>
+        <Text variant="headline-lg" align="center">
           Your streak starts today.
         </Text>
-        <Text variant="body-lg" color="on-surface-variant" align="center" style={{ marginTop: spacing['space-sm'] }}>
+        <Text variant="body-md" color="on-surface-variant" align="center" style={{ marginTop: spacing['space-sm'] }}>
           Every legendary chain begins with a single check-in. Build your first ritual and start locking in daily
           discipline.
         </Text>
@@ -83,7 +83,7 @@ export function EmptyDashboard({ date }: { date: LocalDate }) {
           <Text variant="caption-caps" color="primary-fixed">
             The 21-Day Rule
           </Text>
-          <Text variant="body-md" color="on-surface-variant">
+          <Text variant="body-md" color="on-surface-variant" style={{ fontSize: 13, lineHeight: 19 }}>
             Commit for 3 weeks to shift conscious effort into automatic instinct. Every day marked fuels perpetual
             kinetic velocity.
           </Text>

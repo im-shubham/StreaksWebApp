@@ -30,7 +30,7 @@ export function Pill({
     <View style={[styles.pill, { backgroundColor: colors[tone] }, style]}>
       {dot ? <View style={[styles.dot, { backgroundColor: colors[dot] }]} /> : null}
       {icon ? <Icon name={icon} size={16} color={color} /> : null}
-      <Text variant={variant} color={color} numberOfLines={1}>
+      <Text variant={variant} color={color} numberOfLines={1} style={{ flexShrink: 1 }}>
         {label}
       </Text>
     </View>
@@ -48,6 +48,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'flex-start',
+    flexShrink: 1,
+    maxWidth: '100%',
     gap: space(1.5),
     paddingHorizontal: space(2.5),
     paddingVertical: space(1),

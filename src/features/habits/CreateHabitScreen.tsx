@@ -3,7 +3,7 @@ import * as Haptics from 'expo-haptics';
 import { router } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import { useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Button } from '@/components/ui/Button';
@@ -18,6 +18,9 @@ import { formatTime, WEEKDAY_INITIALS } from '@/domain/dates';
 import { EMBLEMS, HABIT_CATEGORIES, type CadenceType } from '@/domain/types';
 import { withLimit } from '@/features/habits/habitActions';
 import { colors, fontFamily, radius, spacing, typography } from '@/theme';
+
+const WELL_PADDING = spacing['space-md'] - 4;
+const EMBLEM_GAP = spacing['space-sm'] + 2;
 
 const CADENCES: { type: CadenceType; label: string }[] = [
   { type: 'daily', label: 'Daily' },
@@ -37,6 +40,11 @@ const fromHHMM = (s: string) => {
 export function CreateHabitScreen() {
   const db = useSQLiteContext();
   const insets = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
+  // Inner width of the emblem / weekday wells (screen margins + well padding).
+  const wellWidth = width - spacing['margin-mobile'] * 2 - WELL_PADDING * 2;
+  const emblemSize = Math.floor((wellWidth - EMBLEM_GAP * 4) / 5); // 5 × 2 grid, as in Stitch
+  const daySize = Math.min(40, Math.floor((wellWidth - 4 * 6) / 7));
 
   const [name, setName] = useState('');
   const [touched, setTouched] = useState(false);
@@ -106,17 +114,17 @@ export function CreateHabitScreen() {
                 Discipline Protocol
               </Text>
             </View>
-            <Text variant="headline-xl" style={{ marginTop: 4 }}>
+            <Text variant="headline-lg" style={{ marginTop: 4 }}>
               New Habit
             </Text>
-            <Text variant="body-lg" color="on-surface-variant" style={{ marginTop: 6 }}>
+            <Text variant="body-md" color="on-surface-variant" style={{ marginTop: 6 }}>
               Start with one habit and build momentum from there.
             </Text>
           </View>
 
           <View style={{ gap: spacing['space-sm'] }}>
             <View style={styles.labelRow}>
-              <Text variant="body-lg" weight="500">
+              <Text variant="label-md">
                 Habit Name
               </Text>
               <Text variant="label-sm" color="on-surface-variant">
@@ -155,7 +163,7 @@ export function CreateHabitScreen() {
 
           <View style={{ gap: spacing['space-sm'] }}>
             <View style={styles.labelRow}>
-              <Text variant="body-lg" weight="500">
+              <Text variant="label-md">
                 Visual Emblem
               </Text>
               <Text variant="caption-caps" color="primary-fixed">
@@ -176,7 +184,7 @@ export function CreateHabitScreen() {
                         void Haptics.selectionAsync();
                         setEmblemIndex(i);
                       }}
-                      style={[styles.emblem, { backgroundColor: colors[active ? 'primary-fixed' : 'surface-container-high'] }]}
+                      style={[styles.emblem, { width: emblemSize, height: emblemSize, backgroundColor: colors[active ? 'primary-fixed' : 'surface-container-high'] }]}
                     >
                       <Icon name={e.icon} size={26} color={active ? 'on-primary-fixed' : 'on-surface-variant'} />
                     </Pressable>
@@ -188,7 +196,7 @@ export function CreateHabitScreen() {
 
           <View style={{ gap: spacing['space-sm'] }}>
             <View style={styles.labelRow}>
-              <Text variant="body-lg" weight="500">
+              <Text variant="label-md">
                 Frequency &amp; Cadence
               </Text>
               <Text variant="caption-caps" color="on-surface-variant">
@@ -237,7 +245,7 @@ export function CreateHabitScreen() {
                           void Haptics.selectionAsync();
                           setMask((m) => toggleMask(m, i));
                         }}
-                        style={[styles.dayCircle, { backgroundColor: colors[on ? 'primary-fixed' : 'surface-container-high'] }]}
+                        style={[styles.dayCircle, { width: daySize, height: daySize, borderRadius: daySize / 2, backgroundColor: colors[on ? 'primary-fixed' : 'surface-container-high'] }]}
                       >
                         <Text variant="micro-counter" weight="700" color={on ? 'on-primary-fixed' : 'on-surface-variant'}>
                           {d}
@@ -256,17 +264,17 @@ export function CreateHabitScreen() {
                 <Icon name="notifications_active" size={24} color="primary-fixed" />
               </View>
               <View style={{ flex: 1 }}>
-                <Text variant="body-lg" weight="500">
+                <Text variant="label-md">
                   Daily Push Trigger
                 </Text>
-                <Text variant="body-md" color="on-surface-variant">
+                <Text variant="label-sm" color="on-surface-variant">
                   Direct alert to device
                 </Text>
               </View>
               <Toggle value={reminder} onChange={setReminder} accessibilityLabel="Daily push trigger" />
             </View>
             <View style={styles.windowRow}>
-              <Text variant="label-md" weight="600" color="on-surface-variant">
+              <Text variant="label-sm" color="on-surface-variant">
                 Scheduled window
               </Text>
               <Pressable
@@ -308,10 +316,10 @@ export function CreateHabitScreen() {
               <Icon name="bolt" size={20} color="primary-fixed" filled />
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="label-md" weight="700" style={{ letterSpacing: 0.5 }}>
+              <Text variant="caption-caps">
                 The 21-Day Threshold
               </Text>
-              <Text variant="label-md" color="on-surface-variant" numberOfLines={1}>
+              <Text variant="label-md" color="on-surface-variant">
                 Consistency creates automated neural pathways.
               </Text>
             </View>
@@ -320,7 +328,7 @@ export function CreateHabitScreen() {
       </KeyboardAvoidingView>
 
       <View style={[styles.footer, { paddingBottom: insets.bottom + spacing['space-md'] }]}>
-        <Button label="Create Habit" icon="add_task" onPress={() => void submit()} loading={saving} style={{ borderRadius: radius.full, height: 56 }} />
+        <Button label="Create Habit" icon="add_task" onPress={() => void submit()} loading={saving} style={{ borderRadius: radius.full, minHeight: 56 }} />
       </View>
     </View>
   );
@@ -341,7 +349,7 @@ const styles = StyleSheet.create({
   eyebrowDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors['primary-fixed'] },
   labelRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 2 },
   input: {
-    height: 56,
+    minHeight: 56,
     paddingHorizontal: spacing['space-md'] + 4,
     borderRadius: radius.xl,
     borderWidth: 1,
@@ -352,13 +360,13 @@ const styles = StyleSheet.create({
     fontSize: typography['body-lg'].fontSize,
   },
   errorRow: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 2 },
-  well: { padding: spacing['space-md'] - 4, borderRadius: radius.xl, backgroundColor: colors['surface-container-low'] },
-  emblemGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing['space-sm'] + 2 },
-  emblem: { width: '17.5%', aspectRatio: 1, borderRadius: radius.xl, alignItems: 'center', justifyContent: 'center' },
+  well: { padding: WELL_PADDING, borderRadius: radius.xl, backgroundColor: colors['surface-container-low'] },
+  emblemGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: EMBLEM_GAP },
+  emblem: { borderRadius: radius.xl, alignItems: 'center', justifyContent: 'center' },
   segment: { flexDirection: 'row', padding: 4, borderRadius: radius.xl, backgroundColor: colors['surface-container-low'] },
   segTab: { flex: 1, height: 40, borderRadius: radius.lg, alignItems: 'center', justifyContent: 'center' },
   days: { flexDirection: 'row', justifyContent: 'space-between' },
-  dayCircle: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
+  dayCircle: { alignItems: 'center', justifyContent: 'center' },
   stepper: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   reminderHead: { flexDirection: 'row', alignItems: 'center', gap: spacing['space-md'] - 4 },
   reminderIcon: {

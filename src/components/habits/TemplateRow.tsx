@@ -26,10 +26,10 @@ export function TemplateRow({
         <Icon name={icon} size={24} color="on-surface" />
       </View>
       <View style={{ flex: 1 }}>
-        <Text variant="body-lg" weight="500" numberOfLines={1}>
+        <Text variant="label-md" weight="600" numberOfLines={1}>
           {title}
         </Text>
-        <Text variant="body-md" color="on-surface-variant" numberOfLines={1}>
+        <Text variant="body-md" color="on-surface-variant" numberOfLines={2} style={{ fontSize: 13, lineHeight: 17 }}>
           {subtitle}
         </Text>
       </View>

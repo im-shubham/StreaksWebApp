@@ -113,10 +113,10 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
             <Text variant="caption-caps" color="primary-fixed" style={{ marginTop: spacing['space-lg'] }}>
               {signUpMode ? 'Streaks Core Engine' : 'Momentum Engine'}
             </Text>
-            <Text variant="headline-xl" align="center" style={{ fontSize: 34, lineHeight: 40 }}>
+            <Text variant="headline-xl" align="center">
               {signUpMode ? 'Start your streak.' : 'Welcome back.'}
             </Text>
-            <Text variant="body-lg" color="on-surface-variant" align="center" style={{ marginTop: 6 }}>
+            <Text variant="body-md" color="on-surface-variant" align="center" style={{ marginTop: 6 }}>
               {signUpMode
                 ? 'Set up your profile to sync your habits and streaks across devices.'
                 : 'Continue building momentum and protecting your active streaks.'}
@@ -204,15 +204,15 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
             onPress={() => void submit()}
             loading={busy || (submitted && auth.status !== 'signedIn')}
             disabled={!isFirebaseConfigured}
-            style={[{ borderRadius: radius['2xl'], height: 56 }, isFirebaseConfigured && glow]}
+            style={[{ borderRadius: radius['2xl'], minHeight: 56 }, isFirebaseConfigured && glow]}
           />
 
           <View style={styles.switchRow}>
-            <Text variant="body-lg" color="on-surface-variant">
+            <Text variant="body-md" color="on-surface-variant">
               {signUpMode ? 'Already have an account?' : "Don't have an account?"}
             </Text>
             <Pressable onPress={() => router.replace(signUpMode ? '/auth/sign-in' : '/auth/sign-up')} hitSlop={8}>
-              <Text variant="body-lg" weight="600" color="primary-fixed">
+              <Text variant="body-md" weight="600" color="primary-fixed">
                 {signUpMode ? 'Sign In' : 'Create Account'}
               </Text>
             </Pressable>

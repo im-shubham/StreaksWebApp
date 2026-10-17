@@ -21,8 +21,7 @@ export function Icon({ name, size = 24, color = 'on-surface', filled, style, acc
   return (
     <Text
       accessibilityLabel={accessibilityLabel}
-      accessibilityElementsHidden={!accessibilityLabel}
-      importantForAccessibility={accessibilityLabel ? 'yes' : 'no-hide-descendants'}
+      aria-hidden={!accessibilityLabel}
       allowFontScaling={false}
       style={[
         {

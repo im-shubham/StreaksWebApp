@@ -46,8 +46,12 @@ export const glow = {
   shadowOffset: { width: 0, height: 0 },
 } as const;
 
-/** Hold-to-complete threshold from the Stitch design spec. */
-export const HOLD_TO_COMPLETE_MS = 450;
+/**
+ * Hold-to-complete duration, used everywhere: ~1.5s, matching the Main
+ * Dashboard Stitch interaction (`holdDuration = 1500`) and the product
+ * owner's request. DESIGN.md's 450ms gauge figure is not used.
+ */
+export const HOLD_TO_COMPLETE_MS = 1500;
 
 /** Alpha helper for hex tokens, e.g. alpha(colors['primary-fixed'], 0.1). */
 export function alpha(hex: string, opacity: number): string {

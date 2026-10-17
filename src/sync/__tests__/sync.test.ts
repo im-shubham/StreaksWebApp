@@ -6,6 +6,7 @@
  */
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 
+import { subscribeTablesChanged } from '@/db/changes';
 import { checkIn, undoCheckIn } from '@/db/repositories/completions';
 import { createHabit, setHabitStatus } from '@/db/repositories/habits';
 import { today } from '@/domain/dates';
@@ -56,6 +57,26 @@ describe('guest mode + plan limit', () => {
     expect(await streakOf(db, id)).toBe(1);
     const rows = await db.getAllAsync<Row>('SELECT * FROM completions');
     expect(rows).toHaveLength(1);
+  });
+});
+
+describe('change notifications', () => {
+  it('fire after COMMIT, so a re-query sees the new check-in (dashboard refresh)', async () => {
+    const db = openDb();
+    const id = await createHabit(db, habitInput);
+    const seen: { tables: string[]; visible: number }[] = [];
+    const reads: Promise<void>[] = [];
+    const unsubscribe = subscribeTablesChanged((tables) => {
+      reads.push(
+        db
+          .getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM completions WHERE deleted_at IS NULL')
+          .then((r) => void seen.push({ tables: [...tables], visible: r?.n ?? 0 })),
+      );
+    });
+    await checkIn(db, id);
+    await Promise.all(reads);
+    unsubscribe();
+    expect(seen).toEqual([{ tables: ['completions', 'sync_outbox'], visible: 1 }]);
   });
 });
 

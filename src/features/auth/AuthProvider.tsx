@@ -1,5 +1,5 @@
 import * as Network from 'expo-network';
-import { addDatabaseChangeListener, useSQLiteContext } from 'expo-sqlite';
+import { useSQLiteContext } from 'expo-sqlite';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -12,6 +12,7 @@ import {
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { AppState } from 'react-native';
 
+import { subscribeTablesChanged } from '@/db/changes';
 import { updateProfile } from '@/db/repositories/profile';
 import { firebaseAuth, firestore, isFirebaseConfigured } from '@/services/firebase';
 import { signInWithGoogle, signOutOfGoogle } from '@/services/googleSignIn';
@@ -139,8 +140,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const appSub = AppState.addEventListener('change', (s) => {
       if (s === 'active') void runSync();
     });
-    const dbSub = addDatabaseChangeListener((e) => {
-      if (e.tableName !== 'sync_outbox' || !uidRef.current) return;
+    // Post-commit notification (see src/db/changes.ts), not the native pre-commit event.
+    const unsubscribe = subscribeTablesChanged((tables) => {
+      if (!tables.has('sync_outbox') || !uidRef.current) return;
       if (timer) clearTimeout(timer);
       timer = setTimeout(() => {
         void db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM sync_outbox').then((r) => {
@@ -150,7 +152,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
     return () => {
       appSub.remove();
-      dbSub.remove();
+      unsubscribe();
       if (timer) clearTimeout(timer);
     };
   }, [db, runSync]);
