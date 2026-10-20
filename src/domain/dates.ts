@@ -79,3 +79,16 @@ export function formatClock(ms: number): string {
   const d = new Date(ms);
   return formatTime(`${pad(d.getHours())}:${pad(d.getMinutes())}`, { padHour: true });
 }
+
+/** Date -> local 'HH:mm'. */
+export function toHHMM(d: Date): string {
+  return `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+/** Local 'HH:mm' -> a Date today at that time (for time pickers). */
+export function fromHHMM(s: string): Date {
+  const [h, m] = s.split(':').map(Number);
+  const d = new Date();
+  d.setHours(h, m, 0, 0);
+  return d;
+}

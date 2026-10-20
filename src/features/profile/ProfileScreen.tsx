@@ -123,6 +123,13 @@ export function ProfileScreen() {
       )}
 
       <Text variant="caption-caps" color="on-surface-variant" style={{ marginTop: spacing['space-sm'] }}>
+        Preferences
+      </Text>
+      <Card padding={spacing['space-sm']}>
+        <Row icon="notifications_active" label="Notifications" sub="Habit reminders and test alert" color="on-surface" onPress={() => router.push('/notifications')} />
+      </Card>
+
+      <Text variant="caption-caps" color="on-surface-variant" style={{ marginTop: spacing['space-sm'] }}>
         Account Control
       </Text>
       <Card padding={spacing['space-sm']}>

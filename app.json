@@ -33,7 +33,13 @@
         }
       ],
       "@react-native-community/datetimepicker",
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-notifications",
+        {
+          "color": "#BCF540"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

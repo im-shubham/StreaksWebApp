@@ -150,6 +150,21 @@ export async function setHabitStatus(db: SQLiteDatabase, id: string, status: Hab
   });
 }
 
+/** Turns a habit's reminder on/off and sets its local 'HH:mm' time (synced like any habit edit). */
+export async function setHabitReminder(db: SQLiteDatabase, id: string, enabled: boolean, time: string | null): Promise<void> {
+  const now = Date.now();
+  await writeTransaction(db, ['habits', 'sync_outbox'], async (txn) => {
+    await txn.runAsync(
+      'UPDATE habits SET reminder_enabled = ?, reminder_time = COALESCE(?, reminder_time), updated_at = ? WHERE id = ?',
+      enabled ? 1 : 0,
+      time,
+      now,
+      id,
+    );
+    await upsertOutbox(txn, id);
+  });
+}
+
 /** Pins a habit to the dashboard hero ("On Dashboard"). Exactly one primary. */
 export async function setPrimaryHabit(db: SQLiteDatabase, id: string): Promise<void> {
   const now = Date.now();

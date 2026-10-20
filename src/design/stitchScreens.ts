@@ -39,7 +39,7 @@ export const STITCH_SCREENS: StitchScreen[] = [
   { slug: 'vacation-planned-buffer', title: 'Vacation & Planned Buffer', stage: 2, status: 'planned' },
   { slug: 'dashboard-active-vacation-mode', title: 'Dashboard (Active Vacation Mode)', stage: 2, status: 'planned' },
   { slug: 'streak-milestone-celebration', title: 'Streak Milestone Celebration', stage: 2, status: 'planned' },
-  { slug: 'push-check-in-alerts', title: 'Push & Check-in Alerts', stage: 2, status: 'planned' },
+  { slug: 'push-check-in-alerts', title: 'Push & Check-in Alerts', stage: 2, status: 'built', route: '/notifications' },
 
   { slug: 'insights-analytics', title: 'Insights & Analytics', stage: 3, status: 'built', route: '/insights' },
   { slug: 'empty-insights-analytics', title: 'Empty Insights & Analytics', stage: 3, status: 'built', route: '/insights' },
@@ -53,8 +53,8 @@ export const STITCH_SCREENS: StitchScreen[] = [
   { slug: 'authentication', title: 'Authentication', stage: 4, status: 'planned' },
   { slug: 'sign-in', title: 'Sign In', stage: 4, status: 'built', route: '/auth/sign-in' },
   { slug: 'create-account', title: 'Create Account', stage: 4, status: 'built', route: '/auth/sign-up' },
-  { slug: 'forgot-password', title: 'Forgot Password', stage: 4, status: 'planned' },
-  { slug: 'password-reset-email-sent', title: 'Password Reset Email Sent', stage: 4, status: 'planned' },
+  { slug: 'forgot-password', title: 'Forgot Password', stage: 4, status: 'built', route: '/auth/forgot-password' },
+  { slug: 'password-reset-email-sent', title: 'Password Reset Email Sent', stage: 4, status: 'built', route: '/auth/reset-email-sent' },
   { slug: 'auth-error-recovery', title: 'Auth Error & Recovery', stage: 4, status: 'planned' },
   { slug: 'session-expired-account-confirmation', title: 'Session Expired & Account Confirmation', stage: 4, status: 'planned' },
   { slug: 'guest-mode-experience', title: 'Guest Mode Experience', stage: 4, status: 'planned' }, // guest mode works; dedicated screen pending

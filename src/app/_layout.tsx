@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { DATABASE_NAME, migrate } from '@/db/migrations';
 import { AuthProvider } from '@/features/auth/AuthProvider';
+import { ReminderScheduler } from '@/features/reminders/ReminderScheduler';
 import { colors } from '@/theme';
 import { appFonts } from '@/theme/fonts';
 
@@ -30,6 +31,7 @@ export default function RootLayout() {
           <SQLiteProvider databaseName={DATABASE_NAME} onInit={migrate} options={{ enableChangeListener: true }} useSuspense>
             <AuthProvider>
               <StatusBar style="light" />
+              <ReminderScheduler />
               <Stack
                 screenOptions={{
                   headerShown: false,
@@ -42,6 +44,9 @@ export default function RootLayout() {
                 <Stack.Screen name="welcome" options={{ animation: 'fade' }} />
                 <Stack.Screen name="auth/sign-in" />
                 <Stack.Screen name="auth/sign-up" />
+                <Stack.Screen name="auth/forgot-password" />
+                <Stack.Screen name="auth/reset-email-sent" />
+                <Stack.Screen name="notifications" />
                 <Stack.Screen name="habit/new" options={{ animation: 'slide_from_bottom' }} />
               </Stack>
             </AuthProvider>

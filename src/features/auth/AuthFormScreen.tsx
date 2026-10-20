@@ -14,10 +14,9 @@ import { TextField } from '@/components/ui/TextField';
 import { isFirebaseConfigured } from '@/services/firebase';
 import { googleAvailability } from '@/services/googleSignIn';
 import { colors, glow, radius, spacing } from '@/theme';
-import { authErrorMessage } from './authErrors';
+import { authErrorMessage, EMAIL_RE } from './authErrors';
 import { useAuth } from './AuthProvider';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
  * Stitch: "STREAKS - Sign In" / "STREAKS - Create Account" (email + password).
@@ -26,7 +25,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  */
 export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
   const insets = useSafeAreaInsets();
-  const { auth, signIn, signUp, resetPassword, signInWithGoogle } = useAuth();
+  const { auth, signIn, signUp, signInWithGoogle } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -81,18 +80,7 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
     }
   };
 
-  const forgot = async () => {
-    if (!EMAIL_RE.test(email.trim())) {
-      setError('Enter your account email above, then tap Forgot? again.');
-      return;
-    }
-    try {
-      await resetPassword(email);
-      Alert.alert('Check your inbox', `We sent a password reset link to ${email.trim()}. Check spam if it doesn't arrive.`);
-    } catch (e) {
-      setError(authErrorMessage(e));
-    }
-  };
+  const forgot = () => router.push({ pathname: '/auth/forgot-password', params: { email: email.trim() } });
 
   return (
     <View style={[styles.root, { paddingTop: insets.top }]}>
@@ -168,7 +156,7 @@ export function AuthFormScreen({ mode }: { mode: 'sign-in' | 'sign-up' }) {
               autoCapitalize="none"
               autoComplete={signUpMode ? 'new-password' : 'current-password'}
               textContentType={signUpMode ? 'newPassword' : 'password'}
-              accessory={signUpMode ? undefined : { label: 'Forgot?', onPress: () => void forgot() }}
+              accessory={signUpMode ? undefined : { label: 'Forgot?', onPress: forgot }}
               onSubmitEditing={() => void submit()}
               returnKeyType="go"
             />

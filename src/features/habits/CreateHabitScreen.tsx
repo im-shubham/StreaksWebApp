@@ -14,7 +14,8 @@ import { Text } from '@/components/ui/Text';
 import { Toggle } from '@/components/ui/Toggle';
 import { createHabit } from '@/db/repositories/habits';
 import { ALL_WEEKDAYS_MASK, maskCount, maskHas, toggleMask } from '@/domain/cadence';
-import { formatTime, WEEKDAY_INITIALS } from '@/domain/dates';
+import { formatTime, fromHHMM, toHHMM, WEEKDAY_INITIALS } from '@/domain/dates';
+import { ensureReminderPermission } from '@/features/reminders/permission';
 import { EMBLEMS, HABIT_CATEGORIES, type CadenceType } from '@/domain/types';
 import { withLimit } from '@/features/habits/habitActions';
 import { colors, fontFamily, radius, spacing, typography } from '@/theme';
@@ -28,13 +29,6 @@ const CADENCES: { type: CadenceType; label: string }[] = [
   { type: 'interval', label: 'Interval' },
 ];
 
-const toHHMM = (d: Date) => `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
-const fromHHMM = (s: string) => {
-  const [h, m] = s.split(':').map(Number);
-  const d = new Date();
-  d.setHours(h, m, 0, 0);
-  return d;
-};
 
 /** Stitch: "STREAKS - Create Habit". */
 export function CreateHabitScreen() {
@@ -90,6 +84,8 @@ export function CreateHabitScreen() {
       if (!created) return;
       void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       router.back();
+      // Ask only once there is a reminder to deliver; the habit is saved either way.
+      if (reminder) void ensureReminderPermission();
     } finally {
       setSaving(false);
     }
@@ -305,7 +301,7 @@ export function CreateHabitScreen() {
               <View style={styles.note}>
                 <Icon name="verified_user" size={18} color="on-surface-variant" />
                 <Text variant="label-md" color="on-surface-variant" style={{ flex: 1 }}>
-                  Momentum will send a daily reminder at {formatTime(time)}.
+                  Momentum will remind you at {formatTime(time)} on scheduled days you haven’t checked in yet.
                 </Text>
               </View>
             ) : null}
