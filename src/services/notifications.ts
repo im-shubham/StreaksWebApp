@@ -24,7 +24,21 @@ export function onReminderPermissionChange(listener: (p: ReminderPermission) => 
   return () => permissionListeners.delete(listener);
 }
 
-/** Foreground presentation, Android channel and the "Mark Done" action. Idempotent. */
+/**
+ * Our Android channel, once created. Expo Go on Android can't create app
+ * channels (its channel provider is missing), so reminders there fall back to
+ * Expo Go's default channel instead of failing.
+ */
+let channelId: string | undefined;
+
+/** `{ channelId }` for triggers when our Android channel exists. */
+const channel = () => (channelId ? { channelId } : {});
+
+/**
+ * Foreground presentation, Android channel and the "Mark Done" action.
+ * Idempotent. Each optional step degrades on its own, so one unsupported
+ * feature (e.g. channels or actions in Expo Go) never blocks reminders.
+ */
 export function configureNotifications(): Promise<void> {
   if (!supported) return Promise.resolve();
   configured ??= (async () => {
@@ -37,20 +51,26 @@ export function configureNotifications(): Promise<void> {
       }),
     });
     if (Platform.OS === 'android') {
-      await Notifications.setNotificationChannelAsync(REMINDER_CHANNEL, {
-        name: 'Habit reminders',
-        description: 'Reminders at the time you set for each habit',
-        importance: Notifications.AndroidImportance.HIGH,
-        lightColor: '#BCF540',
-      });
+      try {
+        await Notifications.setNotificationChannelAsync(REMINDER_CHANNEL, {
+          name: 'Habit reminders',
+          description: 'Reminders at the time you set for each habit',
+          importance: Notifications.AndroidImportance.HIGH,
+          lightColor: '#BCF540',
+        });
+        channelId = REMINDER_CHANNEL;
+      } catch (e) {
+        console.info('[reminders] using the default notification channel:', e instanceof Error ? e.message.split('\n')[0] : e);
+      }
     }
-    await Notifications.setNotificationCategoryAsync(REMINDER_CATEGORY, [
-      { identifier: ACTION_COMPLETE, buttonTitle: 'Mark Done', options: { opensAppToForeground: true } },
-    ]);
-  })().catch((e) => {
-    configured = null;
-    throw e;
-  });
+    try {
+      await Notifications.setNotificationCategoryAsync(REMINDER_CATEGORY, [
+        { identifier: ACTION_COMPLETE, buttonTitle: 'Mark Done', options: { opensAppToForeground: true } },
+      ]);
+    } catch (e) {
+      console.info('[reminders] "Mark Done" action unavailable:', e instanceof Error ? e.message.split('\n')[0] : e);
+    }
+  })();
   return configured;
 }
 
@@ -108,7 +128,7 @@ export async function applyReminderPlan(plan: readonly PlannedReminder[]): Promi
         categoryIdentifier: REMINDER_CATEGORY,
         data: { habitId: r.habitId, date: r.date },
       },
-      trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: r.fireAt, channelId: REMINDER_CHANNEL },
+      trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: r.fireAt, ...channel() },
     });
   }
   lastSignature = signature;
@@ -125,7 +145,7 @@ export async function sendTestReminder(): Promise<void> {
       sound: 'default',
       data: { test: true },
     },
-    trigger: { type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL, seconds: 3, channelId: REMINDER_CHANNEL },
+    trigger: { type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL, seconds: 3, ...channel() },
   });
 }
 
@@ -148,6 +168,6 @@ export async function sendWelcomeNotification(firstUp: { title: string; when: st
       sound: 'default',
       data: { welcome: true },
     },
-    trigger: { type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL, seconds: 2, channelId: REMINDER_CHANNEL },
+    trigger: { type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL, seconds: 2, ...channel() },
   });
 }

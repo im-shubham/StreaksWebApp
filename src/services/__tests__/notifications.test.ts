@@ -45,7 +45,7 @@ describe('notifications service', () => {
     expect(mockN.scheduleNotificationAsync).toHaveBeenCalledWith({
       identifier: 'gym_2026-10-20',
       content: expect.objectContaining({ title: 'Gym', categoryIdentifier: svc.REMINDER_CATEGORY, data: { habitId: 'gym', date: '2026-10-20' } }),
-      trigger: { type: 'date', date: 1000, channelId: svc.REMINDER_CHANNEL },
+      trigger: { type: 'date', date: 1000 },
     });
     expect(mockN.setNotificationCategoryAsync).toHaveBeenCalledWith(svc.REMINDER_CATEGORY, [
       expect.objectContaining({ identifier: svc.ACTION_COMPLETE, buttonTitle: 'Mark Done' }),
@@ -80,6 +80,32 @@ describe('notifications service', () => {
     expect(await svc.requestReminderPermission()).toBe('denied');
     expect(mockN.requestPermissionsAsync).toHaveBeenCalledTimes(1);
     expect(seen).toEqual(['granted', 'denied']);
+  });
+
+  it('on Android, uses its own channel, or falls back to the default one when channels are unavailable (Expo Go)', async () => {
+    const { Platform } = require('react-native') as typeof import('react-native'); // eslint-disable-line @typescript-eslint/no-require-imports
+    const original = Platform.OS;
+    Object.defineProperty(Platform, 'OS', { configurable: true, get: () => 'android' });
+    try {
+      jest.isolateModules(() => {
+        svc = require('../notifications') as Svc; // eslint-disable-line @typescript-eslint/no-require-imports
+      });
+      await svc.applyReminderPlan([reminder('gym_2026-10-20', 1000)]);
+      expect(mockN.scheduleNotificationAsync).toHaveBeenLastCalledWith(
+        expect.objectContaining({ trigger: { type: 'date', date: 1000, channelId: svc.REMINDER_CHANNEL } }),
+      );
+
+      mockN.setNotificationChannelAsync.mockRejectedValueOnce(new Error('NotificationsChannelsProvider is null'));
+      mockN.setNotificationCategoryAsync.mockRejectedValueOnce(new Error('categories unavailable'));
+      jest.isolateModules(() => {
+        svc = require('../notifications') as Svc; // eslint-disable-line @typescript-eslint/no-require-imports
+      });
+      await expect(svc.applyReminderPlan([reminder('gym_2026-10-21', 2000)])).resolves.toBeUndefined();
+      expect(mockN.scheduleNotificationAsync).toHaveBeenLastCalledWith(expect.objectContaining({ trigger: { type: 'date', date: 2000 } }));
+      await expect(svc.sendTestReminder()).resolves.toBeUndefined();
+    } finally {
+      Object.defineProperty(Platform, 'OS', { configurable: true, get: () => original });
+    }
   });
 
   it('treats iOS provisional authorization as allowed', async () => {
