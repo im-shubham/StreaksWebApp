@@ -1,5 +1,5 @@
 import { isScheduled } from './cadence';
-import { addDays, parseLocalDate, today as localToday, type LocalDate } from './dates';
+import { addDays, formatTime, parseLocalDate, toHHMM, today as localToday, WEEKDAY_SHORT, weekdayIndex, type LocalDate } from './dates';
 import { currentStreak, isShielded, type HabitHistory } from './streak';
 import type { Habit } from './types';
 
@@ -84,4 +84,11 @@ export function planReminders(habits: readonly ReminderHabit[], now: Date = new 
 /** Cheap equality key so an unchanged plan is not rescheduled. */
 export function planSignature(plan: readonly PlannedReminder[]): string {
   return plan.map((p) => `${p.id}@${p.fireAt}:${p.title}|${p.body}`).join('\n');
+}
+
+/** "today at 8:00 AM", "tomorrow at 8:00 AM", "Thu at 8:00 AM". */
+export function describeWhen(r: Pick<PlannedReminder, 'date' | 'fireAt'>, now: Date = new Date()): string {
+  const t = localToday(now);
+  const day = r.date === t ? 'today' : r.date === addDays(t, 1) ? 'tomorrow' : WEEKDAY_SHORT[weekdayIndex(r.date)];
+  return `${day} at ${formatTime(toHHMM(new Date(r.fireAt)))}`;
 }

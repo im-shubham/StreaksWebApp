@@ -10,6 +10,7 @@ import { today, type LocalDate } from '@/domain/dates';
 import { planReminders } from '@/domain/reminders';
 import { useToday } from '@/features/habits/useHabitBoard';
 import { useHabitHistories } from '@/features/habits/useHabitHistories';
+import { maybeSendWelcome } from './welcome';
 import {
   ACTION_COMPLETE,
   applyReminderPlan,
@@ -75,7 +76,9 @@ function Scheduler() {
       void (async () => {
         try {
           if ((await getReminderPermission()) !== 'granted' || cancelled) return;
-          await applyReminderPlan(planReminders(habits));
+          const plan = planReminders(habits);
+          await applyReminderPlan(plan);
+          await maybeSendWelcome(plan[0]);
         } catch (e) {
           console.warn('[reminders] scheduling failed', e);
         }

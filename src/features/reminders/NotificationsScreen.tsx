@@ -14,8 +14,8 @@ import { Text } from '@/components/ui/Text';
 import { Toggle } from '@/components/ui/Toggle';
 import { setHabitReminder } from '@/db/repositories/habits';
 import { describeCadence } from '@/domain/cadence';
-import { addDays, formatTime, fromHHMM, toHHMM, today, WEEKDAY_SHORT, weekdayIndex } from '@/domain/dates';
-import { HORIZON_DAYS, isValidTime, planReminders, type PlannedReminder } from '@/domain/reminders';
+import { formatTime, fromHHMM, toHHMM } from '@/domain/dates';
+import { describeWhen, HORIZON_DAYS, isValidTime, planReminders } from '@/domain/reminders';
 import { useToday } from '@/features/habits/useHabitBoard';
 import { useHabitHistories } from '@/features/habits/useHabitHistories';
 import { openNotificationSettings, sendTestReminder, type ReminderPermission } from '@/services/notifications';
@@ -23,13 +23,6 @@ import { colors, radius, spacing } from '@/theme';
 import { ensureReminderPermission, useReminderPermission } from './permission';
 
 const DEFAULT_TIME = '08:00';
-
-function whenLabel(r: PlannedReminder): string {
-  const t = today();
-  const day = r.date === t ? 'Today' : r.date === addDays(t, 1) ? 'Tomorrow' : WEEKDAY_SHORT[weekdayIndex(r.date)];
-  const d = new Date(r.fireAt);
-  return `${day} · ${formatTime(toHHMM(d))}`;
-}
 
 /**
  * Stitch: "Push & Check In Alerts", trimmed to what the app actually does:
@@ -118,7 +111,7 @@ export function NotificationsScreen() {
                   MOMENTUM
                 </Text>
                 <Text variant="label-sm" color="outline">
-                  {whenLabel(next)}
+                  {describeWhen(next).replace(/^./, (c) => c.toUpperCase())}
                 </Text>
               </View>
               <Text variant="headline-md" numberOfLines={1}>

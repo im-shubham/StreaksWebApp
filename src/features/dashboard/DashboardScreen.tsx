@@ -17,6 +17,7 @@ import { setPrimaryHabit } from '@/db/repositories/habits';
 import { formatClock, formatTime } from '@/domain/dates';
 import { HABIT_CATEGORIES } from '@/domain/types';
 import { openHabitMenu } from '@/features/habits/habitActions';
+import { ReminderPromptCard } from '@/features/reminders/ReminderPromptCard';
 import { useHabitBoard, type HabitView } from '@/features/habits/useHabitBoard';
 import { alpha, colors, glow, radius, spacing } from '@/theme';
 import { EmptyDashboard } from './EmptyDashboard';
@@ -39,6 +40,7 @@ export function DashboardScreen() {
       <HabitSwitcher habit={board.primary} others={board.active.filter((h) => h.id !== board.primary?.id)} />
       <StreakHero habit={board.primary} />
       <CheckInCard habit={board.primary} />
+      <ReminderPromptCard habits={board.habits} primary={board.primary} />
       <WeeklyRhythmCard habit={board.primary} />
       <View style={styles.split}>
         <InfoTile

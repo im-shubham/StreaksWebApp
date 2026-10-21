@@ -134,3 +134,20 @@ export async function pendingReminderCount(): Promise<number> {
   if (!supported) return 0;
   return (await Notifications.getAllScheduledNotificationsAsync()).length;
 }
+
+/** "Welcome to MOMENTUM" banner, shown a moment after reminders first become active. */
+export async function sendWelcomeNotification(firstUp: { title: string; when: string } | null): Promise<void> {
+  if (!supported) return;
+  await configureNotifications();
+  await Notifications.scheduleNotificationAsync({
+    content: {
+      title: 'Welcome to MOMENTUM 👋',
+      body: firstUp
+        ? `Reminders are on. First up: ${firstUp.title}, ${firstUp.when}. Small actions, big momentum.`
+        : 'Reminders are on. We’ll nudge you only on days a habit is due. Small actions, big momentum.',
+      sound: 'default',
+      data: { welcome: true },
+    },
+    trigger: { type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL, seconds: 2, channelId: REMINDER_CHANNEL },
+  });
+}

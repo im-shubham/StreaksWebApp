@@ -8,6 +8,7 @@ import { completeFromReminder } from '../ReminderScheduler';
 
 jest.mock('expo-crypto', () => ({ randomUUID: () => (jest.requireActual('crypto') as typeof import('crypto')).randomUUID() }));
 jest.mock('expo-notifications', () => ({}));
+jest.mock('expo-sqlite/kv-store', () => ({ __esModule: true, default: {} }));
 jest.mock('expo-router', () => ({ router: { navigate: jest.fn() } }));
 
 const input = { name: 'Morning Gym', category: 'fitness' as const, emblem: 'fitness_center' as const, cadenceType: 'daily' as const };
