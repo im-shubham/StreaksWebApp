@@ -44,7 +44,11 @@ Defined in `src/domain/billing.ts` and `functions/src/products.ts` (a test keeps
 1. Upgrade the project (`streak-app-72026`) to the **Blaze** plan (required for Cloud Functions; normal usage of these functions fits in the free monthly quota).
 2. Google Cloud Console (same project) → APIs & Services → enable **Google Play Android Developer API**.
 3. Note the Cloud Functions runtime service account: `PROJECT_NUMBER-compute@developer.gserviceaccount.com` (2nd gen default).
-4. Deploy (only after review): `cd functions && npm install && npm run build`, then from the repo root `npx firebase-tools deploy --only functions,firestore:rules --project streak-app-72026`.
+4. Deploy with the setup script (Windows PowerShell, from the repo root, where you're logged in to Firebase):
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File scripts\setup-firebase.ps1
+   ```
+   It checks the login, asks you to confirm Blaze, writes `FIRESTORE_REGION` (your Firestore location) to `functions/.env.streak-app-72026`, creates a placeholder `APPLE_IAP_PRIVATE_KEY` secret if missing (iOS verification answers "not set up yet" until the real key is set), builds `functions/` and, after asking, deploys Firestore rules + functions.
 
 ## 2. Google Play Console
 

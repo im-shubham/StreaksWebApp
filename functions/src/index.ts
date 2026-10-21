@@ -21,19 +21,33 @@ const APPLE_IAP_ISSUER_ID = defineString('APPLE_IAP_ISSUER_ID', { default: '' })
 const APPLE_APP_APPLE_ID = defineInt('APPLE_APP_APPLE_ID', { default: 0 });
 /** Pub/Sub topic configured in Play Console → Monetization setup → Real-time developer notifications. */
 const PLAY_RTDN_TOPIC = 'play-billing';
+/**
+ * Region of the Firestore database. A Firestore-triggered function must run
+ * there (multi-region nam5 → us-central1, eur3 → europe-west1). Written to
+ * functions/.env.<projectId> by scripts/setup-firebase.ps1.
+ */
+const FIRESTORE_REGION = defineString('FIRESTORE_REGION', { default: 'us-central1' });
+
+/** Placeholder secret value used until an App Store Connect In-App Purchase key is added. */
+const APPLE_NOT_CONFIGURED = 'not-configured';
 
 let play: PlayApi | undefined;
 let apple: AppStoreApi | undefined;
 const deps = (): Deps => ({
   db: getFirestore(),
   play: () => (play ??= playApi()),
-  apple: () =>
-    (apple ??= appStoreApi({
-      privateKey: APPLE_IAP_PRIVATE_KEY.value(),
+  apple: () => {
+    const privateKey = APPLE_IAP_PRIVATE_KEY.value();
+    if (!APPLE_IAP_KEY_ID.value() || !APPLE_IAP_ISSUER_ID.value() || !privateKey || privateKey.trim() === APPLE_NOT_CONFIGURED) {
+      throw new BillingError('failed-precondition', 'App Store purchases aren’t set up yet.');
+    }
+    return (apple ??= appStoreApi({
+      privateKey,
       keyId: APPLE_IAP_KEY_ID.value(),
       issuerId: APPLE_IAP_ISSUER_ID.value(),
       appAppleId: APPLE_APP_APPLE_ID.value() || undefined,
-    })),
+    }));
+  },
   now: () => Date.now(),
 });
 
@@ -77,7 +91,7 @@ export const appStoreNotifications = onRequest({ secrets: [APPLE_IAP_PRIVATE_KEY
 });
 
 /** Free plan limit, enforced server-side whenever a habit becomes active. */
-export const enforceHabitLimit = onDocumentWritten('users/{uid}/habits/{habitId}', async (event) => {
+export const enforceHabitLimit = onDocumentWritten({ document: 'users/{uid}/habits/{habitId}', region: FIRESTORE_REGION }, async (event) => {
   const after = event.data?.after.data();
   if (!after || after.status !== 'active' || after.deletedAt) return;
   const paused = await enforcePlanLimit(getFirestore(), event.params.uid, Date.now());
