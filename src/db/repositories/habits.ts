@@ -3,8 +3,8 @@ import type { SQLiteDatabase } from 'expo-sqlite';
 
 import type { IconName } from '@/components/ui/Icon';
 import { today } from '@/domain/dates';
-import { canAddHabit, HabitLimitError } from '@/domain/plans';
-import type { AccountTier, CadenceType, Habit, HabitCategory, HabitStatus } from '@/domain/types';
+import { canAddHabit, effectiveTier, HabitLimitError } from '@/domain/plans';
+import type { CadenceType, Habit, HabitCategory, HabitStatus } from '@/domain/types';
 import { enqueue } from '../outbox';
 import { writeTransaction } from '../changes';
 
@@ -79,11 +79,13 @@ export type NewHabit = {
 
 /** Throws HabitLimitError when the plan's active-habit cap is reached. */
 async function assertCanActivate(db: SQLiteDatabase): Promise<{ activeCount: number; maxOrder: number }> {
-  const profile = await db.getFirstAsync<{ tier: AccountTier }>(`SELECT tier FROM profile WHERE id = 'me'`);
+  const profile = await db.getFirstAsync<Parameters<typeof effectiveTier>[0] & object>(
+    `SELECT tier, account_uid, pro_plan, pro_expires_at FROM profile WHERE id = 'me'`,
+  );
   const counts = await db.getFirstAsync<{ n: number; maxOrder: number | null }>(
     `SELECT COUNT(*) AS n, MAX(sort_order) AS maxOrder FROM habits WHERE deleted_at IS NULL AND status = 'active'`,
   );
-  const tier = profile?.tier ?? 'guest';
+  const tier = effectiveTier(profile);
   const activeCount = counts?.n ?? 0;
   if (!canAddHabit(tier, activeCount)) throw new HabitLimitError(tier);
   return { activeCount, maxOrder: counts?.maxOrder ?? -1 };

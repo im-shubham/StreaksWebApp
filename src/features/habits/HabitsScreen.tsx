@@ -10,7 +10,7 @@ import { Card } from '@/components/ui/Card';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { Text } from '@/components/ui/Text';
 import { createHabit } from '@/db/repositories/habits';
-import { canAddHabit } from '@/domain/plans';
+import { canAddHabit, effectiveTier } from '@/domain/plans';
 import { ARCHETYPE_TEMPLATES } from '@/domain/templates';
 import { showHabitLimit, withLimit } from './habitActions';
 import { colors, radius, spacing } from '@/theme';
@@ -52,7 +52,7 @@ export function HabitsScreen() {
           icon="add"
           size="md"
           onPress={() => {
-            const tier = board.profile?.tier ?? 'guest';
+            const tier = effectiveTier(board.profile);
             if (canAddHabit(tier, board.active.length)) router.push('/habit/new');
             else showHabitLimit(tier);
           }} style={{ borderRadius: radius['2xl'], minHeight: 52 }} />

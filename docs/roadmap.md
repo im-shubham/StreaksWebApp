@@ -11,9 +11,9 @@ The Stitch designs (`design/stitch`) are implemented in stages. The live per-scr
 | 3 | Insights & settings | Insights & Analytics, Empty Insights, Profile & Settings, App Icon & Themes | **Insights done** (consistency, streaks, 14-week heatmap, recent activity; Temporal Peak, Top Habits and Export deferred). App icon = MOMENTUM logo. Settings/themes planned |
 | 4 | Onboarding & accounts (Firebase Auth) | Welcome, Onboarding 1–3, Authentication, Sign In, Create Account, Forgot Password, Reset Email Sent, Auth Error, Session Expired, Guest Mode | **Forgot Password + Reset Email Sent done**; rest planned |
 | 5 | Sync & offline (Firestore) | Account Data Loading, Offline Mode, Pending Sync Queue, Sync Failure & Recovery | Planned |
-| 6 | Monetization & platform | Pro Paywall, Paywall Modal, Feature Comparison, Free Limit Sheet, Purchase States, Restore Purchases, Native Ads, Widgets & Live Activities | Planned |
+| 6 | Monetization & platform | Pro Paywall, Paywall Modal, Feature Comparison, Free Limit Sheet, Purchase States, Restore Purchases, Native Ads, Widgets & Live Activities | **Pro billing built** (Play Billing + StoreKit via expo-iap, backend verification in `functions/`, [setup](setup/billing.md)); not deployed or live. Ads, widgets planned |
 
-Deferred by decision: Pro purchases, ads, AI features, advanced streak features (freeze, vacation), and the remaining non-essential screens.
+Deferred by decision: ads, AI features, advanced streak features (freeze, vacation), and the remaining non-essential screens.
 
 Reminder notes:
 

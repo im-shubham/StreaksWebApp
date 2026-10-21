@@ -133,6 +133,17 @@ export const MIGRATIONS: string[] = [
     last_pulled_at INTEGER NOT NULL DEFAULT 0
   );
   `,
+  // v2: on-device cache of the server's Pro entitlement (users/{uid}/entitlements/pro),
+  // so the plan works offline. Local-only: never synced, never trusted by the server.
+  `
+  ALTER TABLE profile ADD COLUMN pro_plan TEXT;
+  ALTER TABLE profile ADD COLUMN pro_state TEXT;
+  ALTER TABLE profile ADD COLUMN pro_expires_at INTEGER;
+  ALTER TABLE profile ADD COLUMN pro_auto_renewing INTEGER NOT NULL DEFAULT 0;
+  ALTER TABLE profile ADD COLUMN pro_environment TEXT;
+  ALTER TABLE profile ADD COLUMN pro_platform TEXT;
+  ALTER TABLE profile ADD COLUMN pro_checked_at INTEGER;
+  `,
 ];
 
 export const DATABASE_NAME = 'streaks.db';

@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { DATABASE_NAME, migrate } from '@/db/migrations';
 import { AuthProvider } from '@/features/auth/AuthProvider';
+import { BillingCoordinator } from '@/features/billing/BillingCoordinator';
 import { ReminderScheduler } from '@/features/reminders/ReminderScheduler';
 import { colors } from '@/theme';
 import { appFonts } from '@/theme/fonts';
@@ -32,6 +33,7 @@ export default function RootLayout() {
             <AuthProvider>
               <StatusBar style="light" />
               <ReminderScheduler />
+              <BillingCoordinator />
               <Stack
                 screenOptions={{
                   headerShown: false,
@@ -47,6 +49,8 @@ export default function RootLayout() {
                 <Stack.Screen name="auth/forgot-password" />
                 <Stack.Screen name="auth/reset-email-sent" />
                 <Stack.Screen name="notifications" />
+                <Stack.Screen name="pro" options={{ animation: 'slide_from_bottom' }} />
+                <Stack.Screen name="pro-manage" />
                 <Stack.Screen name="habit/new" options={{ animation: 'slide_from_bottom' }} />
               </Stack>
             </AuthProvider>

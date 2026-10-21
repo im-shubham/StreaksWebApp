@@ -16,8 +16,13 @@ type EntityDef = { entity: SyncEntity; table: string; collection: RemoteCollecti
 
 /** Pull order matters: habits before rows that reference them. */
 export const ENTITIES: EntityDef[] = [
-  // Profile: account link, plan tier and onboarding state never leave or enter via sync.
-  { entity: 'profile', table: 'profile', collection: 'profile', localOnly: ['account_uid', 'email', 'tier', 'onboarded_at'] },
+  // Profile: account link, plan tier, the cached Pro entitlement and onboarding state never leave or enter via sync.
+  {
+    entity: 'profile',
+    table: 'profile',
+    collection: 'profile',
+    localOnly: ['account_uid', 'email', 'tier', 'onboarded_at', 'pro_plan', 'pro_state', 'pro_expires_at', 'pro_auto_renewing', 'pro_environment', 'pro_platform', 'pro_checked_at'],
+  },
   { entity: 'habits', table: 'habits', collection: 'habits', localOnly: [] },
   { entity: 'completions', table: 'completions', collection: 'completions', localOnly: [] },
   { entity: 'freeze_events', table: 'freeze_events', collection: 'freezeEvents', localOnly: [] },

@@ -8,15 +8,16 @@ import { HabitLimitError, PLAN_LIMITS } from '@/domain/plans';
 import type { AccountTier } from '@/domain/types';
 import type { HabitView } from './useHabitBoard';
 
-/** Copy from "STREAKS - Free Habit Limit & Upgrade Sheet"; Pro purchase is deferred. */
+/** Copy from "STREAKS - Free Habit Limit & Upgrade Sheet". */
 export function showHabitLimit(tier: AccountTier = 'free') {
   const max = PLAN_LIMITS[tier].maxActiveHabits;
   Alert.alert(
     `Free capacity reached (${max}/${max})`,
-    `The Free plan supports ${max} active habit to help you build unbreakable focus. Pause or archive your current habit to start a new one.\n\nMomentum Pro with unlimited habits is coming soon.`,
+    `The Free plan supports ${max} active habit to help you build unbreakable focus. Pause or archive your current habit to start a new one, or upgrade to Momentum Pro for unlimited habits.`,
     [
+      { text: 'See Momentum Pro', onPress: () => router.push('/pro') },
       { text: 'Manage Habits', onPress: () => router.navigate('/habits') },
-      { text: 'OK', style: 'cancel' },
+      { text: 'Not Now', style: 'cancel' },
     ],
   );
 }

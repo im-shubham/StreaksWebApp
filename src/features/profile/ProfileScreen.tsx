@@ -14,7 +14,7 @@ import { Text } from '@/components/ui/Text';
 import { useLiveQuery } from '@/db/live';
 import { PROFILE_SQL, type ProfileRow } from '@/db/repositories/profile';
 import { formatClock } from '@/domain/dates';
-import { PLAN_LIMITS } from '@/domain/plans';
+import { effectiveTier, PLAN_LIMITS } from '@/domain/plans';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { useHabitBoard } from '@/features/habits/useHabitBoard';
 import { wipeLocalData } from '@/sync/engine';
@@ -34,7 +34,7 @@ export function ProfileScreen() {
 
   const signedIn = auth.status === 'signedIn';
   const name = profile?.display_name || (signedIn ? auth.user.email?.split('@')[0] : null) || 'Guest';
-  const tier = profile?.tier ?? 'guest';
+  const tier = effectiveTier(profile);
   const activeCount = board.loading ? 0 : board.active.length;
 
   const confirmSignOut = () => {
@@ -126,6 +126,13 @@ export function ProfileScreen() {
         Preferences
       </Text>
       <Card padding={spacing['space-sm']}>
+        <Row
+          icon="workspace_premium"
+          label="Momentum Pro"
+          sub={tier === 'pro' ? 'Manage subscription' : profile?.pro_state ? 'Subscription status and restore' : 'Unlimited active habits'}
+          color={tier === 'pro' ? 'primary-fixed' : 'on-surface'}
+          onPress={() => router.push(tier === 'pro' || profile?.pro_state ? '/pro-manage' : '/pro')}
+        />
         <Row icon="notifications_active" label="Notifications" sub="Habit reminders and test alert" color="on-surface" onPress={() => router.push('/notifications')} />
       </Card>
 

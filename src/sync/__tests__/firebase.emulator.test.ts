@@ -110,4 +110,25 @@ run('Firebase emulators', () => {
     );
     expect(tier).toBe('permission-denied');
   });
+
+  it('Pro entitlement: readable by its owner, never writable by a client; purchases are server-only', async () => {
+    const me = auth.currentUser!.uid;
+    // Seed as the backend would (emulator admin bypass), then act as the client.
+    await fetch(`http://127.0.0.1:8080/v1/projects/demo-streaks/databases/(default)/documents/users/${me}/entitlements?documentId=pro`, {
+      method: 'POST',
+      headers: { Authorization: 'Bearer owner', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields: { active: { booleanValue: false }, state: { stringValue: 'expired' } } }),
+    });
+    expect((await getDoc(doc(fs, 'users', me, 'entitlements', 'pro'))).data()?.state).toBe('expired');
+
+    const grant = { active: true, plan: 'lifetime', updatedAt: 1, serverUpdatedAt: serverTimestamp() };
+    const write = await setDoc(doc(fs, 'users', me, 'entitlements', 'pro'), grant).catch((e: { code?: string }) => e.code);
+    expect(write).toBe('permission-denied');
+    const other = await setDoc(doc(fs, 'users', me, 'entitlements', 'mine'), grant).catch((e: { code?: string }) => e.code);
+    expect(other).toBe('permission-denied');
+    const purchases = await getDoc(doc(fs, 'purchases', 'android_x')).catch((e: { code?: string }) => e.code);
+    expect(purchases).toBe('permission-denied');
+    const forge = await setDoc(doc(fs, 'purchases', 'android_x'), { uid: me }).catch((e: { code?: string }) => e.code);
+    expect(forge).toBe('permission-denied');
+  });
 });

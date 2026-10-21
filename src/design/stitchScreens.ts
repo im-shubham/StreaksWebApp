@@ -64,12 +64,12 @@ export const STITCH_SCREENS: StitchScreen[] = [
   { slug: 'pending-synchronization-queue', title: 'Pending Synchronization Queue', stage: 5, status: 'planned' },
   { slug: 'sync-failure-recovery', title: 'Sync Failure & Recovery', stage: 5, status: 'planned' },
 
-  { slug: 'streaks-pro-paywall', title: 'Streaks Pro Paywall', stage: 6, status: 'planned' },
+  { slug: 'streaks-pro-paywall', title: 'Streaks Pro Paywall', stage: 6, status: 'built', route: '/pro' },
   { slug: 'pro-paywall-modal', title: 'Pro Paywall Modal', stage: 6, status: 'planned' },
   { slug: 'premium-feature-comparison', title: 'Premium Feature Comparison', stage: 6, status: 'planned' },
-  { slug: 'free-habit-limit-upgrade-sheet', title: 'Free Habit Limit & Upgrade Sheet', stage: 6, status: 'planned' },
-  { slug: 'purchase-states-subscription-management', title: 'Purchase States & Subscription Management', stage: 6, status: 'planned' },
-  { slug: 'restore-purchases-subscription-management', title: 'Restore Purchases & Subscription Management', stage: 6, status: 'planned' },
+  { slug: 'free-habit-limit-upgrade-sheet', title: 'Free Habit Limit & Upgrade Sheet', stage: 6, status: 'built', route: '/pro' },
+  { slug: 'purchase-states-subscription-management', title: 'Purchase States & Subscription Management', stage: 6, status: 'built', route: '/pro' },
+  { slug: 'restore-purchases-subscription-management', title: 'Restore Purchases & Subscription Management', stage: 6, status: 'built', route: '/pro-manage' },
   { slug: 'insights-native-ad-ad-states', title: 'Insights Native Ad & Ad States', stage: 6, status: 'planned' },
   { slug: 'lock-screen-live-activity-widgets', title: 'Lock Screen & Live Activity Widgets', stage: 6, status: 'planned' },
 ];
