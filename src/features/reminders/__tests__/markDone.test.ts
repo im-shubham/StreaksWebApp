@@ -7,7 +7,7 @@ import { openDb } from '@/test/localDb';
 import { completeFromReminder } from '../ReminderScheduler';
 
 jest.mock('expo-crypto', () => ({ randomUUID: () => (jest.requireActual('crypto') as typeof import('crypto')).randomUUID() }));
-jest.mock('expo-notifications', () => ({}));
+jest.mock('@/services/expoNotifications', () => ({}));
 jest.mock('expo-sqlite/kv-store', () => ({ __esModule: true, default: {} }));
 jest.mock('expo-router', () => ({ router: { navigate: jest.fn() } }));
 

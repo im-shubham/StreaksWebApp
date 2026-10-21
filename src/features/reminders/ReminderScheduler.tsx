@@ -1,5 +1,5 @@
 import * as Haptics from 'expo-haptics';
-import * as Notifications from 'expo-notifications';
+import * as Notifications from '@/services/expoNotifications';
 import { router } from 'expo-router';
 import { useSQLiteContext, type SQLiteDatabase } from 'expo-sqlite';
 import { useEffect, useState } from 'react';

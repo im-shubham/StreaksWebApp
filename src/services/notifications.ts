@@ -1,4 +1,4 @@
-import * as Notifications from 'expo-notifications';
+import * as Notifications from '@/services/expoNotifications';
 import { Linking, Platform } from 'react-native';
 
 import { planSignature, type PlannedReminder } from '@/domain/reminders';

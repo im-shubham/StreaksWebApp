@@ -15,7 +15,7 @@ const mockN = {
   IosAuthorizationStatus: { NOT_DETERMINED: 0, DENIED: 1, AUTHORIZED: 2, PROVISIONAL: 3, EPHEMERAL: 4 },
   SchedulableTriggerInputTypes: { DATE: 'date', TIME_INTERVAL: 'timeInterval' },
 };
-jest.mock('expo-notifications', () => mockN);
+jest.mock('@/services/expoNotifications', () => mockN);
 
 type Svc = typeof import('../notifications');
 let svc: Svc;
