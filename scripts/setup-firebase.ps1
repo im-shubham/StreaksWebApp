@@ -106,6 +106,14 @@ $envFile = Join-Path 'functions' ".env.$ProjectId"
 Set-DotEnvValue $envFile 'FIRESTORE_REGION' $region
 Note "Firestore location: $location -> FIRESTORE_REGION=$region (saved to $envFile)"
 
+# App Store settings: placeholders until an Apple Developer account exists, so deploy doesn't prompt.
+# (Real values replace them later; the backend treats 'not-configured' as "iOS purchases not set up".)
+$existing = @()
+if (Test-Path $envFile) { $existing = @(Get-Content $envFile) }
+foreach ($pair in @(@('APPLE_IAP_KEY_ID', 'not-configured'), @('APPLE_IAP_ISSUER_ID', 'not-configured'), @('APPLE_APP_APPLE_ID', '0'))) {
+  if (-not ($existing -match "^$($pair[0])=")) { Set-DotEnvValue $envFile $pair[0] $pair[1] }
+}
+
 Step "App Store key secret (APPLE_IAP_PRIVATE_KEY)"
 $secret = Invoke-Firebase @('functions:secrets:get', 'APPLE_IAP_PRIVATE_KEY', '--project', $ProjectId) -AllowFail
 if ($secret.Code -eq 0) {

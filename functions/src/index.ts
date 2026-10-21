@@ -38,7 +38,8 @@ const deps = (): Deps => ({
   play: () => (play ??= playApi()),
   apple: () => {
     const privateKey = APPLE_IAP_PRIVATE_KEY.value();
-    if (!APPLE_IAP_KEY_ID.value() || !APPLE_IAP_ISSUER_ID.value() || !privateKey || privateKey.trim() === APPLE_NOT_CONFIGURED) {
+    const unset = (v: string) => !v || v.trim() === APPLE_NOT_CONFIGURED || v.trim().toLowerCase() === 'none';
+    if (unset(APPLE_IAP_KEY_ID.value()) || unset(APPLE_IAP_ISSUER_ID.value()) || unset(privateKey)) {
       throw new BillingError('failed-precondition', 'App Store purchases aren’t set up yet.');
     }
     return (apple ??= appStoreApi({
