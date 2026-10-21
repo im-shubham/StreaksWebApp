@@ -21,22 +21,36 @@ param(
   [switch]$Yes
 )
 
-$ErrorActionPreference = 'Stop'
+# 'Continue' on purpose: npm/npx write harmless warnings to stderr, which Windows PowerShell 5.1
+# would otherwise treat as fatal. Every external command is checked by its exit code instead,
+# and the script's own `throw`s still stop it on real failures.
+$ErrorActionPreference = 'Continue'
 Set-Location (Split-Path -Parent $PSScriptRoot)
 
 function Step([string]$Message) { Write-Host "`n==> $Message" -ForegroundColor Cyan }
 function Note([string]$Message) { Write-Host "    $Message" -ForegroundColor Gray }
 
 # Runs the pinned Firebase CLI and captures its output (only for commands that never prompt).
+# npm/npx print harmless warnings on stderr (e.g. "npm warn deprecated"); Windows PowerShell 5.1
+# turns redirected stderr into errors, so errors are only judged by the exit code here.
 function Invoke-Firebase {
   param([string[]]$Arguments, [switch]$AllowFail)
-  $output = & npx --yes firebase-tools@15 @Arguments 2>&1
-  $code = $LASTEXITCODE
+  $previous = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  try {
+    $output = & npx --yes firebase-tools@15 @Arguments 2>&1
+    $code = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previous
+  }
+  $lines = @($output | ForEach-Object {
+    if ($_ -is [System.Management.Automation.ErrorRecord]) { $_.Exception.Message } else { "$_" }
+  })
   if ($code -ne 0 -and -not $AllowFail) {
-    $output | ForEach-Object { Write-Host "    $_" }
+    $lines | ForEach-Object { Write-Host "    $_" }
     throw "firebase $($Arguments -join ' ') failed (exit $code)"
   }
-  return [pscustomobject]@{ Code = $code; Lines = @($output | ForEach-Object { "$_" }) }
+  return [pscustomobject]@{ Code = $code; Lines = $lines }
 }
 
 function Confirm-Step([string]$Question) {
